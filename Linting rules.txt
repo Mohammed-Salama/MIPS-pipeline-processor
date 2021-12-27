@@ -2,8 +2,8 @@ VERY IMPORTANT READ IT CAREFULLY PLEASE.
 
 Modular design
 All modules are organized under the modules directory.
- The top level description can be found under topLevelCircuit.v. It contains a modular design of the processor and encompasses five pipe stages and four pipe registers,
- the description for which are present under modules/pipeStages and modules/pipeRegisters respectively. The register file, the hazard detection and the forwarding units are also instantiated in topLevelCircuit.v. Pipe stages are made of and encapsulate other supporting modules.
+ The top level description can be found under topLevelCircuit.vhd. It contains a modular design of the processor and encompasses five pipe stages and four pipe registers,
+ the description for which are present under modules/pipeStages and modules/pipeRegisters respectively. The register file, the hazard detection and the forwarding units are also instantiated in topLevelCircuit.vhd. Pipe stages are made of and encapsulate other supporting modules.
 
 Constants
 defines.v contains project-wide constants for opcodes,
