@@ -1,0 +1,21 @@
+VERY IMPORTANT READ IT CAREFULLY PLEASE.
+
+Modular design
+All modules are organized under the modules directory.
+ The top level description can be found under topLevelCircuit.v. It contains a modular design of the processor and encompasses five pipe stages and four pipe registers,
+ the description for which are present under modules/pipeStages and modules/pipeRegisters respectively. The register file, the hazard detection and the forwarding units are also instantiated in topLevelCircuit.v. Pipe stages are made of and encapsulate other supporting modules.
+
+Constants
+defines.v contains project-wide constants for opcodes,
+ execution commands, and branch condition commands.
+ It also contains constants for wire widths and memory specifications. You can change memory size values to suit your needs.
+
+Wire naming convention
+To maintain conformity, most wire names follow the format {wire description}_{wire stage},
+where the second part describes the stage where the wire is located.
+For example, MEM_W_EN_ID is the memory write enable signal present in the instruction decode stage.
+
+
+
+REFERENCES:
+https://github.com/mhyousefi/MIPS-pipeline-processor#:~:text=Modular%20design,instruction%20decode%20stage
