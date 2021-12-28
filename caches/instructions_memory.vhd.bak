@@ -1,0 +1,30 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity instructionMemory is generic (n : integer := 16 ; m : integer := 20);
+	port(
+		clk           : in std_logic;
+		write_enable  : in std_logic;
+		address       : in  std_logic_vector(m-1 downto 0);
+		datain        : in  std_logic_vector(n-1 downto 0);
+		dataout       : out std_logic_vector(n-1 downto 0));
+end entity instructionMemory;
+
+architecture instructionMemoryArch of instructionMemory is
+
+	type memory_type is array(0 to ((2 ** m)-1)) of std_logic_vector(n-1 downto 0);
+	signal memory : memory_type ;
+	
+	begin
+		process(clk) is
+			begin
+				if rising_edge(clk) then  
+					if we = '1' then
+						memory(to_integer(unsigned(address))) <= datain;
+					end if;
+				end if;
+		end process;
+		dataout <= memory(to_integer(unsigned(address)));
+end instructionMemoryArch;
+
