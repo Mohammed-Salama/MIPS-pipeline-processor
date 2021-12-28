@@ -9,29 +9,72 @@ z2
 !i10f 100
 cModel Technology
 dC:/intelFPGA/20.1
-Einstructionmemory
-Z0 w1640690736
+Edatamemory
+Z0 w1640695047
 Z1 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
 Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
-!i122 1
+!i122 4
 Z4 dD:/Arch Project/MIPS-pipeline-processor
-Z5 8D:/Arch Project/MIPS-pipeline-processor/caches/instructions_memory.vhd
-Z6 FD:/Arch Project/MIPS-pipeline-processor/caches/instructions_memory.vhd
+Z5 8D:/Arch Project/MIPS-pipeline-processor/caches/data_memory.vhd
+Z6 FD:/Arch Project/MIPS-pipeline-processor/caches/data_memory.vhd
+l0
+L5 1
+Vmf;HMJ<WhY^KVHUjZbBU<2
+!s100 L`m?]DO^XE<aYCFGAGIEG1
+Z7 OV;C;2020.1;71
+32
+Z8 !s110 1640695052
+!i10b 1
+Z9 !s108 1640695052.000000
+Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/Arch Project/MIPS-pipeline-processor/caches/data_memory.vhd|
+!s107 D:/Arch Project/MIPS-pipeline-processor/caches/data_memory.vhd|
+!i113 1
+Z11 o-work work -2002 -explicit
+Z12 tExplicit 1 CvgOpt 0
+Adatamemoryarch
+R1
+R2
+R3
+DEx4 work 10 datamemory 0 22 mf;HMJ<WhY^KVHUjZbBU<2
+!i122 4
+l22
+L17 20
+VoeNMlVHARFRf[`]4Y1a^n1
+!s100 :[CNa68WaUKmg1SZmJM5i2
+R7
+32
+R8
+!i10b 1
+R9
+R10
+Z13 !s107 D:/Arch Project/MIPS-pipeline-processor/caches/data_memory.vhd|
+!i113 1
+R11
+R12
+Einstructionmemory
+Z14 w1640690736
+R1
+R2
+R3
+!i122 1
+R4
+Z15 8D:/Arch Project/MIPS-pipeline-processor/caches/instructions_memory.vhd
+Z16 FD:/Arch Project/MIPS-pipeline-processor/caches/instructions_memory.vhd
 l0
 L5 1
 Ve6gAM]I7VNMokS31d[NM=0
 !s100 `hK6Pjdff0Y9eL8VZDeB@0
-Z7 OV;C;2020.1;71
+R7
 32
-Z8 !s110 1640690740
+Z17 !s110 1640690740
 !i10b 1
-Z9 !s108 1640690740.000000
-Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/Arch Project/MIPS-pipeline-processor/caches/instructions_memory.vhd|
-!s107 D:/Arch Project/MIPS-pipeline-processor/caches/instructions_memory.vhd|
+Z18 !s108 1640690740.000000
+Z19 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/Arch Project/MIPS-pipeline-processor/caches/instructions_memory.vhd|
+Z20 !s107 D:/Arch Project/MIPS-pipeline-processor/caches/instructions_memory.vhd|
 !i113 1
-Z11 o-work work -2002 -explicit
-Z12 tExplicit 1 CvgOpt 0
+R11
+R12
 Ainstructionmemoryarch
 R1
 R2
@@ -44,11 +87,11 @@ VgfhB<dTP?BOgN83BF8PVc1
 !s100 ^7oBhKabZbdQX=6`knNBo1
 R7
 32
-R8
+R17
 !i10b 1
-R9
-R10
-Z13 !s107 D:/Arch Project/MIPS-pipeline-processor/caches/instructions_memory.vhd|
+R18
+R19
+R20
 !i113 1
 R11
 R12

@@ -26,3 +26,44 @@ run
 force -freeze sim:/instructionmemory/datain 1010101010101010 0
 run
 run
+# Compile of data_memory.vhd failed with 2 errors.
+# Compile of data_memory.vhd failed with 1 errors.
+# Compile of data_memory.vhd failed with 6 errors.
+# Compile of data_memory.vhd failed with 6 errors.
+# Compile of data_memory.vhd was successful.
+# Load canceled
+# Break key hit
+vsim -gui work.datamemory
+# End time: 14:40:08 on Dec 28,2021, Elapsed time: 1:05:19
+# Errors: 0, Warnings: 13
+# vsim -gui work.datamemory 
+# Start time: 14:40:08 on Dec 28,2021
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.datamemory(datamemoryarch)
+add wave -position insertpoint  \
+sim:/datamemory/address \
+sim:/datamemory/clk \
+sim:/datamemory/datain1 \
+sim:/datamemory/datain2 \
+sim:/datamemory/dataout1 \
+sim:/datamemory/dataout2 \
+sim:/datamemory/is32 \
+sim:/datamemory/write_enable
+force -freeze sim:/datamemory/clk 1 0, 0 {50 ps} -r 100
+force -freeze sim:/datamemory/address 00000000000000001010 0
+force -freeze sim:/datamemory/datain1 1010101010101010 0
+force -freeze sim:/datamemory/datain2 1010101010101010 0
+force -freeze sim:/datamemory/write_enable 1 0
+force -freeze sim:/datamemory/is32 0 0
+run
+run
+run
+force -freeze sim:/datamemory/datain2 1111111111000000 0
+run
+force -freeze sim:/datamemory/is32 1 0
+run
+run
+run
