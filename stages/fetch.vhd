@@ -6,6 +6,7 @@ use work.constants.all;
 
 entity Fetch is
     port(
+        out_pc : out std_logic_vector(PC_SIZE-1 downto 0);
         memory_out : inout std_logic_vector(PC_SIZE-1 downto 0);               -- fetched from memory
         inst_mem_input_data   : in std_logic_vector(2*MEM_WIDTH-1 downto 0);   -- input to instuction memory 
         inst_mem_write_enable : in std_logic;                                -- to write on instruction memory
@@ -45,6 +46,7 @@ begin
             end if;
 
             pc <= temp_pc;
+            out_pc <= temp_pc;
             -- TODO : handle jump and call instrucitons
 
 

@@ -164,3 +164,178 @@ run
 run
 run
 run
+# Compile of constants.vhd was successful.
+# Compile of alu.vhd was successful.
+# Compile of fetch.vhd was successful.
+# Compile of instructions_memory.vhd was successful.
+# Compile of pipeline_buffer.vhd failed with 2 errors.
+# 5 compiles, 1 failed with 2 errors.
+# Compile of constants.vhd was successful.
+# Compile of alu.vhd was successful.
+# Compile of fetch.vhd was successful.
+# Compile of instructions_memory.vhd was successful.
+# Compile of pipeline_buffer.vhd was successful.
+# 5 compiles, 0 failed with no errors.
+vsim -gui work.pipelinebuffer
+# End time: 18:45:52 on Jan 07,2022, Elapsed time: 1:35:37
+# Errors: 0, Warnings: 6
+# vsim -gui work.pipelinebuffer 
+# Start time: 18:45:52 on Jan 07,2022
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading ieee.numeric_std(body)
+# Loading work.constants(body)
+# Loading work.pipelinebuffer(pipelinebufferarch)
+# Compile of constants.vhd was successful.
+# Compile of alu.vhd was successful.
+# Compile of fetch.vhd was successful.
+# Compile of instructions_memory.vhd was successful.
+# Compile of pipeline_buffer.vhd was successful.
+# 5 compiles, 0 failed with no errors.
+add wave -position end  sim:/pipelinebuffer/buff
+add wave -position end  sim:/pipelinebuffer/clk
+add wave -position end  sim:/pipelinebuffer/enable
+add wave -position end  sim:/pipelinebuffer/flush
+add wave -position end  sim:/pipelinebuffer/in_port
+add wave -position end  sim:/pipelinebuffer/out_port
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: ahmed  Hostname: LAPTOP-8POTMREJ  ProcessID: 3212
+#           Attempting to use alternate WLF file "./wlft8ba9mb".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft8ba9mb
+force -freeze sim:/pipelinebuffer/clk 1 0, 0 {50 ps} -r 100
+force -freeze sim:/pipelinebuffer/enable 1 0
+force -freeze sim:/pipelinebuffer/in_port 10#60 0
+run
+run
+run
+# Compile of constants.vhd was successful.
+# Compile of alu.vhd was successful.
+# Compile of fetch.vhd was successful.
+# Compile of instructions_memory.vhd was successful.
+# Compile of pipeline_buffer.vhd was successful.
+# 5 compiles, 0 failed with no errors.
+vsim -gui work.pipelinebuffer
+# End time: 20:04:13 on Jan 07,2022, Elapsed time: 1:18:21
+# Errors: 0, Warnings: 5
+# vsim -gui work.pipelinebuffer 
+# Start time: 20:04:13 on Jan 07,2022
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading ieee.numeric_std(body)
+# Loading work.constants(body)
+# Loading work.pipelinebuffer(pipelinebufferarch)
+add wave -position end  sim:/pipelinebuffer/buff
+add wave -position end  sim:/pipelinebuffer/clk
+add wave -position end  sim:/pipelinebuffer/enable
+add wave -position end  sim:/pipelinebuffer/flush
+add wave -position end  sim:/pipelinebuffer/in_port
+add wave -position end  sim:/pipelinebuffer/out_port
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: ahmed  Hostname: LAPTOP-8POTMREJ  ProcessID: 3212
+#           Attempting to use alternate WLF file "./wlftdy2ifr".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftdy2ifr
+force -freeze sim:/pipelinebuffer/clk 1 0, 0 {50 ps} -r 100
+force -freeze sim:/pipelinebuffer/in_port 10#50 0
+run
+force -freeze sim:/pipelinebuffer/flush 1 0
+force -freeze sim:/pipelinebuffer/in_port 10#100 0
+run
+force -freeze sim:/pipelinebuffer/flush 0 0
+force -freeze sim:/pipelinebuffer/enable 1 0
+force -freeze sim:/pipelinebuffer/in_port 0000000000000001000000000000000000000000000000000000000001100100 0
+run
+run
+force -freeze sim:/pipelinebuffer/in_port 0000000100000001000000000000000000000000000000000000000001100100 0
+run
+# Compile of constants.vhd was successful.
+# Compile of alu.vhd was successful.
+# Compile of fetch.vhd was successful.
+# Compile of instructions_memory.vhd was successful.
+# Compile of pipeline_buffer.vhd was successful.
+# 5 compiles, 0 failed with no errors.
+vsim -gui work.pipelinebuffer
+# End time: 20:10:33 on Jan 07,2022, Elapsed time: 0:06:20
+# Errors: 0, Warnings: 4
+# vsim -gui work.pipelinebuffer 
+# Start time: 20:10:33 on Jan 07,2022
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading ieee.numeric_std(body)
+# Loading work.constants(body)
+# Loading work.pipelinebuffer(pipelinebufferarch)
+add wave -position end  sim:/pipelinebuffer/clk
+add wave -position end  sim:/pipelinebuffer/enable
+add wave -position end  sim:/pipelinebuffer/flush
+add wave -position end  sim:/pipelinebuffer/in_port
+add wave -position end  sim:/pipelinebuffer/out_port
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: ahmed  Hostname: LAPTOP-8POTMREJ  ProcessID: 3212
+#           Attempting to use alternate WLF file "./wlft3n7s6q".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft3n7s6q
+force -freeze sim:/pipelinebuffer/clk 1 0, 0 {50 ps} -r 100
+force -freeze sim:/pipelinebuffer/enable 1 0
+force -freeze sim:/pipelinebuffer/in_port 10#10 0
+run
+run
+force -freeze sim:/pipelinebuffer/in_port 0000000001000000000000000000000000000000000000000000000000001010 0
+run
+force -freeze sim:/pipelinebuffer/in_port 0000004001000000000000000000000000000000000000000000000000001010 0
+# ** UI-Msg: (vsim-4026) Value "'4'" does not represent a literal of the enumeration type.
+# ** UI-Msg: (vsim-4011) Invalid force value: 0000004001000000000000000000000000000000000000000000000000001010 0.
+# 
+noforce sim:/pipelinebuffer/out_port
+run
+run
+force -freeze sim:/pipelinebuffer/in_port 0000010001000000000000000000000000000000000000000000000000001010 0
+run
+run
+# Compile of constants.vhd was successful.
+# Compile of alu.vhd was successful.
+# Compile of fetch.vhd was successful.
+# Compile of instructions_memory.vhd was successful.
+# Compile of pipeline_buffer.vhd was successful.
+# 5 compiles, 0 failed with no errors.
+vsim -gui work.pipelinebuffer
+# End time: 20:15:52 on Jan 07,2022, Elapsed time: 0:05:19
+# Errors: 0, Warnings: 4
+# vsim -gui work.pipelinebuffer 
+# Start time: 20:15:52 on Jan 07,2022
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading ieee.numeric_std(body)
+# Loading work.constants(body)
+# Loading work.pipelinebuffer(pipelinebufferarch)
+add wave -position end  sim:/pipelinebuffer/clk
+add wave -position end  sim:/pipelinebuffer/enable
+add wave -position end  sim:/pipelinebuffer/flush
+add wave -position end  sim:/pipelinebuffer/in_port
+add wave -position end  sim:/pipelinebuffer/out_port
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: ahmed  Hostname: LAPTOP-8POTMREJ  ProcessID: 3212
+#           Attempting to use alternate WLF file "./wlftejw71r".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftejw71r
+force -freeze sim:/pipelinebuffer/clk 1 0, 0 {50 ps} -r 100
+force -freeze sim:/pipelinebuffer/enable 1 0
+force -freeze sim:/pipelinebuffer/in_port 10#10 0
+run
+force -freeze sim:/pipelinebuffer/in_port 0000000010000000000000000000000000000000000000000000000000001010 0
+run
+force -freeze sim:/pipelinebuffer/enable 0 0
+force -freeze sim:/pipelinebuffer/flush 1 0
+run
