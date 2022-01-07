@@ -1,14 +1,15 @@
 library ieee;
 use ieee.std_logic_1164.all;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
 use ieee.numeric_std.all;
 
 entity instructionMemory is generic (n : integer := 16 ; m : integer := 20);
 	port(
 		clk           : in std_logic;
 		write_enable  : in std_logic;
-		address       : in  std_logic_vector(m-1 downto 0);
-		datain        : in  std_logic_vector(n-1 downto 0);
-		dataout       : out std_logic_vector(n-1 downto 0));
+		address       : in  std_logic_vector(2*n-1 downto 0);       -- pc is 32 bit , we care about first 20 bits, then all bits excepts the first 20 bits must be zero else OUT_OF_RANGE INDEXING will happen.
+		datain        : in  std_logic_vector(2*n-1 downto 0);
+		dataout       : out std_logic_vector(2*n-1 downto 0));
 end entity instructionMemory;
 
 architecture instructionMemoryArch of instructionMemory is
@@ -21,10 +22,12 @@ architecture instructionMemoryArch of instructionMemory is
 			begin
 				if rising_edge(clk) then  
 					if write_enable = '1' then
-						memory(to_integer(unsigned(address))) <= datain;
+						memory(to_integer(unsigned(address))) <= datain(2*n-1 downto n);
+						memory(to_integer(unsigned(address+1))) <= datain(n-1 downto 0);
 					end if;
 				end if;
 		end process;
-		dataout <= memory(to_integer(unsigned(address)));
+		dataout(2*n-1 downto n) <= memory(to_integer(unsigned(address)));
+		dataout(n-1 downto 0) <= memory(to_integer(unsigned(address+1)));
 end instructionMemoryArch;
 

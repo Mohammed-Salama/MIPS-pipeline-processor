@@ -6,6 +6,15 @@ package Constants is
 
     --Projects constants
     CONSTANT REG_SIZE : integer :=16;
+    CONSTANT PC_SIZE  : integer :=32;
+    CONSTANT MEM_WIDTH : integer := 16;
+
+
+    
+    -- INSTRUCTION OPCODES:       OPCODE = IMMEDIATE BIT + 5 BITS  
+    
+    CONSTANT HLT_OPCODE : std_logic_vector(5 downto 0) := "000001" ;
+
 
     --Flag register constants
     CONSTANT FLAG_REG_SIZE    :  integer  :=3;

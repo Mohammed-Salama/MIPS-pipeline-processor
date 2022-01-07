@@ -1,16 +1,11 @@
-# Compile of constants.vhd failed with 7 errors.
 # Compile of constants.vhd was successful.
-# Compile of constants.vhd was successful.
-# Compile of alu.vhd failed with 3 errors.
-# Compile of alu.vhd failed with 1 errors.
-# Compile of alu.vhd failed with 4 errors.
-# Compile of alu.vhd failed with 4 errors.
-# Compile of alu.vhd failed with 1 errors.
-# Compile of alu.vhd failed with 2 errors.
-# Compile of alu.vhd was successful with warnings.
-vsim -gui work.alu
-# vsim -gui work.alu 
-# Start time: 18:34:33 on Dec 28,2021
+# Compile of alu.vhd was successful.
+# Compile of fetch.vhd was successful.
+# Compile of instructions_memory.vhd was successful.
+# 4 compiles, 0 failed with no errors.
+vsim -gui work.fetch
+# vsim -gui work.fetch 
+# Start time: 16:45:41 on Jan 07,2022
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -18,32 +13,34 @@ vsim -gui work.alu
 # Loading ieee.std_logic_unsigned(body)
 # Loading ieee.numeric_std(body)
 # Loading work.constants(body)
-# Loading work.alu(aluarch)
-add wave -position end  sim:/alu/enable
-add wave -position end  sim:/alu/flags
-add wave -position end  sim:/alu/opcode
-add wave -position end  sim:/alu/result
-add wave -position end  sim:/alu/rsrc1
-add wave -position end  sim:/alu/rsrc2
-add wave -position end  sim:/alu/tmp
-force -freeze sim:/alu/opcode 010 0
-force -freeze sim:/alu/rsrc1 0000000000000101 0
-force -freeze sim:/alu/rsrc2 0000000000000101 0
+# Loading work.fetch(fetcharch)
+# Loading work.instructionmemory(instructionmemoryarch)
+add wave -position end  sim:/fetch/clk
+add wave -position end  sim:/fetch/inst_mem_input_data
+add wave -position end  sim:/fetch/inst_mem_write_enable
+add wave -position end  sim:/fetch/memory_out
+add wave -position end  sim:/fetch/pc
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: ahmed  Hostname: LAPTOP-8POTMREJ  ProcessID: 3212
+#           Attempting to use alternate WLF file "./wlftaq7b9m".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftaq7b9m
+mem load -filltype inc -filldata 0 -fillradix symbolic -skip 0 /fetch/instMem/memory
+force -freeze sim:/fetch/clk 1 0, 0 {50 ps} -r 100
 run
-# ** Fatal: (vsim-3420) Array lengths do not match. Left is 17 (16 downto 0). Right is 16 (15 downto 0).
-#    Time: 0 ps  Iteration: 0  Process: /alu/line__29 File: E:/CA project/MIPS_pipeline_processor/units/alu.vhd
-# Fatal error in Process line__29 at E:/CA project/MIPS_pipeline_processor/units/alu.vhd line 33
-# 
-# HDL call sequence:
-# Stopped at E:/CA project/MIPS_pipeline_processor/units/alu.vhd 33 Process line__29
-# 
-# Compile of alu.vhd was successful with warnings.
-# Compile of alu.vhd was successful.
-vsim -gui work.alu
-# End time: 18:37:48 on Dec 28,2021, Elapsed time: 0:03:15
-# Errors: 1, Warnings: 17
-# vsim -gui work.alu 
-# Start time: 18:37:48 on Dec 28,2021
+mem load -filltype value -filldata {0000000100000001 } -fillradix symbolic /fetch/instMem/memory(1)
+run
+mem load -filltype value -filldata {1000000000000010 } -fillradix symbolic /fetch/instMem/memory(2)
+run
+mem load -filltype value -filldata {0000010000000100 } -fillradix symbolic /fetch/instMem/memory(4)
+run
+mem load -filltype value -filldata {0000010000000101 } -fillradix symbolic /fetch/instMem/memory(5)
+run
+vsim -gui work.fetch
+# End time: 16:58:48 on Jan 07,2022, Elapsed time: 0:13:07
+# Errors: 0, Warnings: 4
+# vsim -gui work.fetch 
+# Start time: 16:58:48 on Jan 07,2022
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -51,48 +48,49 @@ vsim -gui work.alu
 # Loading ieee.std_logic_unsigned(body)
 # Loading ieee.numeric_std(body)
 # Loading work.constants(body)
-# Loading work.alu(aluarch)
-add wave -position end  sim:/alu/opcode
-add wave -position end  sim:/alu/result
-add wave -position end  sim:/alu/rsrc1
-add wave -position end  sim:/alu/rsrc2
-add wave -position end  sim:/alu/tmp
-force -freeze sim:/alu/opcode 010 0
-force -freeze sim:/alu/rsrc1 0000000000000101 0
-force -freeze sim:/alu/rsrc2 0000000000000101 0
+# Loading work.fetch(fetcharch)
+# Loading work.instructionmemory(instructionmemoryarch)
+add wave -position end  sim:/fetch/clk
+add wave -position end  sim:/fetch/inst_mem_input_data
+add wave -position end  sim:/fetch/inst_mem_write_enable
+add wave -position end  sim:/fetch/memory_out
+add wave -position end  sim:/fetch/pc
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: ahmed  Hostname: LAPTOP-8POTMREJ  ProcessID: 3212
+#           Attempting to use alternate WLF file "./wlft3h07e3".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft3h07e3
+force -freeze sim:/fetch/clk 1 0, 0 {50 ps} -r 100
+mem load -filltype value -filldata 0 -fillradix symbolic -skip 0 /fetch/instMem/memory
+mem load -filltype inc -filldata 0 -fillradix symbolic -skip 0 /fetch/instMem/memory
+mem load -filltype inc -filldata 0 -fillradix symbolic -skip 1 /fetch/instMem/memory
+mem load -filltype value -filldata 0 -fillradix symbolic -skip 0 /fetch/instMem/memory
+mem load -filltype inc -filldata 0 -fillradix symbolic -skip 1 /fetch/instMem/memory
+mem load -filltype value -filldata 0 -fillradix symbolic -skip 0 /fetch/instMem/memory
+mem load -filltype value -filldata {0000000000000001 } -fillradix symbolic /fetch/instMem/memory(1)
+mem load -filltype value -filldata {0000000000000010 } -fillradix symbolic /fetch/instMem/memory(3)
+mem load -filltype value -filldata 0 -fillradix symbolic -skip 0 /fetch/instMem/memory
+mem load -filltype inc -filldata 0 -fillradix symbolic -skip 0 /fetch/instMem/memory
+force -freeze sim:/fetch/clk 1 0, 0 {50 ps} -r 100
 run
-force -freeze sim:/alu/rsrc1 10#11 0
 run
-force -freeze sim:/alu/rsrc1 1111111111111111 0
-force -freeze sim:/alu/rsrc2 1111111111111111 0
 run
-# Compile of constants.vhd was successful.
-# Compile of alu.vhd failed with 5 errors.
-# 2 compiles, 1 failed with 5 errors.
-# Compile of constants.vhd was successful.
-# Compile of alu.vhd failed with 4 errors.
-# 2 compiles, 1 failed with 4 errors.
-# Compile of constants.vhd was successful.
-# Compile of alu.vhd failed with 5 errors.
-# 2 compiles, 1 failed with 5 errors.
-# Compile of constants.vhd was successful.
-# Compile of alu.vhd failed with 5 errors.
-# 2 compiles, 1 failed with 5 errors.
-# Compile of constants.vhd was successful.
-# Compile of alu.vhd failed with 3 errors.
-# 2 compiles, 1 failed with 3 errors.
-# Compile of constants.vhd was successful.
-# Compile of alu.vhd failed with 2 errors.
-# 2 compiles, 1 failed with 2 errors.
-# Compile of alu.vhd failed with 3 errors.
+run
+run
+run
+run
+run
+run
 # Compile of constants.vhd was successful.
 # Compile of alu.vhd was successful.
-# 2 compiles, 0 failed with no errors.
-vsim -gui work.alu
-# End time: 20:03:45 on Dec 28,2021, Elapsed time: 1:25:57
-# Errors: 0, Warnings: 9
-# vsim -gui work.alu 
-# Start time: 20:03:45 on Dec 28,2021
+# Compile of fetch.vhd was successful.
+# Compile of instructions_memory.vhd was successful.
+# 4 compiles, 0 failed with no errors.
+vsim -gui work.fetch
+# End time: 17:05:21 on Jan 07,2022, Elapsed time: 0:06:33
+# Errors: 0, Warnings: 4
+# vsim -gui work.fetch 
+# Start time: 17:05:21 on Jan 07,2022
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -100,57 +98,44 @@ vsim -gui work.alu
 # Loading ieee.std_logic_unsigned(body)
 # Loading ieee.numeric_std(body)
 # Loading work.constants(body)
-# Loading work.alu(aluarch)
-add wave -position end  sim:/alu/flags
-add wave -position end  sim:/alu/opcode
-add wave -position end  sim:/alu/rsrc1
-add wave -position end  sim:/alu/rsrc2
-add wave -position end  sim:/alu/result
-force -freeze sim:/alu/opcode 000 0
-force -freeze sim:/alu/rsrc1 10#5 0
-run
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /alu
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /alu
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /alu
-force -freeze sim:/alu/rsrc1 10#10 0
-run
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 100 ps  Iteration: 0  Instance: /alu
-noforce sim:/alu/rsrc1
-force -freeze sim:/alu/rsrc1 1000000000000000 0
-run
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 200 ps  Iteration: 0  Instance: /alu
-force -freeze sim:/alu/rsrc1 1111111111111111 0
-run
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 300 ps  Iteration: 0  Instance: /alu
-force -freeze sim:/alu/rsrc1 0111111111111111 0
-run
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 400 ps  Iteration: 0  Instance: /alu
-force -freeze sim:/alu/rsrc1 0111111111111111 0
-run
-force -freeze sim:/alu/rsrc2 0 0
-# Value length (1) does not equal array index length (16).
-# ** UI-Msg: (vsim-4011) Invalid force value: 0 0.
-# 
-force -freeze sim:/alu/rsrc2 0000000000000000 0
+# Loading work.fetch(fetcharch)
+# Loading work.instructionmemory(instructionmemoryarch)
+add wave -position end  sim:/fetch/clk
+add wave -position end  sim:/fetch/inst_mem_input_data
+add wave -position end  sim:/fetch/inst_mem_write_enable
+add wave -position end  sim:/fetch/memory_out
+add wave -position end  sim:/fetch/pc
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: ahmed  Hostname: LAPTOP-8POTMREJ  ProcessID: 3212
+#           Attempting to use alternate WLF file "./wlft7jw64n".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft7jw64n
+force -freeze sim:/fetch/clk 1 0, 0 {50 ps} -r 100
+mem load -filltype inc -filldata 0 -fillradix symbolic -skip 0 /fetch/instMem/memory
 run
 run
-force -freeze sim:/alu/rsrc1 0111111111111111 0
+run
+run
+run
+run
+mem load -filltype value -filldata {1000000000000110 } -fillradix symbolic /fetch/instMem/memory(6)
+run
+mem load -filltype value -filldata {0100000000001000 } -fillradix symbolic /fetch/instMem/memory(8)
+run
+mem load -filltype value -filldata {0000010000001001 } -fillradix symbolic /fetch/instMem/memory(9)
+run
+mem load -filltype value -filldata {0000010000001010 } -fillradix symbolic /fetch/instMem/memory(10)
 run
 # Compile of constants.vhd was successful.
 # Compile of alu.vhd was successful.
-# 2 compiles, 0 failed with no errors.
-vsim -gui work.alu
-# End time: 20:14:18 on Dec 28,2021, Elapsed time: 0:10:33
-# Errors: 0, Warnings: 9
-# vsim -gui work.alu 
-# Start time: 20:14:18 on Dec 28,2021
+# Compile of fetch.vhd was successful.
+# Compile of instructions_memory.vhd was successful.
+# 4 compiles, 0 failed with no errors.
+vsim -gui work.fetch
+# End time: 17:10:14 on Jan 07,2022, Elapsed time: 0:04:53
+# Errors: 0, Warnings: 4
+# vsim -gui work.fetch 
+# Start time: 17:10:15 on Jan 07,2022
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -158,308 +143,24 @@ vsim -gui work.alu
 # Loading ieee.std_logic_unsigned(body)
 # Loading ieee.numeric_std(body)
 # Loading work.constants(body)
-# Loading work.alu(aluarch)
-add wave -position end  sim:/alu/opcode
-add wave -position end  sim:/alu/rsrc1
-add wave -position end  sim:/alu/rsrc2
-add wave -position end  sim:/alu/result
-add wave -position end  sim:/alu/flags
-force -freeze sim:/alu/opcode 000 0
-force -freeze sim:/alu/rsrc1 0111111111111111 0
-force -freeze sim:/alu/rsrc2 0000000000000000 0
+# Loading work.fetch(fetcharch)
+# Loading work.instructionmemory(instructionmemoryarch)
+add wave -position end  sim:/fetch/clk
+add wave -position end  sim:/fetch/inst_mem_input_data
+add wave -position end  sim:/fetch/inst_mem_write_enable
+add wave -position end  sim:/fetch/memory_out
+add wave -position end  sim:/fetch/pc
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: ahmed  Hostname: LAPTOP-8POTMREJ  ProcessID: 3212
+#           Attempting to use alternate WLF file "./wlftdfkgh4".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftdfkgh4
+force -freeze sim:/fetch/clk 1 0, 0 {50 ps} -r 100
+mem load -filltype inc -filldata 0 -fillradix symbolic -skip 0 /fetch/instMem/memory
+mem load -filltype value -filldata {1000000000000000 } -fillradix symbolic /fetch/instMem/memory(0)
 run
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /alu
-force -freeze sim:/alu/rsrc1 1111111111111111 0
-run
-# Compile of constants.vhd was successful.
-# Compile of alu.vhd was successful.
-# 2 compiles, 0 failed with no errors.
-vsim -gui work.alu
-# End time: 20:22:58 on Dec 28,2021, Elapsed time: 0:08:40
-# Errors: 0, Warnings: 3
-# vsim -gui work.alu 
-# Start time: 20:22:58 on Dec 28,2021
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.std_logic_arith(body)
-# Loading ieee.std_logic_unsigned(body)
-# Loading ieee.numeric_std(body)
-# Loading work.constants(body)
-# Loading work.alu(aluarch)
-add wave -position end  sim:/alu/opcode
-add wave -position end  sim:/alu/rsrc1
-add wave -position end  sim:/alu/rsrc2
-add wave -position end  sim:/alu/result
-add wave -position end  sim:/alu/flags
-force -freeze sim:/alu/opcode 000 0
-force -freeze sim:/alu/rsrc1 1111111111111111 0
-force -freeze sim:/alu/rsrc2 10#0 0
-run
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /alu
-force -freeze sim:/alu/rsrc1 0111111111111111 0
-run
-force -freeze sim:/alu/opcode 010 0
-force -freeze sim:/alu/rsrc1 10#0 0
-run
-force -freeze sim:/alu/rsrc1 10#-32768 0
-# Invalid decimal digit: -.
-# ** UI-Msg: (vsim-4011) Invalid force value: 10#-32768 0.
-# 
-force -freeze sim:/alu/rsrc1 1000000000000000 0
-run
-force -freeze sim:/alu/opcode 011 0
-force -freeze sim:/alu/rsrc1 10#1 0
-force -freeze sim:/alu/rsrc2 10#1 0
-run
-force -freeze sim:/alu/opcode 001 0
-run
-force -freeze sim:/alu/rsrc1 1000000000000001 0
-run
-force -freeze sim:/alu/rsrc1 0000000000000001 0
-run
-force -freeze sim:/alu/rsrc1 0000000000000000 0
-run
-force -freeze sim:/alu/opcode 010 0
-run
-force -freeze sim:/alu/rsrc1 0000000000000001 0
-run
-force -freeze sim:/alu/rsrc1 0000000000000101 0
-run
-force -freeze sim:/alu/rsrc1 1111111111111111 0
-run
-noforce sim:/alu/rsrc2
-force -freeze sim:/alu/rsrc2 1111111111111111 0
-run
-force -freeze sim:/alu/rsrc2 0000000000000011 0
-run
-force -freeze sim:/alu/opcode 011 0
-run
-# Break key hit
-# Compile of constants.vhd was successful.
-# Compile of alu.vhd failed with 1 errors.
-# 2 compiles, 1 failed with 1 error.
-# Compile of alu.vhd was successful.
-# Compile of constants.vhd was successful.
-# Compile of alu.vhd failed with 5 errors.
-# 2 compiles, 1 failed with 5 errors.
-# Compile of constants.vhd was successful.
-# Compile of alu.vhd was successful.
-# 2 compiles, 0 failed with no errors.
-vsim -gui work.alu
-# End time: 22:08:33 on Dec 28,2021, Elapsed time: 1:45:35
-# Errors: 0, Warnings: 6
-# vsim -gui work.alu 
-# Start time: 22:08:33 on Dec 28,2021
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.std_logic_arith(body)
-# Loading ieee.std_logic_unsigned(body)
-# Loading ieee.numeric_std(body)
-# Loading work.constants(body)
-# Loading work.alu(aluarch)
-add wave -position end  sim:/alu/opcode
-add wave -position end  sim:/alu/rsrc1
-add wave -position end  sim:/alu/rsrc2
-add wave -position end  sim:/alu/result
-add wave -position end  sim:/alu/flags
-force -freeze sim:/alu/opcode 000 0
-force -freeze sim:/alu/rsrc1 1111111111111111 0
-run
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /alu
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /alu
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /alu
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /alu
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 1  Instance: /alu
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 1  Instance: /alu
-force -freeze sim:/alu/rsrc1 1111111111111110 0
-run
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 100 ps  Iteration: 0  Instance: /alu
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 100 ps  Iteration: 0  Instance: /alu
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 100 ps  Iteration: 0  Instance: /alu
-force -freeze sim:/alu/rsrc2 10#10 0
-run
-run
-force -freeze sim:/alu/opcode 010 0
-force -freeze sim:/alu/rsrc2 0000000000001010 0
+mem load -filltype value -filldata {0000010000000010 } -fillradix symbolic /fetch/instMem/memory(2)
 run
 run
 run
-# Compile of constants.vhd was successful.
-# Compile of alu.vhd was successful.
-# 2 compiles, 0 failed with no errors.
-vsim -gui work.alu
-# End time: 22:16:03 on Dec 28,2021, Elapsed time: 0:07:30
-# Errors: 0, Warnings: 11
-# vsim -gui work.alu 
-# Start time: 22:16:03 on Dec 28,2021
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.std_logic_arith(body)
-# Loading ieee.std_logic_signed(body)
-# Loading ieee.numeric_std(body)
-# Loading work.constants(body)
-# Loading work.alu(aluarch)
-add wave -position end  sim:/alu/flags
-add wave -position end  sim:/alu/opcode
-add wave -position end  sim:/alu/result
-add wave -position end  sim:/alu/rsrc1
-add wave -position end  sim:/alu/rsrc2
-force -freeze sim:/alu/opcode 010 0
-force -freeze sim:/alu/rsrc1 1111111111111110 0
-force -freeze sim:/alu/rsrc2 10#10 0
-run
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /alu
-force -freeze sim:/alu/rsrc1 0111111111111111 0
-force -freeze sim:/alu/rsrc2 0111111111111111 0
-run
-# Compile of constants.vhd was successful.
-# Compile of alu.vhd was successful.
-# 2 compiles, 0 failed with no errors.
-vsim -gui work.alu
-# End time: 22:23:46 on Dec 28,2021, Elapsed time: 0:07:43
-# Errors: 0, Warnings: 3
-# vsim -gui work.alu 
-# Start time: 22:23:46 on Dec 28,2021
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.std_logic_arith(body)
-# Loading ieee.std_logic_signed(body)
-# Loading ieee.numeric_std(body)
-# Loading work.constants(body)
-# Loading work.alu(aluarch)
-add wave -position end  sim:/alu/flags
-add wave -position end  sim:/alu/opcode
-add wave -position end  sim:/alu/result
-add wave -position end  sim:/alu/rsrc1
-add wave -position end  sim:/alu/rsrc2
-force -freeze sim:/alu/opcode 010 0
-force -freeze sim:/alu/rsrc1 1111111111111110 0
-force -freeze sim:/alu/rsrc2 1111111111111110 0
-run
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /alu
-force -freeze sim:/alu/rsrc1 0111111111111111 0
-force -freeze sim:/alu/rsrc2 0111111111111111 0
-run
-noforce sim:/alu/rsrc1
-force -freeze sim:/alu/rsrc1 1111111111111110 0
-force -freeze sim:/alu/rsrc2 10#10 0
-run
-force -freeze sim:/alu/rsrc1 1000000000000000 0
-force -freeze sim:/alu/rsrc2 10000000000000000 0
-# Value length (17) does not equal array index length (16).
-# ** UI-Msg: (vsim-4011) Invalid force value: 10000000000000000 0.
-# 
-run
-force -freeze sim:/alu/opcode 011 0
-force -freeze sim:/alu/rsrc1 10#5 0
-force -freeze sim:/alu/rsrc2 10#5 0
-run
-force -freeze sim:/alu/rsrc2 10#6 0
-run
-force -freeze sim:/alu/rsrc1 10#7 0
-run
-force -freeze sim:/alu/opcode 100 0
-force -freeze sim:/alu/rsrc1 1111111111111111 0
-force -freeze sim:/alu/rsrc2 1111111111111111 0
-run
-force -freeze sim:/alu/rsrc2 0000000000000000 0
-run
-force -freeze sim:/alu/opcode 101 0
-run
-force -freeze sim:/alu/rsrc1 0000000000000000 0
-run
-force -freeze sim:/alu/opcode 111 0
-run
-run
-force -freeze sim:/alu/opcode 110 0
-run
-# Compile of alu.vhd failed with 4 errors.
-# Compile of alu.vhd failed with 2 errors.
-# Compile of alu.vhd was successful.
-vsim -gui work.alu
-# End time: 22:39:38 on Dec 28,2021, Elapsed time: 0:15:52
-# Errors: 0, Warnings: 5
-# vsim -gui work.alu 
-# Start time: 22:39:38 on Dec 28,2021
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.std_logic_arith(body)
-# Loading ieee.std_logic_signed(body)
-# Loading ieee.numeric_std(body)
-# Loading work.constants(body)
-# Loading work.alu(aluarch)
-add wave -position end  sim:/alu/flags
-add wave -position end  sim:/alu/opcode
-add wave -position end  sim:/alu/result
-add wave -position end  sim:/alu/rsrc1
-add wave -position end  sim:/alu/rsrc2
-force -freeze sim:/alu/opcode 110 0
-force -freeze sim:/alu/rsrc1 10#0 0
-force -freeze sim:/alu/rsrc2 10#0 0
-run
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /alu
-force -freeze sim:/alu/opcode 000 0
-run
-force -freeze sim:/alu/opcode 001 0
-force -freeze sim:/alu/rsrc1 0000000000000100 0
-run
-force -freeze sim:/alu/opcode 010 0
-force -freeze sim:/alu/rsrc2 10#6 0
-run
-force -freeze sim:/alu/rsrc2 10#1 0
-force -freeze sim:/alu/rsrc1 1000000000000000 0
-run
-# Compile of alu.vhd was successful.
-vsim -gui work.alu
-# End time: 23:09:37 on Dec 28,2021, Elapsed time: 0:29:59
-# Errors: 0, Warnings: 3
-# vsim -gui work.alu 
-# Start time: 23:09:37 on Dec 28,2021
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.std_logic_arith(body)
-# Loading ieee.std_logic_unsigned(body)
-# Loading ieee.numeric_std(body)
-# Loading work.constants(body)
-# Loading work.alu(aluarch)
-add wave -position end  sim:/alu/flags
-add wave -position end  sim:/alu/opcode
-add wave -position end  sim:/alu/result
-add wave -position end  sim:/alu/rsrc1
-add wave -position end  sim:/alu/rsrc2
-force -freeze sim:/alu/opcode 010 0
-force -freeze sim:/alu/rsrc1 1111111111111111 0
-force -freeze sim:/alu/rsrc2 0000000000000001 0
-run
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /alu
-run
-run
-run
-force -freeze sim:/alu/opcode 011 0
-force -freeze sim:/alu/opcode 011 0
-force -freeze sim:/alu/rsrc1 10#5 0
-force -freeze sim:/alu/rsrc2 10#6 0
-run
-force -freeze sim:/alu/opcode 110 0
 run
