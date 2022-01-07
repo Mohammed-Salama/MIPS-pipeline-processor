@@ -1,12 +1,23 @@
-# Compile of execute.vhd failed with 4 errors.
-# Compile of constants.vhd failed with 2 errors.
-# Compile of constants.vhd failed with 2 errors.
-# Compile of constants.vhd was successful.
-# Compile of constants.vhd was successful.
+# Compile of execute.vhd failed with 3 errors.
 # Compile of alu.vhd was successful.
-# Compile of execute.vhd failed with 6 errors.
-# Compile of execute.vhd failed with 6 errors.
-# Compile of execute.vhd failed with 6 errors.
-# Compile of execute.vhd failed with 5 errors.
+# Compile of constants.vhd was successful.
+# 3 compiles, 1 failed with 3 errors.
+# Compile of constants.vhd was successful.
+# Compile of execute.vhd failed with 3 errors.
+# Compile of execute.vhd failed with 1 errors.
+# Compile of execute.vhd failed with 4 errors.
+# Compile of alu.vhd was successful.
+# Compile of constants.vhd was successful.
 # Compile of execute.vhd was successful.
-# Compile of execute.vhd was successful.
+# Compile of data_memory.vhd was successful.
+# Compile of memory.vhd failed with 4 errors.
+# Compile of memory.vhd failed with 3 errors.
+# Compile of memory.vhd failed with 1 errors.
+# Compile of memory.vhd failed with 2 errors.
+# Compile of memory.vhd failed with 2 errors.
+# Compile of memory.vhd failed with 2 errors.
+# Compile of memory.vhd failed with 2 errors.
+# Compile of data_memory.vhd was successful.
+# Compile of memory.vhd failed with 2 errors.
+# Compile of memory.vhd was successful.
+# Compile of memory.vhd was successful.

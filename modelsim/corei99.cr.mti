@@ -1,16 +1,4 @@
-{E:/CA project/MIPS_pipeline_processor/stages/fetch.vhd} {1 {vcom -work work -2002 -explicit -stats=none {E:/CA project/MIPS_pipeline_processor/stages/fetch.vhd}
-Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package std_logic_arith
--- Loading package STD_LOGIC_UNSIGNED
--- Loading package NUMERIC_STD
--- Loading package Constants
--- Compiling entity Fetch
--- Compiling architecture FetchArch of Fetch
-
-} {} {}} {E:/CA project/MIPS_pipeline_processor/units/alu.vhd} {1 {vcom -work work -2002 -explicit -stats=none {E:/CA project/MIPS_pipeline_processor/units/alu.vhd}
+{E:/CA project/MIPS_pipeline_processor/units/alu.vhd} {1 {vcom -work work -2002 -explicit -stats=none {E:/CA project/MIPS_pipeline_processor/units/alu.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -22,17 +10,23 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Compiling entity Alu
 -- Compiling architecture AluArch of Alu
 
-} {} {}} {E:/CA project/MIPS_pipeline_processor/generals/pipeline_buffer.vhd} {1 {vcom -work work -2002 -explicit -stats=none {E:/CA project/MIPS_pipeline_processor/generals/pipeline_buffer.vhd}
+} {} {}} {E:/CA project/MIPS_pipeline_processor/constatns/constants.vhd} {1 {vcom -work work -2002 -explicit -stats=none {E:/CA project/MIPS_pipeline_processor/constatns/constants.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
--- Loading package std_logic_arith
--- Loading package STD_LOGIC_UNSIGNED
--- Loading package NUMERIC_STD
+-- Compiling package Constants
+-- Compiling package body Constants
 -- Loading package Constants
--- Compiling entity PipelineBuffer
--- Compiling architecture PipelineBufferArch of PipelineBuffer
+
+} {} {}} {D:/cufe/3rd computer/CMP3010_Computer Architecture/project/work/MIPS-pipeline-processor/caches/data_memory.vhd} {1 {vcom -work work -2002 -explicit -stats=none {D:/cufe/3rd computer/CMP3010_Computer Architecture/project/work/MIPS-pipeline-processor/caches/data_memory.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity dataMemory
+-- Compiling architecture dataMemoryArch of dataMemory
 
 } {} {}} {D:/cufe/3rd computer/CMP3010_Computer Architecture/project/work/MIPS-pipeline-processor/units/alu.vhd} {1 {vcom -work work -2002 -explicit -stats=none {D:/cufe/3rd computer/CMP3010_Computer Architecture/project/work/MIPS-pipeline-processor/units/alu.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
@@ -45,6 +39,28 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Loading package Constants
 -- Compiling entity Alu
 -- Compiling architecture AluArch of Alu
+
+} {} {}} {D:/cufe/3rd computer/CMP3010_Computer Architecture/project/work/MIPS-pipeline-processor/constatns/constants.vhd} {1 {vcom -work work -2002 -explicit -stats=none {D:/cufe/3rd computer/CMP3010_Computer Architecture/project/work/MIPS-pipeline-processor/constatns/constants.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling package Constants
+-- Compiling package body Constants
+-- Loading package Constants
+
+} {} {}} {D:/cufe/3rd computer/CMP3010_Computer Architecture/project/work/MIPS-pipeline-processor/stages/execute.vhd} {1 {vcom -work work -2002 -explicit -stats=none {D:/cufe/3rd computer/CMP3010_Computer Architecture/project/work/MIPS-pipeline-processor/stages/execute.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package NUMERIC_STD
+-- Loading package Constants
+-- Compiling entity Execute
+-- Compiling architecture ExecuteArch of Execute
+-- Loading entity Alu
 
 } {} {}} {E:/CA project/MIPS_pipeline_processor/caches/instructions_memory.vhd} {1 {vcom -work work -2002 -explicit -stats=none {E:/CA project/MIPS_pipeline_processor/caches/instructions_memory.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
