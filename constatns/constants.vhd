@@ -36,6 +36,9 @@ package Constants is
     CONSTANT SETC_OPCODE:std_logic_vector(2 downto 0) := "110";
     CONSTANT ALU_RESULT_LEN: integer                  := 16;
 
+     -- Stack pointer
+     CONSTANT SP_REG_SIZE      : integer := 16;
+
 
     -- pipeline buffer indecies:
       -- signals form CU ONE BIT:

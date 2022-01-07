@@ -21,3 +21,44 @@
 # Compile of memory.vhd failed with 2 errors.
 # Compile of memory.vhd was successful.
 # Compile of memory.vhd was successful.
+# Compile of constants.vhd was successful.
+# Compile of pipeline_buffer.vhd failed with 4 errors.
+# Compile of constants.vhd was successful.
+# Compile of pipeline_buffer.vhd was successful.
+# Compile of execute.vhd failed with 4 errors.
+# Compile of alu.vhd was successful.
+# Compile of constants.vhd was successful.
+# Compile of memory.vhd failed with 5 errors.
+# Compile of data_memory.vhd was successful.
+# Compile of pipeline_buffer.vhd was successful.
+# 6 compiles, 2 failed with 9 errors.
+# Compile of constants.vhd was successful.
+# Compile of execute.vhd was successful.
+# Compile of constants.vhd was successful.
+# Compile of execute.vhd was successful.
+# Compile of alu.vhd was successful.
+# Compile of data_memory.vhd was successful.
+# Compile of pipeline_buffer.vhd was successful.
+# Compile of memory.vhd failed.
+# Compile of data_memory.vhd was successful.
+# Compile of pipeline_buffer.vhd was successful.
+# Compile of alu.vhd was successful.
+# Compile of memory.vhd failed.
+# Compile of execute.vhd was successful.
+# Compile of memory.vhd failed with 5 errors.
+# Compile of constants.vhd was successful.
+# Compile of execute.vhd was successful.
+# Compile of alu.vhd was successful.
+# Compile of constants.vhd was successful.
+# Compile of memory.vhd failed with 5 errors.
+# Compile of data_memory.vhd was successful.
+# Compile of pipeline_buffer.vhd was successful.
+# 6 compiles, 1 failed with 5 errors.
+# Compile of memory.vhd failed with 5 errors.
+# Compile of execute.vhd was successful.
+# Compile of alu.vhd was successful.
+# Compile of constants.vhd was successful.
+# Compile of memory.vhd was successful.
+# Compile of data_memory.vhd was successful.
+# Compile of pipeline_buffer.vhd was successful.
+# 6 compiles, 0 failed with no errors.
