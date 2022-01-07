@@ -32,10 +32,8 @@ architecture RegisterFileArch of RegisterFile is
         end if;
     end if;
 
-    if falling_edge(clk) then
-        rsrc1_out <= regFile(to_integer(unsigned((rsrc1))));
-        rsrc2_out <= regFile(to_integer(unsigned((rsrc2))));
-    end if;
+    rsrc1_out <= regFile(to_integer(unsigned((rsrc1))));
+    rsrc2_out <= regFile(to_integer(unsigned((rsrc2))));
 
     end process;
     
