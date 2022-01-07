@@ -30,5 +30,5 @@ architecture dataMemoryArch of dataMemory is
 				end if;
 		end process;
 		dataout1 <= memory(to_integer(unsigned(address)));
-		dataout2 <= memory(to_integer(unsigned(address))-1);
+		--dataout2 <= memory(to_integer(unsigned(address))-1);
 end dataMemoryArch;

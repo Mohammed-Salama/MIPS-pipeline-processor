@@ -100,7 +100,7 @@ MemoryStage:    entity work.Memory port map(
 );
 
 
-MW_Buffer:      entity work.PipelineBuffer GENERIC MAP (16) port map(clk,Buffers_enable,BUffers_Flush,MW_Input,MW_Output);
+MW_Buffer:      entity work.PipelineBuffer GENERIC MAP (54) port map(clk,Buffers_enable,BUffers_Flush,MW_Input,MW_Output);
 
 WriteBackStage: entity work.WriteBack port map(
     MW_Output(5 downto 3), MW_Output(53 downto 38), MW_Output(21 downto 6), MW_Output(37 downto 22),

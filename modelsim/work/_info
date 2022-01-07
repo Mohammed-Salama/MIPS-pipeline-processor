@@ -563,9 +563,9 @@ R47
 R48
 R23
 32
-Z76 !s110 1641596705
+Z76 !s110 1641598184
 !i10b 1
-Z77 !s108 1641596705.000000
+Z77 !s108 1641598184.000000
 R49
 R50
 !i113 1
@@ -606,9 +606,9 @@ Z79 VH:R4XW^JHGDhc01NCRVb_1
 Z80 !s100 MBa:HZ]G>MCWcQR1;Eb_F0
 R23
 32
-Z81 !s110 1641596704
+R76
 !i10b 1
-Z82 !s108 1641596704.000000
+R77
 R36
 R37
 !i113 1
@@ -620,13 +620,13 @@ R11
 R43
 l0
 L96
-Z83 VGG]RYclIPUA]e1>R[OIDC2
-Z84 !s100 =DM`o1H=mMN0603B_JoYJ0
+Z81 VGG]RYclIPUA]e1>R[OIDC2
+Z82 !s100 =DM`o1H=mMN0603B_JoYJ0
 R23
 32
-R81
+R76
 !i10b 1
-R82
+R77
 R36
 R37
 !i113 1
@@ -659,8 +659,8 @@ R11
 R43
 l0
 L96
-R83
-R84
+R81
+R82
 R23
 32
 R74
@@ -672,21 +672,21 @@ R37
 R38
 R15
 Econtrol_unit
-Z85 w1641589645
+Z83 w1641589645
 R11
 R43
 R44
-Z86 8D:/cufe/3rd computer/CMP3010_Computer Architecture/project/work/MIPS-pipeline-processor/units/control_unit.vhd
-Z87 FD:/cufe/3rd computer/CMP3010_Computer Architecture/project/work/MIPS-pipeline-processor/units/control_unit.vhd
+Z84 8D:/cufe/3rd computer/CMP3010_Computer Architecture/project/work/MIPS-pipeline-processor/units/control_unit.vhd
+Z85 FD:/cufe/3rd computer/CMP3010_Computer Architecture/project/work/MIPS-pipeline-processor/units/control_unit.vhd
 l0
 L4
 VXiMQUSDkX4o68BEI2k<KK3
 !s100 eJ_PK`NzS^DHm[THW1bl;1
 R23
 32
-R76
+Z86 !s110 1641598185
 !i10b 1
-R77
+Z87 !s108 1641598185.000000
 Z88 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/cufe/3rd computer/CMP3010_Computer Architecture/project/work/MIPS-pipeline-processor/units/control_unit.vhd|
 Z89 !s107 D:/cufe/3rd computer/CMP3010_Computer Architecture/project/work/MIPS-pipeline-processor/units/control_unit.vhd|
 !i113 1
@@ -702,16 +702,16 @@ V=VYFbR@j^:`J@^NFZ;VXf1
 !s100 I_[RaJ;TNEIm;MJ5[Ai?L3
 R23
 32
-R76
+R86
 !i10b 1
-R77
+R87
 R88
 R89
 !i113 1
 R38
 R15
 Edatamemory
-Z91 w1641586659
+Z91 w1641598160
 R42
 R11
 R43
@@ -724,9 +724,9 @@ V:en8j<foc6b;MW1akLUe;2
 !s100 K^k8bW_Hi?@Rn:LbzzSMa2
 R23
 32
-R81
+R76
 !i10b 1
-R82
+R77
 Z94 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/cufe/3rd computer/CMP3010_Computer Architecture/project/work/MIPS-pipeline-processor/caches/data_memory.vhd|
 Z95 !s107 D:/cufe/3rd computer/CMP3010_Computer Architecture/project/work/MIPS-pipeline-processor/caches/data_memory.vhd|
 !i113 1
@@ -739,20 +739,20 @@ R43
 R72
 l22
 L17
-VLbTz>S^Tm8njTT^kB:9B@0
-!s100 kV]cVPFQ?:W5Q`B<=IlnL0
+VDB1@4jce=;=5<CU9Oa;QJ3
+!s100 e>miD2302@c2>PP1AMkJ63
 R23
 32
-R81
+R76
 !i10b 1
-R82
+R77
 R94
 R95
 !i113 1
 R38
 R15
 Edecode_stage
-Z96 w1641590469
+Z96 w1641597965
 R11
 R43
 R44
@@ -764,9 +764,9 @@ Vhl?lKFjD^8aOg4FIe61[02
 !s100 oh4;DH>Ulh[cC??YhK:]S2
 R23
 32
-R76
+R86
 !i10b 1
-R77
+R87
 Z99 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/cufe/3rd computer/CMP3010_Computer Architecture/project/work/MIPS-pipeline-processor/stages/decode.vhd|
 Z100 !s107 D:/cufe/3rd computer/CMP3010_Computer Architecture/project/work/MIPS-pipeline-processor/stages/decode.vhd|
 !i113 1
@@ -785,9 +785,9 @@ Vneb]lWYlk<:79QC4<N6bA0
 !s100 _KB7jOSA_8WV6kUOcHZel0
 R23
 32
-R76
+R86
 !i10b 1
-R77
+R87
 R99
 R100
 !i113 1
@@ -810,9 +810,9 @@ V_6cnbR>an636A1iT4SkTY2
 !s100 9d5k^Lno;WN<@>hcXA=jM3
 R23
 32
-R81
+R76
 !i10b 1
-R82
+R77
 R59
 R60
 !i113 1
@@ -833,9 +833,9 @@ V;9H1[L=TFCUF@Mhh@Zh>N1
 !s100 IBFdXzL5ih`M35MmcRJgA0
 R23
 32
-R81
+R76
 !i10b 1
-R82
+R77
 R59
 R60
 !i113 1
@@ -938,7 +938,7 @@ R23
 32
 R76
 !i10b 1
-R82
+R77
 R109
 R110
 !i113 1
@@ -961,7 +961,7 @@ R23
 32
 R76
 !i10b 1
-R82
+R77
 R109
 R110
 !i113 1
@@ -1028,9 +1028,9 @@ R121
 R122
 R23
 32
-R81
+R76
 !i10b 1
-R82
+R77
 R125
 R126
 !i113 1
@@ -1049,16 +1049,16 @@ R127
 R128
 R23
 32
-R81
+R76
 !i10b 1
-R82
+R77
 R125
 R126
 !i113 1
 R38
 R15
 Emain
-Z129 w1641596684
+Z129 w1641597222
 R73
 R42
 R9
@@ -1074,9 +1074,9 @@ VeNYI`_X4;D66S[c;47oUE2
 !s100 dT>60Cge3;48cfj`=zeoL0
 R23
 32
-R76
+R86
 !i10b 1
-R77
+R87
 Z132 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/cufe/3rd computer/CMP3010_Computer Architecture/project/work/MIPS-pipeline-processor/main/Processor.vhd|
 Z133 !s107 D:/cufe/3rd computer/CMP3010_Computer Architecture/project/work/MIPS-pipeline-processor/main/Processor.vhd|
 !i113 1
@@ -1098,13 +1098,13 @@ R43
 Z135 DEx4 work 4 main 0 22 eNYI`_X4;D66S[c;47oUE2
 l66
 L16
-Z136 V]A5Dc_kG`]MBfMDN>@:HJ3
-Z137 !s100 U;l]N1>OS52C60_<XNb_e2
+Z136 VH@of_:WemC?KJAS>8ldXI1
+Z137 !s100 BY56Bl:AWafn3dSZe?MTb0
 R23
 32
-R76
+R86
 !i10b 1
-R77
+R87
 R132
 R133
 !i113 1
@@ -1222,9 +1222,9 @@ R144
 R145
 R23
 32
-R81
+R76
 !i10b 1
-R82
+R77
 R148
 R149
 !i113 1
@@ -1244,9 +1244,9 @@ R13
 R14
 R23
 32
-R81
+R76
 !i10b 1
-R82
+R77
 R148
 R149
 !i113 1
@@ -1265,9 +1265,9 @@ V5@jYFLhSHAU^UkUiBShb<3
 !s100 ;kGjQL8:R=@lLhTaHBcP^1
 R23
 32
-R81
+R76
 !i10b 1
-R82
+R77
 Z153 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/cufe/3rd computer/CMP3010_Computer Architecture/project/work/MIPS-pipeline-processor/generals/Register.vhd|
 Z154 !s107 D:/cufe/3rd computer/CMP3010_Computer Architecture/project/work/MIPS-pipeline-processor/generals/Register.vhd|
 !i113 1
@@ -1283,9 +1283,9 @@ V:VZQC7F`7`lc?>[4nTO:b3
 !s100 g7@1AlK6U^DI0gi4T[`2K2
 R23
 32
-R81
+R76
 !i10b 1
-R82
+R77
 R153
 R154
 !i113 1
@@ -1305,9 +1305,9 @@ VZ;Aol=`NoLofUD]9`I1Y_0
 !s100 Wa^>^lXJ8V4EZD>JmPZ^?2
 R23
 32
-R76
+R86
 !i10b 1
-R77
+R87
 Z158 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/cufe/3rd computer/CMP3010_Computer Architecture/project/work/MIPS-pipeline-processor/units/register_file.vhd|
 Z159 !s107 D:/cufe/3rd computer/CMP3010_Computer Architecture/project/work/MIPS-pipeline-processor/units/register_file.vhd|
 !i113 1
@@ -1324,9 +1324,9 @@ VTZDhOAVISTc:@5^:zTN1T0
 !s100 HQ5@5b77]j7T[nf_jGW[c0
 R23
 32
-R76
+R86
 !i10b 1
-R77
+R87
 R158
 R159
 !i113 1
@@ -1349,9 +1349,9 @@ VZDWL<3bY=NU50M`K0]A4z2
 !s100 89^e@4KTY82i_f4dH1fLf2
 R23
 32
-R76
+R86
 !i10b 1
-R77
+R87
 Z163 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/cufe/3rd computer/CMP3010_Computer Architecture/project/work/MIPS-pipeline-processor/stages/write_back.vhd|
 Z164 !s107 D:/cufe/3rd computer/CMP3010_Computer Architecture/project/work/MIPS-pipeline-processor/stages/write_back.vhd|
 !i113 1
@@ -1371,9 +1371,9 @@ VR3DKYBDl<10lPazF_dL8T0
 !s100 G[0@BZ11_[3::Ga1mPj0z3
 R23
 32
-R76
+R86
 !i10b 1
-R77
+R87
 R163
 R164
 !i113 1

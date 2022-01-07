@@ -4,7 +4,7 @@ use ieee.numeric_std.all;
 
 entity dataMemory is generic (n : integer := 16 ; m : integer := 20);
 	port(
-		clk             : in std_logic;
+		-- clk             : in std_logic;
 		write_enable    : in std_logic;
 		is32            : in std_logic;
 		address         : in  std_logic_vector(m-1 downto 0);
@@ -20,17 +20,15 @@ architecture dataMemoryArch of dataMemory is
 	signal memory : memory_type ;
 	
 	begin
-		process(clk) is
+		process(datain1, datain2,write_enable, is32 ) is
 			begin
-				if rising_edge(clk) then  
-					if write_enable = '1' then
-						memory(to_integer(unsigned(address))) <= datain1;
-						if is32 ='1' then
-							memory(to_integer(unsigned(address-1))) <= datain2;
-						end if;
+				if write_enable = '1' then
+					memory(to_integer(unsigned(address))) <= datain1;
+					if is32 ='1' then
+						memory(to_integer(unsigned(address))-1) <= datain2;
 					end if;
 				end if;
 		end process;
 		dataout1 <= memory(to_integer(unsigned(address)));
-		dataout2 <= memory(to_integer(unsigned(address-1)));
+		dataout2 <= memory(to_integer(unsigned(address))-1);
 end dataMemoryArch;
