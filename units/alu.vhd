@@ -12,7 +12,6 @@ entity Alu is
         opcode : in std_logic_vector(OPCODE_LEN-1 downto 0);
         rsrc1  : in std_logic_vector(REG_SIZE-1 downto 0);
         rsrc2  : in std_logic_vector(REG_SIZE-1 downto 0);
-        enable : in std_logic;
         result : inout std_logic_vector(REG_SIZE-1 downto 0);
         flags  : out std_logic_vector(FLAG_REG_SIZE-1 downto 0)
     );

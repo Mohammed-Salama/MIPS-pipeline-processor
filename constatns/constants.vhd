@@ -8,6 +8,8 @@ package Constants is
     CONSTANT REG_SIZE : integer :=16;
     CONSTANT PC_SIZE  : integer :=32;
     CONSTANT MEM_WIDTH : integer := 16;
+    CONSTANT REG_INDEX_SIZE : integer := 3;
+    CONSTANT IMM_SIZE: integer := 16;
 
 
     
@@ -31,6 +33,7 @@ package Constants is
     CONSTANT AND_OPCODE: std_logic_vector(2 downto 0) := "100";
     CONSTANT NOT_OPCODE: std_logic_vector(2 downto 0) := "101";
     CONSTANT SETC_OPCODE:std_logic_vector(2 downto 0) := "110";
+    CONSTANT ALU_RESULT_LEN: integer                  := 16;
 
 
 
