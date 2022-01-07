@@ -1,1 +1,4 @@
-modelsim/
+modelsim/*
+/modelsim
+/modelsim/*
+/modelsim/
