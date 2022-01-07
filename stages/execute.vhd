@@ -6,19 +6,23 @@ use work.constants.all;
 
 entity Execute is
     port(
-        Rdst   : in std_logic_vector(REG_INDEX_SIZE-1 downto 0);   -- input to instuction memory 
+        Rdst   : in std_logic_vector(REG_INDEX_SIZE-1 downto 0); 
         Rsrc1, Rsrc2 : in std_logic_vector(REG_SIZE-1 downto 0);
         IMM: in std_logic_vector(IMM_SIZE-1 downto 0);
         -- Signals
         INT, RTI, RET, CALL, JMP, JC, JN, JZ: in std_logic;
-        Stack: std_logic_vector (1 downto 0);
+        Stack: in std_logic_vector (1 downto 0);
         InEn, OutEn, Carry, FlagEn, LDM, ALUEn: in std_logic;
         ALUOP: in std_logic_vector(OPCODE_LEN - 1 downto 0);
         WBEn, MemW, memR, IMMS: in std_logic;
         --Output
         ALUResult: out std_logic_vector(ALU_RESULT_LEN-1 downto 0);
         Rsrc2Out : out std_logic_vector(REG_SIZE-1 downto 0);
-        RdstOut: out std_logic_vector(REG_INDEX_SIZE-1 downto 0)
+        RdstOut: out std_logic_vector(REG_INDEX_SIZE-1 downto 0);
+        --Output Signals
+        RTIOut, RETOut, CALLOut: out std_logic;
+        StackOut: out std_logic_vector (1 downto 0);
+        InEnOut, WBEnOut, MemWOut, memROut: out std_logic
     );
 end entity;
 
@@ -40,4 +44,13 @@ begin
     RdstOut <= Rdst;
 
     ALUResult <= ALUResultTemp;
+    --Signals passed 
+    RTIOut     <=  RTI  ;          
+    RETOut     <=  RET  ;   
+    CALLOut    <=  CALL ;   
+    StackOut   <=  Stack;      
+    InEnOut    <=  InEn ; 
+    WBEnOut    <=  WBEn ; 
+    MemWOut    <=  MemW ;     
+    memROut    <=  memR ; 
 end ExecuteArch;

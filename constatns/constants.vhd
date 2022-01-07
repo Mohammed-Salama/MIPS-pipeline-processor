@@ -12,6 +12,8 @@ package Constants is
     CONSTANT REG_INDEX_SIZE : integer := 3;                    -- register file registers
     CONSTANT IMM_SIZE: integer := 16;
 
+    --Memory
+    CONSTANT MEMOROY_ADRESS_LEN: integer := 20;
 
     
     -- INSTRUCTION OPCODES:       OPCODE = IMMEDIATE BIT + 5 BITS  
@@ -63,7 +65,8 @@ package Constants is
       CONSTANT imm_idx          : integer :=  21;
       CONSTANT aluEn_idx        : integer :=  22;
 
-      
+  -- Stack pointer
+      CONSTANT SP_REG_SIZE      : integer := 16;
 
 
 

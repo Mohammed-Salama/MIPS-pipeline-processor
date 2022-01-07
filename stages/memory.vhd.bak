@@ -20,7 +20,6 @@ entity Memory is
         ALUResultOut: out std_logic_vector(ALU_RESULT_LEN-1 downto 0);
         InPortOut: out std_logic_vector(REG_SIZE-1 downto 0);
         RdstOut: out std_logic_vector(REG_INDEX_SIZE-1 downto 0);
-        memROut: out std_logic;
         --Output Signals
         InEnOut, WBEnOut: out std_logic
     );
@@ -31,7 +30,7 @@ architecture MemoryArch of Memory is
 signal MemoryAdress: std_logic_vector(MEMOROY_ADRESS_LEN-1 downto 0);
 signal dataout2temp : std_logic_vector(MEM_WIDTH-1 downto 0);
 begin 
-Mem : entity work.dataMemory port map(MemW,Stack(1),MemoryAdress,Rsrc2,Rsrc2,dataOut,dataout2temp );
+Mem : work.dataMemory port map(MemW,Stack(1),MemoryAdress,Rsrc2,Rsrc2,dataOut,dataout2temp );
 
     MemoryAdress <= "0000" & ALUResult when Stack(1) = '0'
             else "0000" & FSP;
@@ -40,5 +39,4 @@ Mem : entity work.dataMemory port map(MemW,Stack(1),MemoryAdress,Rsrc2,Rsrc2,dat
     --Signals passed     
     InEnOut    <=  InEn ; 
     WBEnOut    <=  WBEn ; 
-    memROut     <= memR;
 end MemoryArch;
