@@ -10,11 +10,8 @@ entity Execute is
         Rsrc1, Rsrc2 : in std_logic_vector(REG_SIZE-1 downto 0);
         IMM: in std_logic_vector(IMM_SIZE-1 downto 0);
         -- Signals
-        INT, RTI, RET, CALL, JMP, JC, JN, JZ: in std_logic;
-        Stack: std_logic_vector (1 downto 0);
-        InEn, OutEn, Carry, FlagEn, LDM, ALUEn: in std_logic;
+        IMMS,LDM: in std_logic;
         ALUOP: in std_logic_vector(OPCODE_LEN - 1 downto 0);
-        WBEn, MemW, memR, IMMS: in std_logic;
         --Output
         ALUResult: out std_logic_vector(ALU_RESULT_LEN-1 downto 0);
         Rsrc2Out : out std_logic_vector(REG_SIZE-1 downto 0);
@@ -31,10 +28,10 @@ begin
 
     ALU : entity work.Alu port map (ALUOP,ALUIn1,ALUIn2,ALUResultTemp,ALUFlags);
     ALUIn1 <=   
-		Rsrc1 when LDM = '0'
+		Rsrc1 when LDM = "0"
         else    IMM;
     ALUIn2 <=   
-		Rsrc2 when IMMS = '0'
+		Rsrc2 when IMMS = "0"
         else    IMM;              
     Rsrc2Out <= Rsrc2;
     RdstOut <= Rdst;

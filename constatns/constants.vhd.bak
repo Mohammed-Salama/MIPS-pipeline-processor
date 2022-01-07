@@ -12,7 +12,7 @@ package Constants is
     CONSTANT IMM_SIZE: integer := 16;
 
 
-    
+    fdsfds
     -- INSTRUCTION OPCODES:       OPCODE = IMMEDIATE BIT + 5 BITS  
     
     CONSTANT HLT_OPCODE : std_logic_vector(5 downto 0) := "000001" ;
