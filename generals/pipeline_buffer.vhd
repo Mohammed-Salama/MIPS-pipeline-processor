@@ -4,23 +4,20 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 use ieee.NUMERIC_STD.all;
 use work.constants.all;
 
-
-
-entity PipelineBuffer is 
+entity PipelineBuffer  is generic (n : integer := 128 );
     port(
         clk : in std_logic;
         enable : in std_logic;
         flush : in std_logic;
-        in_port : in std_logic_vector(PIPELINE_BUFF_SIZE-1 downto 0);
-        out_port : out std_logic_vector(PIPELINE_BUFF_SIZE-1 downto 0)
+        in_port : in std_logic_vector(n-1 downto 0);
+        out_port : out std_logic_vector(n-1 downto 0)
     );
 end entity;
-
 
 architecture PipelineBufferArch of PipelineBuffer is
     begin
         process(clk) is
-        variable buff : std_logic_vector( PIPELINE_BUFF_SIZE-1 downto 0);
+        variable buff : std_logic_vector( n-1 downto 0);
         begin
             if rising_edge(clk) then
                 if (flush = '1') then

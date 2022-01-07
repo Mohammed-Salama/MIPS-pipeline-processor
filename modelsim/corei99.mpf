@@ -220,10 +220,10 @@ Resolution = ps
 UserTimeUnit = default
 
 ; Default run length
-RunLength = 100
+RunLength = 100 ps
 
 ; Maximum iterations that can be run without advancing simulation time
-IterationLimit = 5000
+IterationLimit = 10000000
 
 ; Directive to license manager:
 ; vhdl          Immediately reserve a VHDL license
@@ -402,7 +402,7 @@ ConcurrentFileLimit = 40
 ;    wlf   {wlf file only}
 ; msgmode = both
 [Project]
-; Warning -- Do not edit the project properties directly.
+** Warning: ; Warning -- Do not edit the project properties directly.
 ;            Property names are dynamic in nature and property
 ;            values have special syntax.  Changing property data directly
 ;            can result in a corrupt MPF file.  All project properties
@@ -411,6 +411,7 @@ Project_Version = 6
 Project_DefaultLib = work
 Project_SortMethod = unused
 Project_Files_Count = 5
+<<<<<<< HEAD
 Project_File_0 = D:/cufe/3rd computer/CMP3010_Computer Architecture/project/work/MIPS-pipeline-processor/stages/memory.vhd
 Project_File_P_0 = vhdl_novitalcheck 0 file_type vhdl group_id 0 cover_nofec 0 vhdl_nodebug 0 vhdl_1164 1 vhdl_noload 0 vhdl_synth 0 vhdl_enable0In 0 folder {Top Level} last_compile 1641588253 vhdl_disableopt 0 vhdl_vital 0 cover_excludedefault 0 vhdl_warn1 1 vhdl_warn2 1 vhdl_explicit 1 vhdl_showsource 0 vhdl_warn3 1 cover_covercells 0 vhdl_0InOptions {} vhdl_warn4 1 voptflow 1 cover_optlevel 3 vhdl_options {} vhdl_warn5 1 toggle - ood 0 cover_noshort 0 compile_to work compile_order 3 cover_nosub 0 dont_compile 0 vhdl_use93 2002
 Project_File_1 = D:/cufe/3rd computer/CMP3010_Computer Architecture/project/work/MIPS-pipeline-processor/caches/data_memory.vhd
@@ -421,6 +422,18 @@ Project_File_3 = D:/cufe/3rd computer/CMP3010_Computer Architecture/project/work
 Project_File_P_3 = vhdl_novitalcheck 0 file_type vhdl group_id 0 cover_nofec 0 vhdl_nodebug 0 vhdl_1164 1 vhdl_noload 0 vhdl_synth 0 vhdl_enable0In 0 folder {Top Level} last_compile 1641587222 vhdl_disableopt 0 vhdl_vital 0 cover_excludedefault 0 vhdl_warn1 1 vhdl_warn2 1 vhdl_explicit 1 vhdl_showsource 0 vhdl_warn3 1 cover_covercells 0 vhdl_0InOptions {} vhdl_warn4 1 voptflow 1 cover_optlevel 3 vhdl_options {} vhdl_warn5 1 toggle - ood 0 cover_noshort 0 compile_to work compile_order 0 cover_nosub 0 dont_compile 0 vhdl_use93 2002
 Project_File_4 = D:/cufe/3rd computer/CMP3010_Computer Architecture/project/work/MIPS-pipeline-processor/constatns/constants.vhd
 Project_File_P_4 = vhdl_novitalcheck 0 file_type vhdl group_id 0 cover_nofec 0 vhdl_nodebug 0 vhdl_1164 1 vhdl_noload 0 vhdl_synth 0 vhdl_enable0In 0 folder {Top Level} last_compile 1641586754 vhdl_disableopt 0 cover_excludedefault 0 vhdl_vital 0 vhdl_warn1 1 vhdl_showsource 0 vhdl_explicit 1 vhdl_warn2 1 vhdl_0InOptions {} cover_covercells 0 vhdl_warn3 1 vhdl_options {} cover_optlevel 3 voptflow 1 vhdl_warn4 1 ood 0 toggle - vhdl_warn5 1 compile_to work cover_noshort 0 compile_order 2 dont_compile 0 cover_nosub 0 vhdl_use93 2002
+=======
+Project_File_0 = E:/CA project/MIPS_pipeline_processor/units/alu.vhd
+Project_File_P_0 = vhdl_novitalcheck 0 file_type vhdl group_id 0 cover_nofec 0 vhdl_nodebug 0 vhdl_1164 1 vhdl_noload 0 vhdl_synth 0 vhdl_enable0In 0 folder {Top Level} last_compile 1641577618 vhdl_disableopt 0 cover_excludedefault 0 vhdl_vital 0 vhdl_warn1 1 vhdl_showsource 0 vhdl_explicit 1 vhdl_warn2 1 vhdl_0InOptions {} cover_covercells 0 vhdl_warn3 1 vhdl_options {} cover_optlevel 3 voptflow 1 vhdl_warn4 1 ood 0 toggle - vhdl_warn5 1 compile_to work cover_noshort 0 compile_order 1 dont_compile 0 cover_nosub 0 vhdl_use93 2002
+Project_File_1 = E:/CA project/MIPS_pipeline_processor/stages/fetch.vhd
+Project_File_P_1 = vhdl_novitalcheck 0 file_type vhdl group_id 0 cover_nofec 0 vhdl_nodebug 0 vhdl_1164 1 vhdl_noload 0 vhdl_synth 0 vhdl_enable0In 0 folder {Top Level} last_compile 1641577729 vhdl_disableopt 0 cover_excludedefault 0 vhdl_vital 0 vhdl_warn1 1 vhdl_showsource 0 vhdl_explicit 1 vhdl_warn2 1 vhdl_0InOptions {} cover_covercells 0 vhdl_warn3 1 vhdl_options {} cover_optlevel 3 voptflow 1 vhdl_warn4 1 ood 0 toggle - vhdl_warn5 1 compile_to work cover_noshort 0 compile_order 2 dont_compile 0 cover_nosub 0 vhdl_use93 2002
+Project_File_2 = E:/CA project/MIPS_pipeline_processor/constatns/constants.vhd
+Project_File_P_2 = vhdl_novitalcheck 0 file_type vhdl group_id 0 cover_nofec 0 vhdl_nodebug 0 vhdl_1164 1 vhdl_noload 0 vhdl_synth 0 vhdl_enable0In 0 folder {Top Level} last_compile 1641587074 vhdl_disableopt 0 cover_excludedefault 0 vhdl_vital 0 vhdl_warn1 1 vhdl_showsource 0 vhdl_explicit 1 vhdl_warn2 1 vhdl_0InOptions {} cover_covercells 0 vhdl_warn3 1 vhdl_options {} cover_optlevel 3 voptflow 1 vhdl_warn4 1 ood 0 toggle - vhdl_warn5 1 compile_to work cover_noshort 0 compile_order 0 dont_compile 0 cover_nosub 0 vhdl_use93 2002
+Project_File_3 = E:/CA project/MIPS_pipeline_processor/generals/pipeline_buffer.vhd
+Project_File_P_3 = vhdl_novitalcheck 0 file_type vhdl group_id 0 cover_nofec 0 vhdl_nodebug 0 vhdl_1164 1 vhdl_noload 0 vhdl_synth 0 vhdl_enable0In 0 folder {Top Level} last_compile 1641588569 vhdl_disableopt 0 vhdl_vital 0 cover_excludedefault 0 vhdl_warn1 1 vhdl_warn2 1 vhdl_explicit 1 vhdl_showsource 0 vhdl_warn3 1 cover_covercells 0 vhdl_0InOptions {} vhdl_warn4 1 voptflow 1 cover_optlevel 3 vhdl_options {} vhdl_warn5 1 toggle - ood 0 cover_noshort 0 compile_to work compile_order 4 cover_nosub 0 dont_compile 0 vhdl_use93 2002
+Project_File_4 = E:/CA project/MIPS_pipeline_processor/caches/instructions_memory.vhd
+Project_File_P_4 = vhdl_novitalcheck 0 file_type vhdl group_id 0 cover_nofec 0 vhdl_nodebug 0 vhdl_1164 1 vhdl_noload 0 vhdl_synth 0 vhdl_enable0In 0 folder {Top Level} last_compile 1641559218 vhdl_disableopt 0 vhdl_vital 0 cover_excludedefault 0 vhdl_warn1 1 vhdl_warn2 1 vhdl_explicit 1 vhdl_showsource 0 vhdl_warn3 1 cover_covercells 0 vhdl_0InOptions {} vhdl_warn4 1 voptflow 1 cover_optlevel 3 vhdl_options {} vhdl_warn5 1 toggle - ood 0 cover_noshort 0 compile_to work compile_order 3 cover_nosub 0 dont_compile 0 vhdl_use93 2002
+>>>>>>> f48d320377e515c7c67cf55543c1b8012f762641
 Project_Sim_Count = 0
 Project_Folder_Count = 0
 Echo_Compile_Output = 0
@@ -468,5 +481,5 @@ DEBUGDATABASE_DoubleClick = Edit
 DEBUGDATABASE_CustomDoubleClick = 
 DEBUGARCHIVE_DoubleClick = Edit
 DEBUGARCHIVE_CustomDoubleClick = 
-Project_Major_Version = 10
-Project_Minor_Version = 5
+Project_Major_Version = 2020
+Project_Minor_Version = 1
