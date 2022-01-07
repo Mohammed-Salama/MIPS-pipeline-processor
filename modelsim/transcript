@@ -345,3 +345,15 @@ run
 # Compile of instructions_memory.vhd was successful.
 # Compile of pipeline_buffer.vhd was successful.
 # 5 compiles, 0 failed with no errors.
+# Compile of constants.vhd was successful.
+# Compile of alu.vhd was successful.
+# Compile of fetch.vhd was successful.
+# Compile of instructions_memory.vhd was successful.
+# Compile of pipeline_buffer.vhd was successful.
+# 5 compiles, 0 failed with no errors.
+# Compile of constants.vhd was successful.
+# Compile of alu.vhd was successful.
+# Compile of fetch.vhd was successful.
+# Compile of instructions_memory.vhd was successful.
+# Compile of pipeline_buffer.vhd was successful.
+# 5 compiles, 0 failed with no errors.

@@ -8,7 +8,6 @@ package Constants is
     CONSTANT REG_SIZE : integer :=16;
     CONSTANT PC_SIZE  : integer :=32;
     CONSTANT MEM_WIDTH : integer := 16;
-    CONSTANT PIPELINE_BUFF_SIZE : integer := 64;
     CONSTANT REG_INDEX_SIZE : integer := 3;                    -- register file registers
     CONSTANT IMM_SIZE: integer := 16;
 
