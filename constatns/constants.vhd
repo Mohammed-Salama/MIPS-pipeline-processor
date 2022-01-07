@@ -8,7 +8,8 @@ package Constants is
     CONSTANT REG_SIZE : integer :=16;
     CONSTANT PC_SIZE  : integer :=32;
     CONSTANT MEM_WIDTH : integer := 16;
-    CONSTANT REG_INDEX_SIZE : integer := 3;
+    CONSTANT PIPELINE_BUFF_SIZE : integer := 64;
+    CONSTANT REG_INDEX_SIZE : integer := 3;                    -- register file registers
     CONSTANT IMM_SIZE: integer := 16;
 
 
@@ -34,6 +35,35 @@ package Constants is
     CONSTANT NOT_OPCODE: std_logic_vector(2 downto 0) := "101";
     CONSTANT SETC_OPCODE:std_logic_vector(2 downto 0) := "110";
     CONSTANT ALU_RESULT_LEN: integer                  := 16;
+
+
+    -- pipeline buffer indecies:
+      -- signals form CU:
+      CONSTANT int_idx          : integer :=  0;
+      CONSTANT rti_idx          : integer :=  1;
+      CONSTANT ret_idx          : integer :=  2;
+      CONSTANT call_idx         : integer :=  3;
+      CONSTANT jmp_idx          : integer :=  4;
+      CONSTANT jc_idx           : integer :=  5;
+      CONSTANT jn_idx           : integer :=  6;
+      CONSTANT jz_idx           : integer :=  7;
+      CONSTANT stack1_idx       : integer :=  8;
+      CONSTANT stack0_idx       : integer :=  9;
+      CONSTANT inEn_idx         :  integer:=  10;
+      CONSTANT outEn_idx        : integer :=  11;
+      CONSTANT carry_idx        : integer :=  12;
+      CONSTANT flagEn_idx       : integer :=  13;
+      CONSTANT ldm_idx	        : integer :=  14;
+      CONSTANT aluop2_idx       : integer :=  15;
+      CONSTANT aluop1_idx       : integer :=  16;
+      CONSTANT aluop0_idx       : integer :=  17;
+      CONSTANT wbEn_idx         : integer :=  18;
+      CONSTANT memw_idx         : integer :=  19;
+      CONSTANT memr_idx         : integer :=  20; 
+      CONSTANT imm_idx          : integer :=  21;
+      CONSTANT aluEn_idx        : integer :=  22;
+
+      
 
 
 
