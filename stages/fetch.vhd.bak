@@ -22,6 +22,7 @@ signal PCReset : std_logic_vector(PC_SIZE-1 downto 0);
 
 begin
     instMem : entity work.instructionMemory PORT MAP (clk,pc,memory_out,PCReset);
+e
     process (clk) is
         variable temp_pc : std_logic_vector(PC_SIZE-1 downto 0);
     begin

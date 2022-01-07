@@ -34,7 +34,7 @@ BEGIN
         );
     ControlUnit: ENTITY work.control_unit 
         PORT MAP(
-            instruction(31 downto 26),
+            instruction(31 downto 26);
             signals
         );
 END ARCHITECTURE;

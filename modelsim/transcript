@@ -62,3 +62,165 @@
 # Compile of data_memory.vhd was successful.
 # Compile of pipeline_buffer.vhd was successful.
 # 6 compiles, 0 failed with no errors.
+# Compile of execute.vhd failed with 4 errors.
+# Compile of alu.vhd was successful.
+# Compile of constants.vhd was successful.
+# Compile of memory.vhd was successful.
+# Compile of data_memory.vhd was successful.
+# Compile of pipeline_buffer.vhd was successful.
+# 6 compiles, 1 failed with 4 errors.
+# Compile of alu.vhd was successful.
+# Compile of constants.vhd was successful.
+# Compile of memory.vhd was successful.
+# Compile of data_memory.vhd was successful.
+# Compile of pipeline_buffer.vhd was successful.
+# Compile of execute.vhd was successful.
+# Compile of alu.vhd was successful.
+# Compile of constants.vhd was successful.
+# Compile of memory.vhd was successful.
+# Compile of data_memory.vhd was successful.
+# Compile of pipeline_buffer.vhd was successful.
+# Compile of execute.vhd was successful.
+# Compile of alu.vhd was successful.
+# Compile of constants.vhd was successful.
+# Compile of memory.vhd was successful.
+# Compile of data_memory.vhd was successful.
+# Compile of pipeline_buffer.vhd was successful.
+# Compile of execute.vhd was successful.
+# 6 compiles, 0 failed with no errors.
+# Compile of data_memory.vhd was successful.
+# Compile of instructions_memory.vhd was successful.
+# Compile of constants.vhd was successful.
+# Compile of pipeline_buffer.vhd was successful.
+# Compile of execute.vhd was successful.
+# Compile of fetch.vhd was successful.
+# Compile of memory.vhd was successful.
+# Compile of alu.vhd was successful.
+# Compile of control_unit.vhd was successful.
+# Compile of register_file.vhd was successful.
+# Compile of Processor.vhd failed.
+# Compile of decode.vhd failed.
+# Compile of write_back.vhd failed.
+# Compile of exception_unit.vhd failed.
+# Compile of forwarding_unit.vhd failed.
+# Compile of hazard_unit.vhd failed.
+# Compile of data_memory.vhd was successful.
+# Compile of instructions_memory.vhd was successful.
+# Compile of constants.vhd was successful.
+# Compile of pipeline_buffer.vhd was successful.
+# Compile of execute.vhd was successful.
+# Compile of fetch.vhd was successful.
+# Compile of memory.vhd was successful.
+# Compile of alu.vhd was successful.
+# Compile of control_unit.vhd was successful.
+# Compile of register_file.vhd was successful.
+# Compile of Processor.vhd failed with 1 errors.
+# Compile of decode.vhd failed with 1 errors.
+# Compile of write_back.vhd failed with 1 errors.
+# Compile of exception_unit.vhd failed with 1 errors.
+# Compile of forwarding_unit.vhd failed with 1 errors.
+# Compile of hazard_unit.vhd failed with 1 errors.
+# 16 compiles, 6 failed with 6 errors.
+# Compile of data_memory.vhd was successful.
+# Compile of instructions_memory.vhd was successful.
+# Compile of constants.vhd was successful.
+# Compile of pipeline_buffer.vhd was successful.
+# Compile of execute.vhd was successful.
+# Compile of fetch.vhd was successful.
+# Compile of memory.vhd was successful.
+# Compile of alu.vhd was successful.
+# Compile of control_unit.vhd was successful.
+# Compile of register_file.vhd was successful.
+# Compile of decode.vhd failed with 1 errors.
+# Compile of write_back.vhd failed with 1 errors.
+# 12 compiles, 2 failed with 2 errors.
+# Compile of data_memory.vhd was successful.
+# Compile of instructions_memory.vhd was successful.
+# Compile of constants.vhd was successful.
+# Compile of pipeline_buffer.vhd was successful.
+# Compile of execute.vhd was successful.
+# Compile of fetch.vhd was successful.
+# Compile of memory.vhd was successful.
+# Compile of alu.vhd was successful.
+# Compile of control_unit.vhd was successful.
+# Compile of register_file.vhd was successful.
+# Compile of decode.vhd failed with 2 errors.
+# Compile of write_back.vhd failed with 1 errors.
+# 12 compiles, 2 failed with 3 errors.
+# Compile of decode.vhd failed with 2 errors.
+# Compile of decode.vhd failed with 2 errors.
+# Compile of decode.vhd failed with 2 errors.
+# Compile of decode.vhd was successful.
+# Compile of write_back.vhd failed with 1 errors.
+# Compile of write_back.vhd was successful.
+# Compile of data_memory.vhd was successful.
+# Compile of instructions_memory.vhd was successful.
+# Compile of constants.vhd was successful.
+# Compile of pipeline_buffer.vhd was successful.
+# Compile of execute.vhd was successful.
+# Compile of fetch.vhd was successful.
+# Compile of memory.vhd was successful.
+# Compile of alu.vhd was successful.
+# Compile of control_unit.vhd was successful.
+# Compile of register_file.vhd was successful.
+# Compile of decode.vhd was successful.
+# Compile of write_back.vhd was successful.
+# 12 compiles, 0 failed with no errors.
+# Compile of decode.vhd failed with 1 errors.
+# Compile of decode.vhd failed with 2 errors.
+# Compile of decode.vhd was successful.
+# Compile of data_memory.vhd was successful.
+# Compile of instructions_memory.vhd was successful.
+# Compile of constants.vhd was successful.
+# Compile of pipeline_buffer.vhd was successful.
+# Compile of execute.vhd was successful.
+# Compile of fetch.vhd was successful.
+# Compile of memory.vhd was successful.
+# Compile of alu.vhd was successful.
+# Compile of control_unit.vhd was successful.
+# Compile of register_file.vhd was successful.
+# Compile of decode.vhd was successful.
+# Compile of write_back.vhd was successful.
+# 12 compiles, 0 failed with no errors.
+# Compile of Register.vhd failed with 2 errors.
+# Compile of Register.vhd was successful.
+# Compile of Register.vhd was successful.
+# Compile of data_memory.vhd was successful.
+# Compile of instructions_memory.vhd was successful.
+# Compile of constants.vhd was successful.
+# Compile of pipeline_buffer.vhd was successful.
+# Compile of execute.vhd was successful.
+# Compile of fetch.vhd was successful.
+# Compile of memory.vhd was successful.
+# Compile of alu.vhd was successful.
+# Compile of control_unit.vhd was successful.
+# Compile of register_file.vhd was successful.
+# Compile of decode.vhd was successful.
+# Compile of write_back.vhd was successful.
+# Compile of Processor.vhd failed with 2 errors.
+# 14 compiles, 1 failed with 2 errors.
+# Compile of instructions_memory.vhd failed with 5 errors.
+# Compile of instructions_memory.vhd was successful.
+# Compile of fetch.vhd failed with 1 errors.
+# Compile of fetch.vhd failed with 1 errors.
+# Compile of fetch.vhd failed with 1 errors.
+# Compile of fetch.vhd failed with 1 errors.
+# Compile of fetch.vhd was successful.
+# Compile of Processor.vhd failed with 3 errors.
+# Compile of Processor.vhd failed with 1 errors.
+# Compile of Processor.vhd was successful.
+# Compile of Register.vhd was successful.
+# Compile of data_memory.vhd was successful.
+# Compile of instructions_memory.vhd was successful.
+# Compile of constants.vhd was successful.
+# Compile of pipeline_buffer.vhd was successful.
+# Compile of execute.vhd was successful.
+# Compile of fetch.vhd was successful.
+# Compile of memory.vhd was successful.
+# Compile of alu.vhd was successful.
+# Compile of control_unit.vhd was successful.
+# Compile of register_file.vhd was successful.
+# Compile of decode.vhd was successful.
+# Compile of write_back.vhd was successful.
+# Compile of Processor.vhd was successful.
+# 14 compiles, 0 failed with no errors.

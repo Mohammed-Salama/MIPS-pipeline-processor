@@ -14,7 +14,7 @@ entity WriteBack is
         --output
         WBEnOut: out std_logic;
         RdstOut: out std_logic_vector(REG_INDEX_SIZE-1 downto 0);
-        RegisterDataIn: out std_logic_vector(REG_SIZE-1 downto 0)
+        RegisterDataIn: out std_logic_vector(REG_SIZE-1 downto 0);
     );
 end entity;
 
