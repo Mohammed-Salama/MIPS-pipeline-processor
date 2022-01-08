@@ -26,7 +26,7 @@ architecture RegisterFileArch of RegisterFile is
     process(clk) is
     begin
     
-    if falling_edge(clk) then
+    if rising_edge(clk) then
         if write_enable = '1' then
         regFile(to_integer(unsigned((write_address)))) <= data_in;
         end if;

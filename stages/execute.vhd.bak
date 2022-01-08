@@ -22,14 +22,16 @@ entity Execute is
         --Output Signals
         RTIOut, RETOut, CALLOut: out std_logic;
         StackOut: out std_logic_vector (1 downto 0);
-        InEnOut, WBEnOut, MemWOut, memROut: out std_logic;
+        InEnOut, WBEnOut, MemWOut, memROut: out std_logic
+        --Extras
+        ALUFlags: out std_logic_vector(FLAG_REG_SIZE-1 downto 0);
     );
 end entity;
 
 
 architecture ExecuteArch of Execute is
 signal ALUIn1, ALUIn2: std_logic_vector(REG_SIZE-1 downto 0);
-signal ALUFlags: std_logic_vector(FLAG_REG_SIZE-1 downto 0);
+--signal ALUFlags: std_logic_vector(FLAG_REG_SIZE-1 downto 0);
 signal ALUResultTemp : std_logic_vector(ALU_RESULT_LEN-1 downto 0);
 begin 
 

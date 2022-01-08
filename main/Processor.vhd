@@ -56,16 +56,17 @@ signal  WB_RdstOut: std_logic_vector(REG_INDEX_SIZE-1 downto 0);
 signal  WB_RegisterDataIn: std_logic_vector(REG_SIZE-1 downto 0);
 
 
+--Flag Register 
+signal Flags_From_ALU: std_logic_vector(2 downto 0);
+signal Flags:std_logic_vector(2 downto 0);
 
+--TEMP
 signal Buffers_enable,BUffers_Flush:std_logic;
-
-
-
 signal FSP: std_logic_vector (15 downto 0);
 
 begin 
 
-
+FlagRegisterModel : entity work.Reg GENERIC MAP (3) Port map(clk,rst,De_Output(60),Flags_From_ALU,Flags);
 
 
 
@@ -77,6 +78,7 @@ ExecuteStage:   entity work.Execute port map(De_Output(34 downto 32) , De_Output
                         De_Output(73),De_Output(72),De_Output(71),De_Output(70),De_Output(69),De_Output(68),De_Output(67),De_Output(66),
                         De_Output(65 downto 64),
                         De_Output(63),De_Output(62),De_Output(61),De_Output(60),De_Output(59),De_Output(58),
+                    --                                               FlagEn
                         De_Output(57 downto 55),
                         De_Output(54),De_Output(53),De_Output(52),De_Output(51),
                         --Output
@@ -84,7 +86,8 @@ ExecuteStage:   entity work.Execute port map(De_Output(34 downto 32) , De_Output
                         --Output Signals
                         E_ControlOUt(8),E_ControlOUt(7),E_ControlOUt(6),
                         E_ControlOUt(5 downto 4),
-                        E_ControlOUt(3),E_ControlOUt(2),E_ControlOUt(1),E_ControlOUt(0)
+                        E_ControlOUt(3),E_ControlOUt(2),E_ControlOUt(1),E_ControlOUt(0),
+                        Flags_From_ALU
 );
 
 EM_Buffer:      entity work.PipelineBuffer GENERIC MAP (76) port map(clk,Buffers_enable,BUffers_Flush,EM_Input,EM_Output);
@@ -122,10 +125,10 @@ EM_Input <= E_ALUResult & E_Rsrc2Out & E_RdstOut &
 
 
 MW_Input <= M_OUT;
+Out_Port <= De_Output(31 downto 16) when De_Output(62) = '1';
 
 Buffers_enable<='1';
 BUffers_Flush<='0';
 FSP <= (Others => '0');
 
 end MainkArch;
-
