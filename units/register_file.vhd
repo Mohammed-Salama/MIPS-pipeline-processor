@@ -31,11 +31,8 @@ architecture RegisterFileArch of RegisterFile is
         regFile(to_integer(unsigned((write_address)))) <= data_in;
         end if;
     end if;
-
+    end process;
     rsrc1_out <= regFile(to_integer(unsigned((rsrc1))));
     rsrc2_out <= regFile(to_integer(unsigned((rsrc2))));
-
-    end process;
-    
 end RegisterFileArch;
 
