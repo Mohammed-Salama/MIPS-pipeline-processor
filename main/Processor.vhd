@@ -61,7 +61,11 @@ signal Flags_From_ALU: std_logic_vector(2 downto 0);
 signal Flags:std_logic_vector(2 downto 0);
 
 --TEMP
-signal Buffers_enable,BUffers_Flush:std_logic;
+signal Buffers_enable_FD,BUffers_Flush_FD:std_logic;
+signal Buffers_enable_DE,BUffers_Flush_DE:std_logic;
+signal Buffers_enable_EM,BUffers_Flush_EM:std_logic;
+signal Buffers_enable_MW,BUffers_Flush_MW:std_logic;
+
 signal FSP: std_logic_vector (15 downto 0);
 
 begin 
@@ -71,9 +75,9 @@ FlagRegisterModel : entity work.Reg GENERIC MAP (3) Port map(clk,rst,De_Output(6
 
                                                                         --jmp          --jc        --jn           --jz
 FetchStage:     entity work.Fetch port map(clk,rst,F_PC,F_instruction,De_Output(69),De_Output(68),De_Output(67),De_Output(66),Flags,De_Output(31 downto 16));
-FD_Buffer:      entity work.PipelineBuffer GENERIC MAP (32) port map(clk,Buffers_enable,BUffers_Flush,F_instruction,FD_instruction);
+FD_Buffer:      entity work.PipelineBuffer GENERIC MAP (32) port map(clk,Buffers_enable_FD,BUffers_Flush_FD,F_instruction,FD_instruction);
 DecodeStage:    entity work.decode_stage port map(clk,WB_WBEnOut, WB_RdstOut, WB_RegisterDataIn, FD_instruction,D_ControlSignals,D_Rsrc1,D_Rsrc2,D_IMM,D_Rdst);   
-DE_Buffer:      entity work.PipelineBuffer GENERIC MAP (74) port map(clk,Buffers_enable,BUffers_Flush,DE_Input,De_Output);
+DE_Buffer:      entity work.PipelineBuffer GENERIC MAP (74) port map(clk,Buffers_enable_DE,BUffers_Flush_DE,DE_Input,De_Output);
 ExecuteStage:   entity work.Execute port map(De_Output(34 downto 32) , De_Output(31 downto 16), De_Output(15 downto 0),De_Output(50 downto 35),
                         De_Output(73),De_Output(72),De_Output(71),De_Output(70),De_Output(69),De_Output(68),De_Output(67),De_Output(66),
                         De_Output(65 downto 64),
@@ -90,7 +94,7 @@ ExecuteStage:   entity work.Execute port map(De_Output(34 downto 32) , De_Output
                         Flags_From_ALU
 );
 
-EM_Buffer:      entity work.PipelineBuffer GENERIC MAP (76) port map(clk,Buffers_enable,BUffers_Flush,EM_Input,EM_Output);
+EM_Buffer:      entity work.PipelineBuffer GENERIC MAP (76) port map(clk,Buffers_enable_EM,BUffers_Flush_EM,EM_Input,EM_Output);
 
 MemoryStage:    entity work.Memory port map(
     EM_Output(75 downto 60), EM_Output(59 downto 44), EM_Output(31 downto 16), EM_Output(15 downto 0), EM_Output(43 downto 41), 
@@ -103,7 +107,7 @@ MemoryStage:    entity work.Memory port map(
 );
 
 
-MW_Buffer:      entity work.PipelineBuffer GENERIC MAP (54) port map(clk,Buffers_enable,BUffers_Flush,MW_Input,MW_Output);
+MW_Buffer:      entity work.PipelineBuffer GENERIC MAP (54) port map(clk,Buffers_enable_MW,BUffers_Flush_MW,MW_Input,MW_Output);
 
 WriteBackStage: entity work.WriteBack port map(
     MW_Output(5 downto 3), MW_Output(53 downto 38), MW_Output(21 downto 6), MW_Output(37 downto 22),
@@ -127,8 +131,19 @@ EM_Input <= E_ALUResult & E_Rsrc2Out & E_RdstOut &
 MW_Input <= M_OUT;
 Out_Port <= De_Output(31 downto 16) when De_Output(62) = '1';
 
-Buffers_enable<='1';
-BUffers_Flush<='0';
+--  -- JMP         --CARRY       --NEG          --ZERO
+-- De_Output(69),De_Output(68),De_Output(67),De_Output(66),
+
+Buffers_enable_FD<='1';
+Buffers_enable_DE<='1';
+Buffers_enable_EM<='1';
+Buffers_enable_MW<='1';
+
+BUffers_Flush_FD<= De_Output(69) or (De_Output(68) and flags(CARRY_FLAG_INDEX)) or(De_Output(67) and flags(NEG_FLAG_INDEX)) or(De_Output(66) and flags(ZERO_FLAG_INDEX));
+BUffers_Flush_DE<= De_Output(69) or (De_Output(68) and flags(CARRY_FLAG_INDEX)) or(De_Output(67) and flags(NEG_FLAG_INDEX)) or(De_Output(66) and flags(ZERO_FLAG_INDEX));
+BUffers_Flush_EM<='0';
+BUffers_Flush_MW<='0';
+
 FSP <= (Others => '0');
 
 end MainkArch;

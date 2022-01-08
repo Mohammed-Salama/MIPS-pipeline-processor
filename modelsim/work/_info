@@ -17,7 +17,7 @@ Z3 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
 Z4 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
 Z5 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z6 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
-!i122 278
+!i122 348
 Z7 dE:/CA project/MIPS_pipeline_processor/modelsim
 Z8 8E:/CA project/MIPS_pipeline_processor/units/alu.vhd
 Z9 FE:/CA project/MIPS_pipeline_processor/units/alu.vhd
@@ -27,9 +27,9 @@ V5QZ0<b6klm<ZBbXbknZal3
 !s100 C1:ollbFEFP^46QQKfWFI2
 Z10 OV;C;2020.1;71
 32
-Z11 !s110 1641665257
+Z11 !s110 1641668275
 !i10b 1
-Z12 !s108 1641665257.000000
+Z12 !s108 1641668275.000000
 Z13 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|E:/CA project/MIPS_pipeline_processor/units/alu.vhd|
 Z14 !s107 E:/CA project/MIPS_pipeline_processor/units/alu.vhd|
 !i113 1
@@ -43,7 +43,7 @@ R4
 R5
 R6
 Z17 DEx4 work 3 alu 0 22 5QZ0<b6klm<ZBbXbknZal3
-!i122 278
+!i122 348
 l27
 L23 40
 V7nkWKOCofEY]U02WQbXK82
@@ -61,7 +61,7 @@ R16
 Pconstants
 R5
 R6
-!i122 275
+!i122 345
 Z18 w1641599235
 R7
 Z19 8E:/CA project/MIPS_pipeline_processor/constatns/constants.vhd
@@ -72,11 +72,11 @@ VH:R4XW^JHGDhc01NCRVb_1
 !s100 MBa:HZ]G>MCWcQR1;Eb_F0
 R10
 32
-Z21 !s110 1641665256
+R11
 !i10b 1
-Z22 !s108 1641665256.000000
-Z23 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|E:/CA project/MIPS_pipeline_processor/constatns/constants.vhd|
-Z24 !s107 E:/CA project/MIPS_pipeline_processor/constatns/constants.vhd|
+Z21 !s108 1641668274.000000
+Z22 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|E:/CA project/MIPS_pipeline_processor/constatns/constants.vhd|
+Z23 !s107 E:/CA project/MIPS_pipeline_processor/constatns/constants.vhd|
 !i113 1
 R15
 R16
@@ -84,18 +84,18 @@ Bbody
 R1
 R5
 R6
-!i122 275
+!i122 345
 l0
 L96 1
 VGG]RYclIPUA]e1>R[OIDC2
 !s100 =DM`o1H=mMN0603B_JoYJ0
 R10
 32
-R21
+R11
 !i10b 1
+R21
 R22
 R23
-R24
 !i113 1
 R15
 R16
@@ -103,19 +103,19 @@ Econtrol_unit
 R18
 R5
 R6
-!i122 271
+!i122 341
 R7
-Z25 8E:/CA project/MIPS_pipeline_processor/units/control_unit.vhd
-Z26 FE:/CA project/MIPS_pipeline_processor/units/control_unit.vhd
+Z24 8E:/CA project/MIPS_pipeline_processor/units/control_unit.vhd
+Z25 FE:/CA project/MIPS_pipeline_processor/units/control_unit.vhd
 l0
 L4 1
 VXiMQUSDkX4o68BEI2k<KK3
 !s100 eJ_PK`NzS^DHm[THW1bl;1
 R10
 32
-R21
+Z26 !s110 1641668274
 !i10b 1
-R22
+R21
 Z27 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|E:/CA project/MIPS_pipeline_processor/units/control_unit.vhd|
 Z28 !s107 E:/CA project/MIPS_pipeline_processor/units/control_unit.vhd|
 !i113 1
@@ -125,16 +125,16 @@ Acu_arc
 R5
 R6
 Z29 DEx4 work 12 control_unit 0 22 XiMQUSDkX4o68BEI2k<KK3
-!i122 271
+!i122 341
 l12
 L11 64
 V=VYFbR@j^:`J@^NFZ;VXf1
 !s100 I_[RaJ;TNEIm;MJ5[Ai?L3
 R10
 32
-R21
+R26
 !i10b 1
-R22
+R21
 R27
 R28
 !i113 1
@@ -145,7 +145,7 @@ R18
 R2
 R5
 R6
-!i122 276
+!i122 346
 R7
 Z30 8E:/CA project/MIPS_pipeline_processor/caches/data_memory.vhd
 Z31 FE:/CA project/MIPS_pipeline_processor/caches/data_memory.vhd
@@ -157,7 +157,7 @@ R10
 32
 R11
 !i10b 1
-R22
+R12
 Z32 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|E:/CA project/MIPS_pipeline_processor/caches/data_memory.vhd|
 Z33 !s107 E:/CA project/MIPS_pipeline_processor/caches/data_memory.vhd|
 !i113 1
@@ -168,7 +168,7 @@ R2
 R5
 R6
 Z34 DEx4 work 10 datamemory 0 22 :en8j<foc6b;MW1akLUe;2
-!i122 276
+!i122 346
 l22
 L17 18
 VDB1@4jce=;=5<CU9Oa;QJ3
@@ -177,7 +177,7 @@ R10
 32
 R11
 !i10b 1
-R22
+R12
 R32
 R33
 !i113 1
@@ -187,7 +187,7 @@ Edecode_stage
 R18
 R5
 R6
-!i122 273
+!i122 343
 R7
 Z35 8E:/CA project/MIPS_pipeline_processor/stages/decode.vhd
 Z36 FE:/CA project/MIPS_pipeline_processor/stages/decode.vhd
@@ -197,9 +197,9 @@ Vhl?lKFjD^8aOg4FIe61[02
 !s100 oh4;DH>Ulh[cC??YhK:]S2
 R10
 32
-R21
+R26
 !i10b 1
-R22
+R21
 Z37 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|E:/CA project/MIPS_pipeline_processor/stages/decode.vhd|
 Z38 !s107 E:/CA project/MIPS_pipeline_processor/stages/decode.vhd|
 !i113 1
@@ -212,16 +212,16 @@ Z39 DEx4 work 12 registerfile 0 22 Z;Aol=`NoLofUD]9`I1Y_0
 R5
 R6
 Z40 DEx4 work 12 decode_stage 0 22 hl?lKFjD^8aOg4FIe61[02
-!i122 273
+!i122 343
 l21
 L20 21
 Vneb]lWYlk<:79QC4<N6bA0
 !s100 _KB7jOSA_8WV6kUOcHZel0
 R10
 32
-R21
+R26
 !i10b 1
-R22
+R21
 R37
 R38
 !i113 1
@@ -235,7 +235,7 @@ R3
 R4
 R5
 R6
-!i122 279
+!i122 349
 R7
 Z42 8E:/CA project/MIPS_pipeline_processor/stages/execute.vhd
 Z43 FE:/CA project/MIPS_pipeline_processor/stages/execute.vhd
@@ -262,7 +262,7 @@ R4
 R5
 R6
 Z46 DEx4 work 7 execute 0 22 fXI1:bHhd3TkS7>C^BOa>1
-!i122 279
+!i122 349
 l36
 L32 27
 VFLSTZ_[W1XhHV[=KGf8DE2
@@ -285,7 +285,7 @@ R3
 R4
 R5
 R6
-!i122 280
+!i122 350
 R7
 Z48 8E:/CA project/MIPS_pipeline_processor/stages/fetch.vhd
 Z49 FE:/CA project/MIPS_pipeline_processor/stages/fetch.vhd
@@ -312,7 +312,7 @@ R4
 R5
 R6
 Z53 DEx4 work 5 fetch 0 22 7D>E:SR_e=:__DMY1n>HM1
-!i122 280
+!i122 350
 l29
 L24 33
 VdhLWIkEZZIJVWVQ8?EnPF0
@@ -334,7 +334,7 @@ R3
 R4
 R5
 R6
-!i122 277
+!i122 347
 R7
 Z54 8E:/CA project/MIPS_pipeline_processor/caches/instructions_memory.vhd
 Z55 FE:/CA project/MIPS_pipeline_processor/caches/instructions_memory.vhd
@@ -359,7 +359,7 @@ R4
 R5
 R6
 R52
-!i122 277
+!i122 347
 l20
 L15 19
 V]OiM?M=5Sh2UE0zzm4:TE2
@@ -375,14 +375,14 @@ R57
 R15
 R16
 Emain
-Z58 w1641665251
+Z58 w1641668271
 R1
 R2
 R3
 R4
 R5
 R6
-!i122 284
+!i122 354
 R7
 Z59 8E:/CA project/MIPS_pipeline_processor/main/Processor.vhd
 Z60 FE:/CA project/MIPS_pipeline_processor/main/Processor.vhd
@@ -392,56 +392,56 @@ VeNYI`_X4;D66S[c;47oUE2
 !s100 dT>60Cge3;48cfj`=zeoL0
 R10
 32
-R11
+Z61 !s110 1641668276
 !i10b 1
-R12
-Z61 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|E:/CA project/MIPS_pipeline_processor/main/Processor.vhd|
-Z62 !s107 E:/CA project/MIPS_pipeline_processor/main/Processor.vhd|
+Z62 !s108 1641668276.000000
+Z63 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|E:/CA project/MIPS_pipeline_processor/main/Processor.vhd|
+Z64 !s107 E:/CA project/MIPS_pipeline_processor/main/Processor.vhd|
 !i113 1
 R15
 R16
 Amainkarch
-Z63 DEx4 work 9 writeback 0 22 ZDWL<3bY=NU50M`K0]A4z2
-Z64 DEx4 work 6 memory 0 22 T`>VPWD91YU<EmEjRETdV2
+Z65 DEx4 work 9 writeback 0 22 ZDWL<3bY=NU50M`K0]A4z2
+Z66 DEx4 work 6 memory 0 22 T`>VPWD91YU<EmEjRETdV2
 R46
 R40
-Z65 DEx4 work 14 pipelinebuffer 0 22 E_IWmMI]n2dP^h0mZFPS^1
+Z67 DEx4 work 14 pipelinebuffer 0 22 E_IWmMI]n2dP^h0mZFPS^1
 R53
-Z66 DEx4 work 3 reg 0 22 5@jYFLhSHAU^UkUiBShb<3
+Z68 DEx4 work 3 reg 0 22 5@jYFLhSHAU^UkUiBShb<3
 R1
 R2
 R3
 R4
 R5
 R6
-Z67 DEx4 work 4 main 0 22 eNYI`_X4;D66S[c;47oUE2
-!i122 284
-l67
-Z68 L16 119
-V^Yn@VB:=R[n=;ZJ@IA:AB0
-!s100 8z=d==[4IhYBlf639SE]30
+Z69 DEx4 work 4 main 0 22 eNYI`_X4;D66S[c;47oUE2
+!i122 354
+l71
+L16 134
+V`1jg=^a^llSUCI@KNcfE72
+!s100 kiBR<42H3VMgLSQG3M=_N2
 R10
 32
-R11
-!i10b 1
-R12
 R61
+!i10b 1
 R62
+R63
+R64
 !i113 1
 R15
 R16
 Ememory
-Z69 w1641642321
+Z70 w1641642321
 R1
 R2
 R3
 R4
 R5
 R6
-!i122 281
+!i122 351
 R7
-Z70 8E:/CA project/MIPS_pipeline_processor/stages/memory.vhd
-Z71 FE:/CA project/MIPS_pipeline_processor/stages/memory.vhd
+Z71 8E:/CA project/MIPS_pipeline_processor/stages/memory.vhd
+Z72 FE:/CA project/MIPS_pipeline_processor/stages/memory.vhd
 l0
 L7 1
 VT`>VPWD91YU<EmEjRETdV2
@@ -451,8 +451,8 @@ R10
 R11
 !i10b 1
 R12
-Z72 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|E:/CA project/MIPS_pipeline_processor/stages/memory.vhd|
-Z73 !s107 E:/CA project/MIPS_pipeline_processor/stages/memory.vhd|
+Z73 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|E:/CA project/MIPS_pipeline_processor/stages/memory.vhd|
+Z74 !s107 E:/CA project/MIPS_pipeline_processor/stages/memory.vhd|
 !i113 1
 R15
 R16
@@ -464,8 +464,8 @@ R3
 R4
 R5
 R6
-R64
-!i122 281
+R66
+!i122 351
 l33
 L30 17
 Vm9lR;i3O>f1j@S8456M[m2
@@ -475,23 +475,23 @@ R10
 R11
 !i10b 1
 R12
-R72
 R73
+R74
 !i113 1
 R15
 R16
 Epipelinebuffer
-Z74 w1641588569
+Z75 w1641588569
 R1
 R2
 R3
 R4
 R5
 R6
-!i122 283
+!i122 353
 R7
-Z75 8E:/CA project/MIPS_pipeline_processor/generals/pipeline_buffer.vhd
-Z76 FE:/CA project/MIPS_pipeline_processor/generals/pipeline_buffer.vhd
+Z76 8E:/CA project/MIPS_pipeline_processor/generals/pipeline_buffer.vhd
+Z77 FE:/CA project/MIPS_pipeline_processor/generals/pipeline_buffer.vhd
 l0
 L7 1
 VE_IWmMI]n2dP^h0mZFPS^1
@@ -501,8 +501,8 @@ R10
 R11
 !i10b 1
 R12
-Z77 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|E:/CA project/MIPS_pipeline_processor/generals/pipeline_buffer.vhd|
-Z78 !s107 E:/CA project/MIPS_pipeline_processor/generals/pipeline_buffer.vhd|
+Z78 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|E:/CA project/MIPS_pipeline_processor/generals/pipeline_buffer.vhd|
+Z79 !s107 E:/CA project/MIPS_pipeline_processor/generals/pipeline_buffer.vhd|
 !i113 1
 R15
 R16
@@ -513,8 +513,8 @@ R3
 R4
 R5
 R6
-R65
-!i122 283
+R67
+!i122 353
 l18
 L17 15
 VfMJiXLOklPLb3H:WNRYZ41
@@ -524,8 +524,8 @@ R10
 R11
 !i10b 1
 R12
-R77
 R78
+R79
 !i113 1
 R15
 R16
@@ -533,63 +533,63 @@ Ereg
 R18
 R5
 R6
-!i122 274
+!i122 344
 R7
-Z79 8E:/CA project/MIPS_pipeline_processor/generals/Register.vhd
-Z80 FE:/CA project/MIPS_pipeline_processor/generals/Register.vhd
+Z80 8E:/CA project/MIPS_pipeline_processor/generals/Register.vhd
+Z81 FE:/CA project/MIPS_pipeline_processor/generals/Register.vhd
 l0
 L4 1
 V5@jYFLhSHAU^UkUiBShb<3
 !s100 ;kGjQL8:R=@lLhTaHBcP^1
 R10
 32
-R21
+R26
 !i10b 1
-R22
-Z81 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|E:/CA project/MIPS_pipeline_processor/generals/Register.vhd|
-Z82 !s107 E:/CA project/MIPS_pipeline_processor/generals/Register.vhd|
+R21
+Z82 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|E:/CA project/MIPS_pipeline_processor/generals/Register.vhd|
+Z83 !s107 E:/CA project/MIPS_pipeline_processor/generals/Register.vhd|
 !i113 1
 R15
 R16
 Aregarch
 R5
 R6
-R66
-!i122 274
+R68
+!i122 344
 l14
 L13 11
 V:VZQC7F`7`lc?>[4nTO:b3
 !s100 g7@1AlK6U^DI0gi4T[`2K2
 R10
 32
-R21
+R26
 !i10b 1
-R22
-R81
+R21
 R82
+R83
 !i113 1
 R15
 R16
 Eregisterfile
-R69
+R70
 R2
 R5
 R6
-!i122 272
+!i122 342
 R7
-Z83 8E:/CA project/MIPS_pipeline_processor/units/register_file.vhd
-Z84 FE:/CA project/MIPS_pipeline_processor/units/register_file.vhd
+Z84 8E:/CA project/MIPS_pipeline_processor/units/register_file.vhd
+Z85 FE:/CA project/MIPS_pipeline_processor/units/register_file.vhd
 l0
 L6 1
 VZ;Aol=`NoLofUD]9`I1Y_0
 !s100 Wa^>^lXJ8V4EZD>JmPZ^?2
 R10
 32
-R21
+R26
 !i10b 1
-R22
-Z85 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|E:/CA project/MIPS_pipeline_processor/units/register_file.vhd|
-Z86 !s107 E:/CA project/MIPS_pipeline_processor/units/register_file.vhd|
+R21
+Z86 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|E:/CA project/MIPS_pipeline_processor/units/register_file.vhd|
+Z87 !s107 E:/CA project/MIPS_pipeline_processor/units/register_file.vhd|
 !i113 1
 R15
 R16
@@ -598,18 +598,18 @@ R2
 R5
 R6
 R39
-!i122 272
+!i122 342
 l24
 L21 20
 VN<_kb1RQPHA2IRE1@NXD=0
 !s100 DLa=WKe=o<PPSh_GhIdP22
 R10
 32
-R21
+R26
 !i10b 1
-R22
-R85
+R21
 R86
+R87
 !i113 1
 R15
 R16
@@ -621,10 +621,10 @@ R3
 R4
 R5
 R6
-!i122 282
+!i122 352
 R7
-Z87 8E:/CA project/MIPS_pipeline_processor/stages/write_back.vhd
-Z88 FE:/CA project/MIPS_pipeline_processor/stages/write_back.vhd
+Z88 8E:/CA project/MIPS_pipeline_processor/stages/write_back.vhd
+Z89 FE:/CA project/MIPS_pipeline_processor/stages/write_back.vhd
 l0
 L7 1
 VZDWL<3bY=NU50M`K0]A4z2
@@ -634,8 +634,8 @@ R10
 R11
 !i10b 1
 R12
-Z89 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|E:/CA project/MIPS_pipeline_processor/stages/write_back.vhd|
-Z90 !s107 E:/CA project/MIPS_pipeline_processor/stages/write_back.vhd|
+Z90 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|E:/CA project/MIPS_pipeline_processor/stages/write_back.vhd|
+Z91 !s107 E:/CA project/MIPS_pipeline_processor/stages/write_back.vhd|
 !i113 1
 R15
 R16
@@ -646,8 +646,8 @@ R3
 R4
 R5
 R6
-R63
-!i122 282
+R65
+!i122 352
 l23
 L22 8
 VR3DKYBDl<10lPazF_dL8T0
@@ -657,8 +657,8 @@ R10
 R11
 !i10b 1
 R12
-R89
 R90
+R91
 !i113 1
 R15
 R16
