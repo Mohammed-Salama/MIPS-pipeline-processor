@@ -47,8 +47,7 @@ signal SP_Operations : std_logic_vector(31 downto 0);
 signal SP_Real : std_logic_vector(31 downto 0);
 begin 
 
-    ALU : entity work.Alu port map (ALUOP,ALUIn1,ALUIn2,ALUResultTemp,ALUFlags);
-
+    ALU : entity work.Alu port map (ALUEn,ALUOP,ALUIn1,ALUIn2,ALUResultTemp,ALUFlags);
     ALUIn1 <=   
 		        Rsrc1   when LDM = '0' and FU_Rsrc1_en = '0'
         else    IMM     when LDM = '1' and FU_Rsrc1_en = '0'

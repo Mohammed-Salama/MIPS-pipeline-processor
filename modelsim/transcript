@@ -1,0 +1,461 @@
+# Compile of control_unit.vhd was successful.
+# Compile of register_file.vhd was successful.
+# Compile of decode.vhd was successful.
+# Compile of Register.vhd was successful.
+# Compile of constants.vhd was successful.
+# Compile of data_memory.vhd was successful.
+# Compile of instructions_memory.vhd was successful.
+# Compile of alu.vhd was successful.
+# Compile of execute.vhd was successful.
+# Compile of fetch.vhd was successful.
+# Compile of memory.vhd was successful.
+# Compile of write_back.vhd was successful.
+# Compile of pipeline_buffer.vhd was successful.
+# Compile of Processor.vhd was successful.
+# 14 compiles, 0 failed with no errors.
+vsim -gui work.main
+# vsim -gui work.main 
+# Start time: 20:38:06 on Jan 08,2022
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading ieee.numeric_std(body)
+# Loading work.constants(body)
+# Loading work.main(mainkarch)
+# Loading work.reg(regarch)
+# Loading work.fetch(fetcharch)
+# Loading work.instructionmemory(instructionmemoryarch)
+# Loading work.pipelinebuffer(pipelinebufferarch)
+# Loading work.decode_stage(ds_arc)
+# Loading work.registerfile(registerfilearch)
+# Loading work.control_unit(cu_arc)
+# Loading work.execute(executearch)
+# Loading work.alu(aluarch)
+# Loading work.memory(memoryarch)
+# Loading work.datamemory(datamemoryarch)
+# Loading work.writeback(writebackarch)
+# ** Warning: (vsim-8683) Uninitialized out port /main/MemoryStage/Mem/dataout2(15 downto 0) has no driver.
+# This port will contribute value (UUUUUUUUUUUUUUUU) to the signal network.
+vsim -gui work.main
+# End time: 20:38:19 on Jan 08,2022, Elapsed time: 0:00:13
+# Errors: 0, Warnings: 3
+# vsim -gui work.main 
+# Start time: 20:38:19 on Jan 08,2022
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading ieee.numeric_std(body)
+# Loading work.constants(body)
+# Loading work.main(mainkarch)
+# Loading work.reg(regarch)
+# Loading work.fetch(fetcharch)
+# Loading work.instructionmemory(instructionmemoryarch)
+# Loading work.pipelinebuffer(pipelinebufferarch)
+# Loading work.decode_stage(ds_arc)
+# Loading work.registerfile(registerfilearch)
+# Loading work.control_unit(cu_arc)
+# Loading work.execute(executearch)
+# Loading work.alu(aluarch)
+# Loading work.memory(memoryarch)
+# Loading work.datamemory(datamemoryarch)
+# Loading work.writeback(writebackarch)
+# ** Warning: (vsim-8683) Uninitialized out port /main/MemoryStage/Mem/dataout2(15 downto 0) has no driver.
+# This port will contribute value (UUUUUUUUUUUUUUUU) to the signal network.
+mem load -filltype value -filldata 0 -fillradix symbolic -skip 0 /main/DecodeStage/RegFile/regFile
+mem load -filltype value -filldata 0 -fillradix symbolic -skip 0 /main/MemoryStage/Mem/memory
+mem load -filltype value -filldata 0 -fillradix binary /main/FetchStage/instMem/memory(0)
+mem load -filltype value -filldata 10 -fillradix binary /main/FetchStage/instMem/memory(1)
+mem load -filltype value -filldata 0000100000000000 -fillradix binary /main/FetchStage/instMem/memory(2)
+mem load -filltype value -filldata 0110100000000000 -fillradix binary /main/FetchStage/instMem/memory(3)
+mem load -filltype value -filldata 0001000010010000 -fillradix binary /main/FetchStage/instMem/memory(4)
+mem load -filltype value -filldata 0001000010010000 -fillradix binary /main/FetchStage/instMem/memory(5)
+mem load -filltype value -filldata 0001000010010000 -fillradix binary /main/FetchStage/instMem/memory(6)
+add wave -position end  sim:/main/clk
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: ahmed  Hostname: LAPTOP-8POTMREJ  ProcessID: 11148
+#           Attempting to use alternate WLF file "./wlft9cfx2w".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft9cfx2w
+add wave -position end  sim:/main/rst
+add wave -position end  sim:/main/F_PC
+add wave -position end  sim:/main/F_instruction
+add wave -position end  sim:/main/FD_instruction
+add wave -position end  sim:/main/In_Port
+add wave -position end  sim:/main/Out_Port
+add wave -position end  sim:/main/Flags
+add wave -position end  sim:/main/WB_RdstOut
+add wave -position end  sim:/main/WB_RegisterDataIn
+add wave -position end  sim:/main/WB_WBEnOut
+add wave sim:/main/DecodeStage/RegFile/*
+
+add wave -position insertpoint  \
+sim:/main/ExecuteStage/ALU/opcode
+add wave -position insertpoint  \
+sim:/main/ExecuteStage/ALU/flags
+add wave -position insertpoint  \
+sim:/main/FetchStage/ALUFlags \
+sim:/main/FetchStage/branch_pc_before_extend \
+sim:/main/FetchStage/jc \
+sim:/main/FetchStage/jmp \
+sim:/main/FetchStage/jn \
+sim:/main/FetchStage/jz \
+sim:/main/FetchStage/memory_out \
+sim:/main/FetchStage/out_pc \
+sim:/main/FetchStage/pc
+
+force -freeze sim:/main/clk 0 0, 1 {50 ps} -r 100
+force -freeze sim:/main/rst 1 0
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /main/MemoryStage/Mem
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /main/MemoryStage/Mem
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 50 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 50 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+force -freeze sim:/main/rst 0 0
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 150 ps  Iteration: 2  Instance: /main/MemoryStage/Mem
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# Compile of control_unit.vhd was successful.
+# Compile of register_file.vhd was successful.
+# Compile of decode.vhd was successful.
+# Compile of Register.vhd was successful.
+# Compile of constants.vhd was successful.
+# Compile of data_memory.vhd was successful.
+# Compile of instructions_memory.vhd was successful.
+# Compile of alu.vhd was successful.
+# Compile of execute.vhd was successful.
+# Compile of fetch.vhd was successful.
+# Compile of memory.vhd was successful.
+# Compile of write_back.vhd was successful.
+# Compile of pipeline_buffer.vhd was successful.
+# Compile of Processor.vhd failed with 1 errors.
+# 14 compiles, 1 failed with 1 error.
+# Compile of control_unit.vhd was successful.
+# Compile of register_file.vhd was successful.
+# Compile of decode.vhd was successful.
+# Compile of Register.vhd was successful.
+# Compile of constants.vhd was successful.
+# Compile of data_memory.vhd was successful.
+# Compile of instructions_memory.vhd was successful.
+# Compile of alu.vhd was successful.
+# Compile of execute.vhd was successful.
+# Compile of fetch.vhd was successful.
+# Compile of memory.vhd was successful.
+# Compile of write_back.vhd was successful.
+# Compile of pipeline_buffer.vhd was successful.
+# Compile of Processor.vhd was successful.
+# 14 compiles, 0 failed with no errors.
+# Load canceled
+vsim -gui work.main
+# End time: 20:58:10 on Jan 08,2022, Elapsed time: 0:19:51
+# Errors: 0, Warnings: 21
+# vsim -gui work.main 
+# Start time: 20:58:10 on Jan 08,2022
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading ieee.numeric_std(body)
+# Loading work.constants(body)
+# Loading work.main(mainkarch)
+# Loading work.reg(regarch)
+# Loading work.fetch(fetcharch)
+# Loading work.instructionmemory(instructionmemoryarch)
+# Loading work.pipelinebuffer(pipelinebufferarch)
+# Loading work.decode_stage(ds_arc)
+# Loading work.registerfile(registerfilearch)
+# Loading work.control_unit(cu_arc)
+# Loading work.execute(executearch)
+# Loading work.alu(aluarch)
+# Loading work.memory(memoryarch)
+# Loading work.datamemory(datamemoryarch)
+# Loading work.writeback(writebackarch)
+# ** Warning: (vsim-8683) Uninitialized out port /main/MemoryStage/Mem/dataout2(15 downto 0) has no driver.
+# This port will contribute value (UUUUUUUUUUUUUUUU) to the signal network.
+mem load -filltype value -filldata 0 -fillradix symbolic -skip 0 /main/DecodeStage/RegFile/regFile
+mem load -filltype value -filldata 0 -fillradix symbolic -skip 0 /main/MemoryStage/Mem/memory
+mem load -filltype value -filldata 0 -fillradix binary /main/FetchStage/instMem/memory(0)
+mem load -filltype value -filldata 10 -fillradix binary /main/FetchStage/instMem/memory(1)
+mem load -filltype value -filldata 0000100000000000 -fillradix binary /main/FetchStage/instMem/memory(2)
+mem load -filltype value -filldata 0110100000000000 -fillradix binary /main/FetchStage/instMem/memory(3)
+mem load -filltype value -filldata 0001000010010000 -fillradix binary /main/FetchStage/instMem/memory(4)
+mem load -filltype value -filldata 0001000010010000 -fillradix binary /main/FetchStage/instMem/memory(5)
+mem load -filltype value -filldata 0001000010010000 -fillradix binary /main/FetchStage/instMem/memory(6)
+add wave -position end  sim:/main/clk
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: ahmed  Hostname: LAPTOP-8POTMREJ  ProcessID: 11148
+#           Attempting to use alternate WLF file "./wlftddjvrc".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftddjvrc
+add wave -position end  sim:/main/rst
+add wave -position end  sim:/main/F_PC
+add wave -position end  sim:/main/F_instruction
+add wave -position end  sim:/main/FD_instruction
+add wave -position end  sim:/main/In_Port
+add wave -position end  sim:/main/Out_Port
+add wave -position end  sim:/main/Flags
+add wave -position end  sim:/main/WB_RdstOut
+add wave -position end  sim:/main/WB_RegisterDataIn
+add wave -position end  sim:/main/WB_WBEnOut
+add wave sim:/main/DecodeStage/RegFile/*
+
+add wave -position insertpoint  \
+sim:/main/ExecuteStage/ALU/opcode
+add wave -position insertpoint  \
+sim:/main/ExecuteStage/ALU/flags
+add wave -position insertpoint  \
+sim:/main/FetchStage/ALUFlags \
+sim:/main/FetchStage/branch_pc_before_extend \
+sim:/main/FetchStage/jc \
+sim:/main/FetchStage/jmp \
+sim:/main/FetchStage/jn \
+sim:/main/FetchStage/jz \
+sim:/main/FetchStage/memory_out \
+sim:/main/FetchStage/out_pc \
+sim:/main/FetchStage/pc
+
+force -freeze sim:/main/clk 0 0, 1 {50 ps} -r 100
+force -freeze sim:/main/rst 1 0
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /main/MemoryStage/Mem
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /main/MemoryStage/Mem
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 50 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 50 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+force -freeze sim:/main/rst 0 0
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 150 ps  Iteration: 2  Instance: /main/MemoryStage/Mem
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
