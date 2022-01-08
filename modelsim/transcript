@@ -212,3 +212,750 @@ run
 force -freeze sim:/alu/rsrc1 1111111111111111 0
 force -freeze sim:/alu/rsrc2 1111111111111111 0
 run
+# Compile of control_unit.vhd was successful.
+# Compile of register_file.vhd was successful.
+# Compile of decode.vhd was successful.
+# Compile of Register.vhd was successful.
+# Compile of constants.vhd was successful.
+# Compile of data_memory.vhd was successful.
+# Compile of instructions_memory.vhd was successful.
+# Compile of alu.vhd was successful.
+# Compile of execute.vhd was successful.
+# Compile of fetch.vhd was successful.
+# Compile of memory.vhd was successful.
+# Compile of write_back.vhd was successful.
+# Compile of pipeline_buffer.vhd was successful.
+# Compile of Processor.vhd failed with 1 errors.
+# 14 compiles, 1 failed with 1 error.
+# Compile of control_unit.vhd was successful.
+# Compile of register_file.vhd was successful.
+# Compile of decode.vhd was successful.
+# Compile of Register.vhd was successful.
+# Compile of constants.vhd was successful.
+# Compile of data_memory.vhd was successful.
+# Compile of instructions_memory.vhd was successful.
+# Compile of alu.vhd was successful.
+# Compile of execute.vhd was successful.
+# Compile of fetch.vhd was successful.
+# Compile of memory.vhd was successful.
+# Compile of write_back.vhd was successful.
+# Compile of pipeline_buffer.vhd was successful.
+# Compile of Processor.vhd failed with 1 errors.
+# 14 compiles, 1 failed with 1 error.
+# Compile of control_unit.vhd was successful.
+# Compile of register_file.vhd was successful.
+# Compile of decode.vhd was successful.
+# Compile of Register.vhd was successful.
+# Compile of constants.vhd was successful.
+# Compile of data_memory.vhd was successful.
+# Compile of instructions_memory.vhd was successful.
+# Compile of alu.vhd was successful.
+# Compile of execute.vhd was successful.
+# Compile of fetch.vhd was successful.
+# Compile of memory.vhd was successful.
+# Compile of write_back.vhd was successful.
+# Compile of pipeline_buffer.vhd was successful.
+# Compile of Processor.vhd was successful.
+# 14 compiles, 0 failed with no errors.
+# Compile of control_unit.vhd was successful.
+# Compile of register_file.vhd was successful.
+# Compile of decode.vhd was successful.
+# Compile of Register.vhd was successful.
+# Compile of constants.vhd was successful.
+# Compile of data_memory.vhd was successful.
+# Compile of instructions_memory.vhd was successful.
+# Compile of alu.vhd was successful.
+# Compile of execute.vhd was successful.
+# Compile of fetch.vhd failed with 1 errors.
+# Compile of memory.vhd was successful.
+# Compile of write_back.vhd was successful.
+# Compile of pipeline_buffer.vhd was successful.
+# Compile of Processor.vhd was successful.
+# 14 compiles, 1 failed with 1 error.
+# Compile of control_unit.vhd was successful.
+# Compile of register_file.vhd was successful.
+# Compile of decode.vhd was successful.
+# Compile of Register.vhd was successful.
+# Compile of constants.vhd was successful.
+# Compile of data_memory.vhd was successful.
+# Compile of instructions_memory.vhd was successful.
+# Compile of alu.vhd was successful.
+# Compile of execute.vhd was successful.
+# Compile of fetch.vhd was successful.
+# Compile of memory.vhd was successful.
+# Compile of write_back.vhd was successful.
+# Compile of pipeline_buffer.vhd was successful.
+# Compile of Processor.vhd was successful.
+# 14 compiles, 0 failed with no errors.
+vsim -gui work.main
+# End time: 16:58:57 on Jan 08,2022, Elapsed time: 2:02:35
+# Errors: 0, Warnings: 33
+# vsim -gui work.main 
+# Start time: 16:58:57 on Jan 08,2022
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading ieee.numeric_std(body)
+# Loading work.constants(body)
+# Loading work.main(mainkarch)
+# Loading work.reg(regarch)
+# Loading work.fetch(fetcharch)
+# Loading work.instructionmemory(instructionmemoryarch)
+# Loading work.pipelinebuffer(pipelinebufferarch)
+# Loading work.decode_stage(ds_arc)
+# Loading work.registerfile(registerfilearch)
+# Loading work.control_unit(cu_arc)
+# Loading work.execute(executearch)
+# Loading work.alu(aluarch)
+# Loading work.memory(memoryarch)
+# Loading work.datamemory(datamemoryarch)
+# Loading work.writeback(writebackarch)
+# ** Warning: (vsim-8683) Uninitialized inout port /main/FetchStage/ALUFlags(2) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized inout port /main/FetchStage/ALUFlags(1) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized inout port /main/FetchStage/ALUFlags(0) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /main/MemoryStage/Mem/dataout2(15 downto 0) has no driver.
+# This port will contribute value (UUUUUUUUUUUUUUUU) to the signal network.
+mem load -filltype value -filldata 0 -fillradix symbolic -skip 0 /main/DecodeStage/RegFile/regFile
+mem load -filltype value -filldata 0 -fillradix symbolic -skip 0 /main/MemoryStage/Mem/memory
+mem load -filltype value -filldata 0 -fillradix binary /main/FetchStage/instMem/memory(0)
+mem load -filltype value -filldata 10 -fillradix binary /main/FetchStage/instMem/memory(1)
+mem load -filltype value -filldata 0000000000000000 -fillradix binary /main/FetchStage/instMem/memory(2)
+mem load -filltype value -filldata 0000000000000010 -fillradix binary /main/FetchStage/instMem/memory(3)
+mem load -filltype value -filldata 0000100000000000 -fillradix binary /main/FetchStage/instMem/memory(4)
+mem load -filltype value -filldata 0110100000000000 -fillradix binary /main/FetchStage/instMem/memory(5)
+mem load -filltype value -filldata 0000000000000000 -fillradix binary /main/FetchStage/instMem/memory(6)
+add wave -position end  sim:/main/clk
+add wave -position end  sim:/main/rst
+add wave -position end  sim:/main/F_PC
+add wave -position end  sim:/main/F_instruction
+add wave -position end  sim:/main/FD_instruction
+add wave -position end  sim:/main/In_Port
+add wave -position end  sim:/main/Out_Port
+add wave -position end  sim:/main/Flags
+add wave -position end  sim:/main/WB_RdstOut
+add wave -position end  sim:/main/WB_RegisterDataIn
+add wave -position end  sim:/main/WB_WBEnOut
+add wave sim:/main/DecodeStage/RegFile/*
+
+force -freeze sim:/main/clk 0 0, 1 {50 ps} -r 100
+force -freeze sim:/main/rst 1 0
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /main/MemoryStage/Mem
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /main/MemoryStage/Mem
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 50 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 50 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 50 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 50 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 50 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 50 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 50 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 50 ps  Iteration: 2  Instance: /main/ExecuteStage/ALU
+force -freeze sim:/main/rst 0 0
+run
+run
+run
+run
+run
+vsim -gui work.main
+# End time: 17:02:30 on Jan 08,2022, Elapsed time: 0:03:33
+# Errors: 0, Warnings: 40
+# vsim -gui work.main 
+# Start time: 17:02:30 on Jan 08,2022
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading ieee.numeric_std(body)
+# Loading work.constants(body)
+# Loading work.main(mainkarch)
+# Loading work.reg(regarch)
+# Loading work.fetch(fetcharch)
+# Loading work.instructionmemory(instructionmemoryarch)
+# Loading work.pipelinebuffer(pipelinebufferarch)
+# Loading work.decode_stage(ds_arc)
+# Loading work.registerfile(registerfilearch)
+# Loading work.control_unit(cu_arc)
+# Loading work.execute(executearch)
+# Loading work.alu(aluarch)
+# Loading work.memory(memoryarch)
+# Loading work.datamemory(datamemoryarch)
+# Loading work.writeback(writebackarch)
+# ** Warning: (vsim-8683) Uninitialized inout port /main/FetchStage/ALUFlags(2) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized inout port /main/FetchStage/ALUFlags(1) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized inout port /main/FetchStage/ALUFlags(0) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /main/MemoryStage/Mem/dataout2(15 downto 0) has no driver.
+# This port will contribute value (UUUUUUUUUUUUUUUU) to the signal network.
+mem load -filltype value -filldata 0 -fillradix symbolic -skip 0 /main/DecodeStage/RegFile/regFile
+mem load -filltype value -filldata 0 -fillradix symbolic -skip 0 /main/MemoryStage/Mem/memory
+mem load -filltype value -filldata 0 -fillradix binary /main/FetchStage/instMem/memory(0)
+mem load -filltype value -filldata 10 -fillradix binary /main/FetchStage/instMem/memory(1)
+mem load -filltype value -filldata 0000100000000000 -fillradix binary /main/FetchStage/instMem/memory(2)
+mem load -filltype value -filldata 0110100000000000 -fillradix binary /main/FetchStage/instMem/memory(3)
+mem load -filltype value -filldata 0000000000000000 -fillradix binary /main/FetchStage/instMem/memory(4)
+add wave -position end  sim:/main/clk
+add wave -position end  sim:/main/rst
+add wave -position end  sim:/main/F_PC
+add wave -position end  sim:/main/F_instruction
+add wave -position end  sim:/main/FD_instruction
+add wave -position end  sim:/main/In_Port
+add wave -position end  sim:/main/Out_Port
+add wave -position end  sim:/main/Flags
+add wave -position end  sim:/main/WB_RdstOut
+add wave -position end  sim:/main/WB_RegisterDataIn
+add wave -position end  sim:/main/WB_WBEnOut
+add wave sim:/main/DecodeStage/RegFile/*
+
+force -freeze sim:/main/clk 0 0, 1 {50 ps} -r 100
+force -freeze sim:/main/rst 1 0
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /main/MemoryStage/Mem
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /main/MemoryStage/Mem
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 50 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 50 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 50 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 50 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 50 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 50 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 50 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 50 ps  Iteration: 2  Instance: /main/ExecuteStage/ALU
+force -freeze sim:/main/rst 0 0
+run
+run
+run
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 450 ps  Iteration: 0  Instance: /main/FetchStage
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 500 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 500 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 550 ps  Iteration: 0  Instance: /main/FetchStage
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 550 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 550 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 600 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 600 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 650 ps  Iteration: 0  Instance: /main/FetchStage
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 650 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 650 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 700 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 700 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 750 ps  Iteration: 0  Instance: /main/FetchStage
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 750 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 750 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 800 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 800 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 850 ps  Iteration: 0  Instance: /main/FetchStage
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 850 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 850 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 900 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 900 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 950 ps  Iteration: 0  Instance: /main/FetchStage
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 950 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 950 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1 ns  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1 ns  Iteration: 0  Instance: /main/DecodeStage/RegFile
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1050 ps  Iteration: 0  Instance: /main/FetchStage
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1050 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1050 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1100 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1100 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1150 ps  Iteration: 0  Instance: /main/FetchStage
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1150 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1150 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1200 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1200 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1250 ps  Iteration: 0  Instance: /main/FetchStage
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1250 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1250 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1300 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1300 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1350 ps  Iteration: 0  Instance: /main/FetchStage
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1350 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1350 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1400 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1400 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1450 ps  Iteration: 0  Instance: /main/FetchStage
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1450 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1450 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1500 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1500 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1550 ps  Iteration: 0  Instance: /main/FetchStage
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1550 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1550 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1600 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1600 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1650 ps  Iteration: 0  Instance: /main/FetchStage
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1650 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1650 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1700 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1700 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1750 ps  Iteration: 0  Instance: /main/FetchStage
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1750 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1750 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1800 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1800 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1850 ps  Iteration: 0  Instance: /main/FetchStage
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1850 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1850 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1900 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1900 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1950 ps  Iteration: 0  Instance: /main/FetchStage
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1950 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1950 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2 ns  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2 ns  Iteration: 0  Instance: /main/DecodeStage/RegFile
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2050 ps  Iteration: 0  Instance: /main/FetchStage
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2050 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2050 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2100 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2100 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2150 ps  Iteration: 0  Instance: /main/FetchStage
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2150 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2150 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2200 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2200 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2250 ps  Iteration: 0  Instance: /main/FetchStage
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2250 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2250 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2300 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2300 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2350 ps  Iteration: 0  Instance: /main/FetchStage
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2350 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2350 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2400 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2400 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2450 ps  Iteration: 0  Instance: /main/FetchStage
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2450 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2450 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2500 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2500 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2550 ps  Iteration: 0  Instance: /main/FetchStage
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2550 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2550 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2600 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2600 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2650 ps  Iteration: 0  Instance: /main/FetchStage
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2650 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2650 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2700 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2700 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2750 ps  Iteration: 0  Instance: /main/FetchStage
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2750 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2750 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2800 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2800 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+vsim -gui work.main
+# End time: 17:07:40 on Jan 08,2022, Elapsed time: 0:05:10
+# Errors: 0, Warnings: 158
+# vsim -gui work.main 
+# Start time: 17:07:40 on Jan 08,2022
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading ieee.numeric_std(body)
+# Loading work.constants(body)
+# Loading work.main(mainkarch)
+# Loading work.reg(regarch)
+# Loading work.fetch(fetcharch)
+# Loading work.instructionmemory(instructionmemoryarch)
+# Loading work.pipelinebuffer(pipelinebufferarch)
+# Loading work.decode_stage(ds_arc)
+# Loading work.registerfile(registerfilearch)
+# Loading work.control_unit(cu_arc)
+# Loading work.execute(executearch)
+# Loading work.alu(aluarch)
+# Loading work.memory(memoryarch)
+# Loading work.datamemory(datamemoryarch)
+# Loading work.writeback(writebackarch)
+# ** Warning: (vsim-8683) Uninitialized inout port /main/FetchStage/ALUFlags(2) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized inout port /main/FetchStage/ALUFlags(1) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized inout port /main/FetchStage/ALUFlags(0) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /main/MemoryStage/Mem/dataout2(15 downto 0) has no driver.
+# This port will contribute value (UUUUUUUUUUUUUUUU) to the signal network.
+mem load -filltype value -filldata 0 -fillradix symbolic -skip 0 /main/DecodeStage/RegFile/regFile
+mem load -filltype value -filldata 0 -fillradix symbolic -skip 0 /main/MemoryStage/Mem/memory
+mem load -filltype value -filldata 0 -fillradix binary /main/FetchStage/instMem/memory(0)
+mem load -filltype value -filldata 10 -fillradix binary /main/FetchStage/instMem/memory(1)
+mem load -filltype value -filldata 0000100000000000 -fillradix binary /main/FetchStage/instMem/memory(2)
+mem load -filltype value -filldata 0110100000000000 -fillradix binary /main/FetchStage/instMem/memory(3)
+mem load -filltype value -filldata 0000000000000000 -fillradix binary /main/FetchStage/instMem/memory(4)
+add wave -position end  sim:/main/clk
+add wave -position end  sim:/main/rst
+add wave -position end  sim:/main/F_PC
+add wave -position end  sim:/main/F_instruction
+add wave -position end  sim:/main/FD_instruction
+add wave -position end  sim:/main/In_Port
+add wave -position end  sim:/main/Out_Port
+add wave -position end  sim:/main/Flags
+add wave -position end  sim:/main/WB_RdstOut
+add wave -position end  sim:/main/WB_RegisterDataIn
+add wave -position end  sim:/main/WB_WBEnOut
+add wave sim:/main/DecodeStage/RegFile/*
+
+force -freeze sim:/main/clk 0 0, 1 {50 ps} -r 100
+force -freeze sim:/main/rst 1 0
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /main/MemoryStage/Mem
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /main/MemoryStage/Mem
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 50 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 50 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 50 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 50 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 50 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 50 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 50 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 50 ps  Iteration: 2  Instance: /main/ExecuteStage/ALU
+force -freeze sim:/main/rst 0 0
+run
+run
+run
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 450 ps  Iteration: 0  Instance: /main/FetchStage
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 500 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 500 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 550 ps  Iteration: 0  Instance: /main/FetchStage
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 550 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 550 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 600 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 600 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
