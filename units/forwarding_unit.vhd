@@ -26,11 +26,11 @@ begin
     Rsrc2_en <= '1' when ( (EM_Rdst = DE_Rsrc2 and EM_WB = '1') or (MW_Rdst = DE_Rsrc2 and MW_WB = '1') )
     else '0';
 
-    Rsrc1_MOrW <= '0' when (EM_Rdst = DE_Rsrc1 and EM_WB = '1') 
-    else '1';
+    Rsrc1_MOrW <= '1' when (EM_Rdst = DE_Rsrc1 and EM_WB = '1') 
+    else '0';
 
-    Rsrc2_MOrW <= '0' when (EM_Rdst = DE_Rsrc2 and EM_WB = '1') 
-    else '1';
+    Rsrc2_MOrW <= '1' when (EM_Rdst = DE_Rsrc2 and EM_WB = '1') 
+    else '0';
 
 
 end ForwardUnitArch;
