@@ -1,46 +1,46 @@
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-use IEEE.STD_LOGIC_UNSIGNED.ALL;
-use ieee.NUMERIC_STD.all;
-use work.constants.all;
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.STD_LOGIC_UNSIGNED.ALL;
+USE ieee.NUMERIC_STD.ALL;
+USE work.constants.ALL;
 
-entity Memory is
-    port(
-        ALUResult: in std_logic_vector(REG_SIZE-1 downto 0);
-        Rsrc2 : in std_logic_vector(REG_SIZE-1 downto 0);
-        InPort: in std_logic_vector(REG_SIZE-1 downto 0);
-        FSP: in std_logic_vector(SP_REG_SIZE-1 downto 0); --final stack pointer
-        Rdst   : in std_logic_vector(REG_INDEX_SIZE-1 downto 0); 
+ENTITY Memory IS
+    PORT (
+        FSP_UPPER : IN STD_LOGIC_VECTOR(HALF_SP_REG_SIZE - 1 DOWNTO 0); --new line
+        ALUResult : IN STD_LOGIC_VECTOR(REG_SIZE - 1 DOWNTO 0);
+        Rsrc2 : IN STD_LOGIC_VECTOR(REG_SIZE - 1 DOWNTO 0);
+        InPort : IN STD_LOGIC_VECTOR(REG_SIZE - 1 DOWNTO 0);
+        FSP_LOWER : IN STD_LOGIC_VECTOR(HALF_SP_REG_SIZE - 1 DOWNTO 0); --final stack pointer
+        Rdst : IN STD_LOGIC_VECTOR(REG_INDEX_SIZE - 1 DOWNTO 0);
         -- Signals
-        RTI, RET, CALL: in std_logic;
-        Stack: in std_logic_vector (1 downto 0);
-        InEn, WBEn, MemW, memR: in std_logic;
+        RTI, RET, CALL : IN STD_LOGIC;
+        Stack : IN STD_LOGIC_VECTOR (1 DOWNTO 0);
+        InEn, WBEn, MemW, memR : IN STD_LOGIC;
         --Output
-        dataOut: out std_logic_vector(MEM_WIDTH-1 downto 0);
-        ALUResultOut: out std_logic_vector(ALU_RESULT_LEN-1 downto 0);
-        InPortOut: out std_logic_vector(REG_SIZE-1 downto 0);
-        RdstOut: out std_logic_vector(REG_INDEX_SIZE-1 downto 0);
-        memROut: out std_logic;
+        dataOut : OUT STD_LOGIC_VECTOR(MEM_WIDTH - 1 DOWNTO 0);
+        ALUResultOut : OUT STD_LOGIC_VECTOR(ALU_RESULT_LEN - 1 DOWNTO 0);
+        InPortOut : OUT STD_LOGIC_VECTOR(REG_SIZE - 1 DOWNTO 0);
+        RdstOut : OUT STD_LOGIC_VECTOR(REG_INDEX_SIZE - 1 DOWNTO 0);
+        memROut : OUT STD_LOGIC;
         --Output Signals
-        InEnOut, WBEnOut: out std_logic
+        InEnOut, WBEnOut : OUT STD_LOGIC
     );
-end entity;
+END ENTITY;
+ARCHITECTURE MemoryArch OF Memory IS
+    SIGNAL MemoryAdress : STD_LOGIC_VECTOR(MEMOROY_ADRESS_LEN - 1 DOWNTO 0);
+    SIGNAL dataout2temp : STD_LOGIC_VECTOR(MEM_WIDTH - 1 DOWNTO 0);
+BEGIN
+    Mem : ENTITY work.dataMemory PORT MAP(MemW, Stack(1), MemoryAdress, Rsrc2, Rsrc2, dataOut, dataout2temp);
 
+    MemoryAdress <= "0000" & ALUResult WHEN Stack(1) = '0'
+        ELSE
+        FSP_UPPER (3 DOWNTO 0) & FSP_LOWER;
 
-architecture MemoryArch of Memory is
-signal MemoryAdress: std_logic_vector(MEMOROY_ADRESS_LEN-1 downto 0);
-signal dataout2temp : std_logic_vector(MEM_WIDTH-1 downto 0);
-begin 
-Mem : entity work.dataMemory port map(MemW,Stack(1),MemoryAdress,Rsrc2,Rsrc2,dataOut,dataout2temp );
-
-    MemoryAdress <= "0000" & ALUResult when Stack(1) = '0'
-            else "0000" & FSP;
-	
     ALUResultOut <= ALUResult;
     --Signals passed     
-    InEnOut    <=  InEn ; 
-    WBEnOut    <=  WBEn ; 
-    memROut     <= memR;
+    InEnOut <= InEn;
+    WBEnOut <= WBEn;
+    memROut <= memR;
     RdstOut <= Rdst;
     InPortOut <= InPort;
-end MemoryArch;
+END MemoryArch;

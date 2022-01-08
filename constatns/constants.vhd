@@ -37,7 +37,7 @@ package Constants is
     CONSTANT ALU_RESULT_LEN: integer                  := 16;
 
      -- Stack pointer
-     CONSTANT SP_REG_SIZE      : integer := 16;
+     CONSTANT HALF_SP_REG_SIZE      : integer := 16;
 
 
     -- pipeline buffer indecies:

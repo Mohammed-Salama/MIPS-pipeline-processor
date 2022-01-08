@@ -20,15 +20,15 @@ architecture dataMemoryArch of dataMemory is
 	signal memory : memory_type ;
 	
 	begin
-		process(datain1, datain2,write_enable, is32 ) is
+		process(datain1, datain2,write_enable, is32,address ) is
 			begin
 				if write_enable = '1' then
 					memory(to_integer(unsigned(address))) <= datain1;
 					if is32 ='1' then
-						memory(to_integer(unsigned(address))-1) <= datain2;
+						memory(to_integer(unsigned(address)-1)) <= datain2;
 					end if;
 				end if;
 		end process;
 		dataout1 <= memory(to_integer(unsigned(address)));
-		--dataout2 <= memory(to_integer(unsigned(address))-1);
+		dataout2 <= memory(to_integer(unsigned(address)-1));
 end dataMemoryArch;

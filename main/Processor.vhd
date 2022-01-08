@@ -38,8 +38,8 @@ signal E_RdstOut:  std_logic_vector(REG_INDEX_SIZE-1 downto 0);
 signal E_ControlOUt : std_logic_vector (8 downto 0);
 
 --EM Buffer
-signal EM_Input: std_logic_vector (75 downto 0);
-signal EM_Output: std_logic_vector(75 downto 0);
+signal EM_Input: std_logic_vector (91 downto 0);
+signal EM_Output: std_logic_vector(91 downto 0);
 
 --Memory Stage
 signal M_OUT: std_logic_vector ( 53 downto 0);
@@ -62,8 +62,8 @@ signal Flags:std_logic_vector(2 downto 0);
 
 --TEMP
 signal Buffers_enable,BUffers_Flush:std_logic;
-signal FSP: std_logic_vector (15 downto 0);
-
+signal FSP_LOWER: std_logic_vector (15 downto 0);
+signal FSP_UPPER: std_logic_vector (15 downto 0); --new line
 begin 
 
 FlagRegisterModel : entity work.Reg GENERIC MAP (3) Port map(clk,rst,De_Output(60),Flags_From_ALU,Flags);
@@ -90,9 +90,10 @@ ExecuteStage:   entity work.Execute port map(De_Output(34 downto 32) , De_Output
                         Flags_From_ALU
 );
 
-EM_Buffer:      entity work.PipelineBuffer GENERIC MAP (76) port map(clk,Buffers_enable,BUffers_Flush,EM_Input,EM_Output);
+EM_Buffer:      entity work.PipelineBuffer GENERIC MAP (92) port map(clk,Buffers_enable,BUffers_Flush,EM_Input,EM_Output);
 
 MemoryStage:    entity work.Memory port map(
+    EM_Output (91 downto 76),    --new line
     EM_Output(75 downto 60), EM_Output(59 downto 44), EM_Output(31 downto 16), EM_Output(15 downto 0), EM_Output(43 downto 41), 
     EM_Output(40), EM_Output(39), EM_Output(38), 
     EM_Output(37 downto 36),
@@ -117,11 +118,12 @@ WriteBackStage: entity work.WriteBack port map(
 DE_Input <= D_ControlSignals & D_IMM & D_Rdst & D_Rsrc1 & D_Rsrc2;
 --             73-51            50-35      34-32    31-16      15 -0
 
-EM_Input <= E_ALUResult & E_Rsrc2Out & E_RdstOut &
-                        E_ControlOUt(8) & E_ControlOUt(7) & E_ControlOUt(6) & 
-                        E_ControlOUt(5 downto 4) & 
-                        E_ControlOUt(3) & E_ControlOUt(2) & E_ControlOUt(1) & E_ControlOUt(0) & 
-                        In_Port & FSP;
+EM_Input <= FSB_UPPER & --new line
+            E_ALUResult & E_Rsrc2Out & E_RdstOut &
+            E_ControlOUt(8) & E_ControlOUt(7) & E_ControlOUt(6) & 
+            E_ControlOUt(5 downto 4) & 
+            E_ControlOUt(3) & E_ControlOUt(2) & E_ControlOUt(1) & E_ControlOUt(0) & 
+            In_Port & FSP_LOWER;
 
 
 MW_Input <= M_OUT;
