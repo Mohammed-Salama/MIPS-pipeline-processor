@@ -60,6 +60,11 @@ signal  WB_RegisterDataIn: std_logic_vector(REG_SIZE-1 downto 0);
 signal Flags_From_ALU: std_logic_vector(2 downto 0);
 signal Flags:std_logic_vector(2 downto 0);
 
+
+--Stack Poiter
+signal SP_From_EX: std_logic_vector (31 downto 0);
+signal REAL_SP: std_logic_vector (31 downto 0);
+
 --TEMP
 signal Buffers_enable,BUffers_Flush:std_logic;
 signal FSP_LOWER: std_logic_vector (15 downto 0);
@@ -67,14 +72,17 @@ signal FSP_UPPER: std_logic_vector (15 downto 0); --new line
 begin 
 
 FlagRegisterModel : entity work.Reg GENERIC MAP (3) Port map(clk,rst,De_Output(60),Flags_From_ALU,Flags);
-
+StackPointerModel : entity work.Reg GENERIC MAP (32) Port map(clk,rst,De_Output(65),SP_From_EX,REAL_SP);
 
 
 FetchStage:     entity work.Fetch port map(clk,rst,F_PC,F_instruction);
 FD_Buffer:      entity work.PipelineBuffer GENERIC MAP (32) port map(clk,Buffers_enable,BUffers_Flush,F_instruction,FD_instruction);
 DecodeStage:    entity work.decode_stage port map(clk,WB_WBEnOut, WB_RdstOut, WB_RegisterDataIn, FD_instruction,D_ControlSignals,D_Rsrc1,D_Rsrc2,D_IMM,D_Rdst);   
 DE_Buffer:      entity work.PipelineBuffer GENERIC MAP (74) port map(clk,Buffers_enable,BUffers_Flush,DE_Input,De_Output);
-ExecuteStage:   entity work.Execute port map(De_Output(34 downto 32) , De_Output(31 downto 16), De_Output(15 downto 0),De_Output(50 downto 35),
+ExecuteStage:   entity work.Execute port map(
+                        rst,
+                        REAL_SP,
+                        De_Output(34 downto 32) , De_Output(31 downto 16), De_Output(15 downto 0),De_Output(50 downto 35),
                         De_Output(73),De_Output(72),De_Output(71),De_Output(70),De_Output(69),De_Output(68),De_Output(67),De_Output(66),
                         De_Output(65 downto 64),
                         De_Output(63),De_Output(62),De_Output(61),De_Output(60),De_Output(59),De_Output(58),
@@ -87,7 +95,10 @@ ExecuteStage:   entity work.Execute port map(De_Output(34 downto 32) , De_Output
                         E_ControlOUt(8),E_ControlOUt(7),E_ControlOUt(6),
                         E_ControlOUt(5 downto 4),
                         E_ControlOUt(3),E_ControlOUt(2),E_ControlOUt(1),E_ControlOUt(0),
-                        Flags_From_ALU
+                        Flags_From_ALU,
+                        FSP_UPPER,
+                        FSP_LOWER,
+                        SP_From_EX
 );
 
 EM_Buffer:      entity work.PipelineBuffer GENERIC MAP (92) port map(clk,Buffers_enable,BUffers_Flush,EM_Input,EM_Output);
@@ -132,5 +143,6 @@ Out_Port <= De_Output(31 downto 16) when De_Output(62) = '1';
 Buffers_enable<='1';
 BUffers_Flush<='0';
 FSP_LOWER <= (Others => '0');
+FSP_UPPER <= (Others => '0');
 
 end MainkArch;

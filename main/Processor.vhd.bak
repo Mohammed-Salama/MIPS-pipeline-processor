@@ -118,7 +118,11 @@ WriteBackStage: entity work.WriteBack port map(
 DE_Input <= D_ControlSignals & D_IMM & D_Rdst & D_Rsrc1 & D_Rsrc2;
 --             73-51            50-35      34-32    31-16      15 -0
 
+<<<<<<< HEAD
+EM_Input <= FSB_UPPER & --new line
+=======
 EM_Input <= FSP_UPPER & --new line
+>>>>>>> 3a6cdc58aeb75b6c3ad0e1c7b4ba7f44e76c03de
             E_ALUResult & E_Rsrc2Out & E_RdstOut &
             E_ControlOUt(8) & E_ControlOUt(7) & E_ControlOUt(6) & 
             E_ControlOUt(5 downto 4) & 
@@ -131,6 +135,7 @@ Out_Port <= De_Output(31 downto 16) when De_Output(62) = '1';
 
 Buffers_enable<='1';
 BUffers_Flush<='0';
-FSP <= (Others => '0');
+FSP_LOWER <= (Others => '0');
+FSP_UPPER <= (Others => '0');
 
 end MainkArch;
