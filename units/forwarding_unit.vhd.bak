@@ -11,7 +11,7 @@ entity ForwardUnit is
     port(
         DE_Rsrc1,DE_Rsrc2: in std_logic_vector(2 downto 0);
         EM_Rdst, MW_Rdst: in std_logic_vector(2 downto 0);
-        EM_WB, MW_WB: in std_logic;
+        EM_WB, MW_WB, in std_logic;
         Rsrc1_en,Rsrc2_en: out std_logic;
         Rsrc1_MOrW, Rsrc2_MOrW: out std_logic
     );
