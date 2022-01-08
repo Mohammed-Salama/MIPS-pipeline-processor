@@ -70,7 +70,7 @@ FlagRegisterModel : entity work.Reg GENERIC MAP (3) Port map(clk,rst,De_Output(6
 
 
                                                                         --jmp          --jc        --jn           --jz
-FetchStage:     entity work.Fetch port map(clk,rst,F_PC,F_instruction,De_Output(69),De_Output(68),De_Output(67),De_Output(66),Flags_From_ALU,De_Output(31 downto 16));
+FetchStage:     entity work.Fetch port map(clk,rst,F_PC,F_instruction,De_Output(69),De_Output(68),De_Output(67),De_Output(66),Flags,De_Output(31 downto 16));
 FD_Buffer:      entity work.PipelineBuffer GENERIC MAP (32) port map(clk,Buffers_enable,BUffers_Flush,F_instruction,FD_instruction);
 DecodeStage:    entity work.decode_stage port map(clk,WB_WBEnOut, WB_RdstOut, WB_RegisterDataIn, FD_instruction,D_ControlSignals,D_Rsrc1,D_Rsrc2,D_IMM,D_Rdst);   
 DE_Buffer:      entity work.PipelineBuffer GENERIC MAP (74) port map(clk,Buffers_enable,BUffers_Flush,DE_Input,De_Output);

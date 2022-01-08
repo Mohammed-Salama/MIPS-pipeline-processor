@@ -35,7 +35,7 @@ signal ALUIn1, ALUIn2: std_logic_vector(REG_SIZE-1 downto 0);
 signal ALUResultTemp : std_logic_vector(ALU_RESULT_LEN-1 downto 0);
 begin 
 
-    ALU : entity work.Alu port map (ALUOP,ALUIn1,ALUIn2,ALUResultTemp,ALUFlags);
+    ALU : entity work.Alu port map (ALUEn,ALUOP,ALUIn1,ALUIn2,ALUResultTemp,ALUFlags);
     ALUIn1 <=   
 		Rsrc1 when LDM = '0'
         else    IMM;

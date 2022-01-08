@@ -13,7 +13,7 @@ entity Fetch is
         jc : in std_logic;
         jn : in std_logic;
         jz : in std_logic;
-        ALUFlags: inout std_logic_vector(FLAG_REG_SIZE-1 downto 0);
+        ALUFlags: in std_logic_vector(FLAG_REG_SIZE-1 downto 0);
         branch_pc_before_extend  : in std_logic_vector (REG_SIZE-1 downto 0)
         -- inst_mem_input_data   : in std_logic_vector(2*MEM_WIDTH-1 downto 0);   -- input to instuction memory 
         -- inst_mem_write_enable : in std_logic                                -- to write on instruction memory
