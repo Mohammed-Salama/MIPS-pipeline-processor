@@ -24,7 +24,7 @@ entity Execute is
         StackOut: out std_logic_vector (1 downto 0);
         InEnOut, WBEnOut, MemWOut, memROut: out std_logic;
         --Extras
-        ALUFlags: out std_logic_vector(FLAG_REG_SIZE-1 downto 0)
+        ALUFlags: inout std_logic_vector(FLAG_REG_SIZE-1 downto 0)
     );
 end entity;
 

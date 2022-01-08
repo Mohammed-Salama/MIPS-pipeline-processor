@@ -13,7 +13,7 @@ entity Alu is
         rsrc1  : in std_logic_vector(REG_SIZE-1 downto 0);
         rsrc2  : in std_logic_vector(REG_SIZE-1 downto 0);
         result : inout std_logic_vector(REG_SIZE-1 downto 0);
-        flags  : out std_logic_vector(FLAG_REG_SIZE-1 downto 0)
+        flags  : inout std_logic_vector(FLAG_REG_SIZE-1 downto 0)
     );
 end entity;
 
@@ -47,12 +47,13 @@ begin
 
     -- SETTING CARRY FLAG
     tmp  <= ('0' & rsrc1) + ('0'&rsrc2);
-    flags(CARRY_FLAG_INDEX) <= '1' when ((tmp(REG_SIZE)='1') or (opcode=SETC_OPCODE) or (opcode=INC_OPCODE and rsrc1=x"ffff") or (rsrc1<rsrc2 and opcode=SUB_OPCODE) ) else '0';
+    flags(CARRY_FLAG_INDEX) <= '1' when ( (opcode=ADD_OPCODE and tmp(REG_SIZE)='1') or (opcode=SETC_OPCODE) or (opcode=INC_OPCODE and rsrc1=x"ffff") or (rsrc1<rsrc2 and opcode=SUB_OPCODE) )else 
+                               '0' when (opcode = ADD_OPCODE or opcode = INC_OPCODE or opcode = SUB_OPCODE) else flags(CARRY_FLAG_INDEX);
 
     -- SETTING ZERO FLAG
-    flags(ZERO_FLAG_INDEX) <= '1' when ((result = (x"0000")) and (opcode /= SETC_OPCODE))  else '0';
+    flags(ZERO_FLAG_INDEX) <= flags(ZERO_FLAG_INDEX) when (opcode  = SETC_OPCODE)else '1' when (result = x"0000") else '0';
 
     -- SETTING NEG FLAG
-    flags(NEG_FLAG_INDEX) <= '1' when ((result(REG_SIZE-1)= '1') and (opcode /= SETC_OPCODE)) else '0';
+    flags(NEG_FLAG_INDEX) <= flags(NEG_FLAG_INDEX) when (opcode  = SETC_OPCODE)else '1' when (result(REG_SIZE-1)= '1') else '0';
 
 end AluArch;
