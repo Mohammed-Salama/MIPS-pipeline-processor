@@ -35,6 +35,15 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Compiling entity PipelineBuffer
 -- Compiling architecture PipelineBufferArch of PipelineBuffer
 
+} {} {}} {D:/cufe/3rd computer/CMP3010_Computer Architecture/project/work/MIPS-pipeline-processor/caches/data_memory.vhd} {1 {vcom -work work -2002 -explicit -stats=none {D:/cufe/3rd computer/CMP3010_Computer Architecture/project/work/MIPS-pipeline-processor/caches/data_memory.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity dataMemory
+-- Compiling architecture dataMemoryArch of dataMemory
+
 } {} {}} {{D:/cufe/3rd computer/CMP3010_Computer Architecture/project/work/MIPS-pipeline-processor/caches/data_memory.vhd}} {1 {vcom -work work -2002 -explicit {D:/cufe/3rd computer/CMP3010_Computer Architecture/project/work/MIPS-pipeline-processor/caches/data_memory.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 Start time: 23:09:44 on Jan 07,2022
@@ -125,19 +134,6 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Loading package NUMERIC_STD
 -- Compiling entity RegisterFile
 -- Compiling architecture RegisterFileArch of RegisterFile
-
-} {} {}} {D:/cufe/3rd computer/CMP3010_Computer Architecture/project/work/MIPS-pipeline-processor/stages/memory.vhd} {1 {vcom -work work -2002 -explicit -stats=none {D:/cufe/3rd computer/CMP3010_Computer Architecture/project/work/MIPS-pipeline-processor/stages/memory.vhd}
-Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package std_logic_arith
--- Loading package STD_LOGIC_UNSIGNED
--- Loading package NUMERIC_STD
--- Loading package Constants
--- Compiling entity Memory
--- Compiling architecture MemoryArch of Memory
--- Loading entity dataMemory
 
 } {} {}} {{D:/cufe/3rd computer/CMP3010_Computer Architecture/project/work/MIPS-pipeline-processor/stages/memory.vhd}} {1 {vcom -work work -2002 -explicit {D:/cufe/3rd computer/CMP3010_Computer Architecture/project/work/MIPS-pipeline-processor/stages/memory.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
@@ -272,6 +268,17 @@ vcom -reportprogress 300 -work work -2002 -explicit D:/cufe/3rd computer/CMP3010
 -- Loading package Constants
 End time: 23:09:44 on Jan 07,2022, Elapsed time: 0:00:00
 Errors: 0, Warnings: 0
+
+} {} {}} {D:/cufe/3rd computer/CMP3010_Computer Architecture/project/work/MIPS-pipeline-processor/stages/decode.vhd} {1 {vcom -work work -2002 -explicit -stats=none {D:/cufe/3rd computer/CMP3010_Computer Architecture/project/work/MIPS-pipeline-processor/stages/decode.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity decode_stage
+-- Compiling architecture DS_Arc of decode_stage
+-- Loading package NUMERIC_STD
+-- Loading entity RegisterFile
+-- Loading entity control_unit
 
 } {} {}} {D:/cufe/3rd computer/CMP3010_Computer Architecture/project/work/MIPS-pipeline-processor/units/control_unit.vhd} {1 {vcom -work work -2002 -explicit -stats=none {D:/cufe/3rd computer/CMP3010_Computer Architecture/project/work/MIPS-pipeline-processor/units/control_unit.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016

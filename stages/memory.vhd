@@ -41,4 +41,6 @@ Mem : entity work.dataMemory port map(MemW,Stack(1),MemoryAdress,Rsrc2,Rsrc2,dat
     InEnOut    <=  InEn ; 
     WBEnOut    <=  WBEn ; 
     memROut     <= memR;
+    RdstOut <= Rdst;
+    InPortOut <= InPort;
 end MemoryArch;

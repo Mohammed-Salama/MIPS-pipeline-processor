@@ -27,7 +27,8 @@ begin
     begin
         if rising_edge(clk) then
             if rst = '1' then
-                pc <= PCReset;
+                out_pc <= PCReset;
+		pc <= PCReset;
             else 
                 if memory_out(31) = '1' then                      -- has immediate value
                     temp_pc := pc + 2;
