@@ -126,6 +126,7 @@ ExecuteStage:   entity work.Execute port map(
 EM_Buffer:      entity work.PipelineBuffer GENERIC MAP (92) port map(clk,Buffers_enable_EM,BUffers_Flush_EM,EM_Input,EM_Output);
 
 MemoryStage:    entity work.Memory port map(
+    clk,
     EM_Output (91 downto 76),    --new line
     EM_Output(75 downto 60), EM_Output(59 downto 44), EM_Output(31 downto 16), EM_Output(15 downto 0), EM_Output(43 downto 41), 
     EM_Output(40), EM_Output(39), EM_Output(38), 

@@ -6,6 +6,7 @@ USE work.constants.ALL;
 
 ENTITY Memory IS
     PORT (
+        clk: In std_logic;
         FSP_UPPER : IN STD_LOGIC_VECTOR(HALF_SP_REG_SIZE - 1 DOWNTO 0); --new line
         ALUResult : IN STD_LOGIC_VECTOR(REG_SIZE - 1 DOWNTO 0);
         Rsrc2 : IN STD_LOGIC_VECTOR(REG_SIZE - 1 DOWNTO 0);
@@ -29,13 +30,15 @@ END ENTITY;
 ARCHITECTURE MemoryArch OF Memory IS
     SIGNAL MemoryAdress : STD_LOGIC_VECTOR(MEMOROY_ADRESS_LEN - 1 DOWNTO 0);
     SIGNAL dataout2temp : STD_LOGIC_VECTOR(MEM_WIDTH - 1 DOWNTO 0);
+    signal is32: std_logic;
 BEGIN
-    Mem : ENTITY work.dataMemory PORT MAP(MemW, Stack(1), MemoryAdress, Rsrc2, Rsrc2, dataOut, dataout2temp);
+    Mem : ENTITY work.dataMemory PORT MAP(clk,MemW, is32, MemoryAdress, Rsrc2, Rsrc2, dataOut, dataout2temp);
 
     MemoryAdress <= "0000" & ALUResult WHEN Stack(1) = '0'
         ELSE
         FSP_UPPER (3 DOWNTO 0) & FSP_LOWER;
 
+    is32 <= RTI or RET or CALL;
     ALUResultOut <= ALUResult;
     --Signals passed     
     InEnOut <= InEn;
