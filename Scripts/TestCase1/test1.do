@@ -21,6 +21,7 @@ mem load -filltype value -filldata 0000000000000000 -fillradix binary /main/Fetc
 mem load -filltype value -filldata 0000000000000000 -fillradix binary /main/FetchStage/instMem/memory(17)
 mem load -filltype value -filldata 0001010010010000 -fillradix binary /main/FetchStage/instMem/memory(18)
 mem load -filltype value -filldata 0001010100100000 -fillradix binary /main/FetchStage/instMem/memory(19)
+mem load -filltype value -filldata 0000010000000000 -fillradix binary /main/FetchStage/instMem/memory(20)
 
 add wave -position end  sim:/main/clk
 add wave -position end  sim:/main/rst

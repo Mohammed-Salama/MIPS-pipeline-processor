@@ -42,16 +42,7 @@ add wave -position end  sim:/main/DecodeStage/RegFile/regFile(4)
 add wave -position end  sim:/main/DecodeStage/RegFile/regFile(5)
 add wave -position end  sim:/main/DecodeStage/RegFile/regFile(6)
 add wave -position end  sim:/main/DecodeStage/RegFile/regFile(7)
-add wave -position end  sim:/main/MemoryStage/dataOut
-add wave -position end  sim:/main/MemoryStage/MemoryAdress
-add wave -position end  sim:/main/MemoryStage/Mem/address
-add wave -position end  sim:/main/MemoryStage/Mem/datain1
-add wave -position end  sim:/main/MemoryStage/Mem/dataout1
-add wave -position end  sim:/main/MemoryStage/ALUResult
-add wave -position end  sim:/main/ExecuteStage/ALUIn1
-add wave -position end  sim:/main/ExecuteStage/ALUIn2
-add wave -position end  sim:/main/ExecuteStage/Rsrc1
-add wave -position end  sim:/main/ExecuteStage/Rsrc2
+add wave -position end  sim:/main/REAL_SP
 
 force -freeze sim:/main/clk 0 0, 1 {50 ps} -r 100
 force -freeze sim:/main/rst 1 0

@@ -80,6 +80,8 @@ signal Buffers_enable_DE,BUffers_Flush_DE:std_logic;
 signal Buffers_enable_EM,BUffers_Flush_EM:std_logic;
 signal Buffers_enable_MW,BUffers_Flush_MW:std_logic;
 
+--Exception
+signal EX_EX1,EX_EX2: std_logic;
 begin 
 
 FlagRegisterModel : entity work.Reg GENERIC MAP (3) Port map(clk,rst,De_Output(60),Flags_From_ALU,Flags);
@@ -92,7 +94,7 @@ ForwardUnitModel: entity work.ForwardUnit port map(
     FU_Rsrc1_MOrW,FU_Rsrc2_MOrW
 );
 
-FetchStage:     entity work.Fetch port map(clk,rst,F_PC,F_instruction,De_Output(69),De_Output(68),De_Output(67),De_Output(66),Flags,De_Output(31 downto 16));
+FetchStage:     entity work.Fetch port map(clk,rst,F_PC,F_instruction,De_Output(69),De_Output(68),De_Output(67),De_Output(66),Flags,De_Output(31 downto 16),EX_EX1, EX_EX2);
 FD_Buffer:      entity work.PipelineBuffer GENERIC MAP (32) port map(clk,Buffers_enable_FD,BUffers_Flush_FD,F_instruction,FD_instruction);
 DecodeStage:    entity work.decode_stage port map(clk,WB_WBEnOut, WB_RdstOut, WB_RegisterDataIn, FD_instruction,D_ControlSignals,D_Rsrc1,D_Rsrc2,D_IMM,D_Rdst,D_Rsrc1_Index,D_Rsrc2_Index);   
 DE_Buffer:      entity work.PipelineBuffer GENERIC MAP (80) port map(clk,Buffers_enable_DE,BUffers_Flush_DE,DE_Input,De_Output);
@@ -120,7 +122,8 @@ ExecuteStage:   entity work.Execute port map(
                         FU_Rsrc1_en,FU_Rsrc2_en,
                         FU_Rsrc1_MOrW,FU_Rsrc2_MOrW,
                         FU_Data_from_Mem_to_execute, --EM_Output(75 downto 60),
-                        WB_RegisterDataIn
+                        WB_RegisterDataIn,
+                        EX_EX1,EX_EX2
 );
 
 EM_Buffer:      entity work.PipelineBuffer GENERIC MAP (92) port map(clk,Buffers_enable_EM,BUffers_Flush_EM,EM_Input,EM_Output);
@@ -176,9 +179,9 @@ Buffers_enable_DE<='1';
 Buffers_enable_EM<='1';
 Buffers_enable_MW<='1';
 
-BUffers_Flush_FD<= De_Output(69) or (De_Output(68) and flags(CARRY_FLAG_INDEX)) or(De_Output(67) and flags(NEG_FLAG_INDEX)) or(De_Output(66) and flags(ZERO_FLAG_INDEX));
-BUffers_Flush_DE<= De_Output(69) or (De_Output(68) and flags(CARRY_FLAG_INDEX)) or(De_Output(67) and flags(NEG_FLAG_INDEX)) or(De_Output(66) and flags(ZERO_FLAG_INDEX));
-BUffers_Flush_EM<='0';
+BUffers_Flush_FD<= EX_EX1 or EX_EX2 or De_Output(69) or (De_Output(68) and flags(CARRY_FLAG_INDEX)) or(De_Output(67) and flags(NEG_FLAG_INDEX)) or(De_Output(66) and flags(ZERO_FLAG_INDEX));
+BUffers_Flush_DE<= EX_EX1 or EX_EX2 or De_Output(69) or (De_Output(68) and flags(CARRY_FLAG_INDEX)) or(De_Output(67) and flags(NEG_FLAG_INDEX)) or(De_Output(66) and flags(ZERO_FLAG_INDEX));
+BUffers_Flush_EM<= EX_EX1 or EX_EX2;
 BUffers_Flush_MW<='0';
 
 --FU
