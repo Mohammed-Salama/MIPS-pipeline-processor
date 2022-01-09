@@ -1,24 +1,42 @@
 ##################################################
 ############# All Instructions ###################
 ##################################################
+import re
 
 ONE_OPERAND = "oneOp"
 NOP="nop"; HLT="hlt"; SETC="setc";
 NOT="not"; INC="inc"; OUT="out"; IN="in";
 
+TWO_OPERANDS = "twoOp"
+MOV="mov"; ADD="add"; SUB="sub";
+AND="and"; IADD="iadd";
+
 INSTRUCTIONS= {
     ONE_OPERAND:{
         NOP: "000", HLT: "001", SETC: "010", NOT: "011", INC: "100",
         OUT:"101",IN:"110"
+    },
+    TWO_OPERANDS:{
+        MOV:"000",ADD:"001", SUB:"010",
+        AND:"011",IADD:"100"
     }
 }
+
 ONE_OPERAND_WITH_RDST=[NOT,INC,OUT,IN]
 ONE_OPERAND_INSTRUCTIONS=INSTRUCTIONS[ONE_OPERAND]
 
+TWO_OPERAND_INSTRUCTIONS=INSTRUCTIONS[TWO_OPERANDS]
+# 32 bits
+TWO_OPERAND_LONG=[IADD]
+
 class Instruction:
-    def __init__(self) -> None:
-        self.bitsString=['0' for _ in range(16)]
+    def __init__(self,isLong=False) -> None:
+        length=33 if isLong else 16
+        self.bitsString=['0' for _ in range(length)]
     
+        if isLong:
+            self.bitsString[16]='\n'
+        
     def __str__(self) -> str:
         return ''.join(self.bitsString)
 
@@ -26,8 +44,6 @@ class Instruction:
         return self.__str__()
     
     def save(self,file):
-        assert not self.bitsString==[], "bits cannot be empty"
-        assert len(self.bitsString) == 16 or len(self.bitsString) == 32,"invalid instruction length"
         file.write(''.join(self.bitsString))
     
     def fromString(self,string):
@@ -36,10 +52,18 @@ class Instruction:
 
 class OneOperand(Instruction):
     def __init__(self, operation: str, rdst: str) -> None:
-        assert len(rdst)==3 , "invalid rdst"
-        assert len(operation)==3 , "invalid operation"
         super().__init__()
-        self.bitsString[0:3] = "000"+operation+rdst+rdst
+        self.bitsString[0:12] = "000"+operation+rdst+rdst
+
+class TwoOperands(Instruction):
+    def __init__(self, isLong:bool,operation: str, rdst: str, rsrc1: str, rsrc2="0"*3, imm="0"*16) -> None:
+        section = "101" if isLong else "001"
+
+        super().__init__(isLong)
+        self.bitsString[0:15] =section +operation+rdst+rsrc1+rsrc2
+
+        if isLong:
+            self.bitsString[17:34]=imm
 
 
 class InstructionFactoryInterface:
@@ -55,14 +79,37 @@ class OneOperandFactory(InstructionFactoryInterface):
             rdst = instParts[1]
         return OneOperand(instCode,rdst)
 
+class TwoOperandsFactory(InstructionFactoryInterface):
+    def create(self, instParts: list) -> TwoOperands:
+        instCode = TWO_OPERAND_INSTRUCTIONS[instParts[0]]
+        rdst=instParts[1]
+        rsrc1=instParts[2]
+        rsrc2="000"; imm="0"*16
+        isLong=False
+
+        if instParts[0] in TWO_OPERAND_LONG:
+            imm=instParts[3]
+            isLong=True
+        
+        elif len(instParts) > 3:
+            rsrc2 = instParts[3]
+        
+        if instParts[0]==MOV: # since mov instruction is flipped in the document
+            rdst, rsrc1 = [rsrc1,rdst]
+        # if instParts[0] in TWO_OPERAND_LONG:
+            # print(instCode, rdst, rsrc1, rsrc2, imm)
+        return TwoOperands(isLong,instCode,rdst,rsrc1,rsrc2,imm)
+
 
 class InstructionFactory(InstructionFactoryInterface):
     def __init__(self) -> None:
         super().__init__()
         self.oneOperandFactory=OneOperandFactory()
+        self.twoOperandsFactory=TwoOperandsFactory()
     
     def prepare(self,instruction:str)->str:
-        parts = instruction.strip().split(' ')
+        parts = instruction.strip()
+        parts=re.split('[ ,]',parts)
         return list(filter(lambda x:x!='',parts))
     
     def create(self,instString:str)->Instruction:
@@ -71,6 +118,8 @@ class InstructionFactory(InstructionFactoryInterface):
     def _create(self,instParts:list)->Instruction:
         if instParts[0] in ONE_OPERAND_INSTRUCTIONS.keys():
             return  self.oneOperandFactory.create(instParts)
+        elif instParts[0] in TWO_OPERAND_INSTRUCTIONS.keys():
+            return  self.twoOperandsFactory.create(instParts)
 
 class Assember:
     def __init__(self) -> None:
@@ -82,10 +131,11 @@ class Assember:
     def writeToFile(self,fileName="output.txt"):
         self.outFile=open(fileName,'w')
         for line in self.inFile:
-            withoutComment=line.lower().split('#')[0].split('//')[0].split('--')
+            withoutComment=line.lower().strip().split('#')[0].split('//')[0].split('--')
             withoutComment=''.join(withoutComment)
+            if withoutComment=='':
+                continue
             inst=self.factory.create(withoutComment)
-            print(inst)
             self.outFile.write(inst.__str__()+'\n')
         self.outFile.close()
         
