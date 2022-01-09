@@ -70,6 +70,7 @@ signal REAL_SP: std_logic_vector (31 downto 0);
 --Forward Unit
 signal FU_Rsrc1_en,FU_Rsrc2_en: std_logic;
 signal FU_Rsrc1_MOrW,FU_Rsrc2_MOrW: std_logic;
+signal FU_Data_from_Mem_to_execute: std_logic_vector(15 downto 0);
 
 --TEMP
 signal FSP_LOWER: std_logic_vector (15 downto 0);
@@ -118,7 +119,7 @@ ExecuteStage:   entity work.Execute port map(
                         --FU
                         FU_Rsrc1_en,FU_Rsrc2_en,
                         FU_Rsrc1_MOrW,FU_Rsrc2_MOrW,
-                        EM_Output(75 downto 60),
+                        FU_Data_from_Mem_to_execute, --EM_Output(75 downto 60),
                         WB_RegisterDataIn
 );
 
@@ -147,7 +148,7 @@ WriteBackStage: entity work.WriteBack port map(
 
 
 
-DE_Input <= D_Rsrc1_Index & D_Rsrc1_Index & D_ControlSignals & D_IMM & D_Rdst & D_Rsrc1 & D_Rsrc2;
+DE_Input <= D_Rsrc1_Index & D_Rsrc2_Index & D_ControlSignals & D_IMM & D_Rdst & D_Rsrc1 & D_Rsrc2;
 --             79-77         76-74          73-51            50-35      34-32    31-16      15 -0
 
 EM_Input <= FSP_UPPER & --new line 91 76
@@ -156,11 +157,15 @@ EM_Input <= FSP_UPPER & --new line 91 76
             E_ControlOUt(5 downto 4) & 
             E_ControlOUt(3) & E_ControlOUt(2) & E_ControlOUt(1) & E_ControlOUt(0) & 
         --                       wb
-            In_Port & FSP_LOWER;
+            In_Port & FSP_LOWER; --31  0 
 
 
 MW_Input <= M_OUT;
-Out_Port <= De_Output(31 downto 16) when De_Output(62) = '1';
+
+Out_Port <= 
+        FU_Data_from_Mem_to_execute when (De_Output(62) = '1' and EM_Output(34) = '1' and EM_Output(43 downto 41) = De_Output(79 downto 77))
+   else    WB_RegisterDataIn           when (De_Output(62) = '1' and MW_Output(0) = '1' and MW_Output(5 downto 3) = De_Output(79 downto 77))
+   else    De_Output(31 downto 16)     when De_Output(62) = '1';
 
 --  -- JMP         --CARRY       --NEG          --ZERO
 -- De_Output(69),De_Output(68),De_Output(67),De_Output(66),
@@ -175,7 +180,9 @@ BUffers_Flush_DE<= De_Output(69) or (De_Output(68) and flags(CARRY_FLAG_INDEX)) 
 BUffers_Flush_EM<='0';
 BUffers_Flush_MW<='0';
 
-FSP_LOWER <= (Others => '0');
-FSP_UPPER <= (Others => '0');
+--FU
+FU_Data_from_Mem_to_execute <= EM_Output(31 downto 16) when EM_Output(35) = '1'
+        else EM_Output(75 downto 60);  --EM_ALU_Result 
+
 
 end MainkArch;

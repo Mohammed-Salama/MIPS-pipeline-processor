@@ -1,0 +1,21 @@
+0 SETC           #C --> 1
+1 NOP            #No change
+2 NOT R1         #R1 =FFFF , C--> no change, N --> 1, Z --> 0
+3 INC R1	       #R1 =0000 , C --> 1 , N --> 0 , Z --> 1
+4 IN R1	       #R1= 5,add 5 on the in port,flags no change	
+5 IN R2          #R2= 10,add 10 on the in port, flags no change
+6 NOT R2	       #R2= FFFFFFEF, C--> no change, N -->1,Z-->0
+7 INC R1         #R1= 6, C --> 0, N -->0, Z-->0
+8 OUT R1
+9 OUT R2
+
+0  0000100000000000
+1  0000000000000000
+2  0000110010010000
+3  0001000010010000
+4  0001100010010000
+5  0001100100010000
+6  0000110100100000
+7  0001000010010000 
+8  0001010010010000
+9  0001010100100000
