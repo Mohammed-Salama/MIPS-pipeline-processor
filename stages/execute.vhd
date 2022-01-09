@@ -55,15 +55,19 @@ begin
         else    MW_DataIn;
 
     ALUIn2 <=
-		        Rsrc2   when IMMS = '0' and FU_Rsrc2_en = '0'
-        else    IMM     when IMMS = '1' and FU_Rsrc2_en = '0'
+                IMM when IMMS = '1'
+		else    Rsrc2   when IMMS = '0' and FU_Rsrc2_en = '0'
         else    EM_ALUResult when FU_Rsrc2_MOrW = '1'
         else    MW_DataIn;   
 
 
         
                    
-    Rsrc2Out <= Rsrc2;
+    Rsrc2Out <= 
+                Rsrc2 when FU_Rsrc2_en = '0'
+        else    EM_ALUResult when FU_Rsrc2_MOrW = '1'
+        else    MW_DataIn;   
+
     RdstOut <= Rdst;
     
     sp_real <= std_logic_vector(unsigned (sp_in) - 1) when Stack(0) = '1' and (CALL = '0' and INT = '0')
