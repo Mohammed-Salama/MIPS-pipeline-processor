@@ -228,10 +228,15 @@ class Assember:
             self.instructions[self.index]=self.factory.create(withoutComment)
             self.index+=1
          
-    def writeToFile(self,fileName="output.txt"):
+    def writeToFile(self,fileName="output.mem"):
         self.outFile=open(fileName,'w')
-        for inst in self.instructions:
-            self.outFile.write(inst.__str__()+'\n')
+        self.outFile.write(
+            "// memory data file (do not edit the following line - required for mem load use)\n// instance=/main/FetchStage/instMem/memory\n// format=mti addressradix=h dataradix=b version=1.0 wordsperline=1\n"
+        )
+
+        for i,inst in enumerate(self.instructions):
+            
+            self.outFile.write(hex(i)[2:].rjust(5)+': '+inst.__str__()+'\n')
         self.outFile.close()
         
 
