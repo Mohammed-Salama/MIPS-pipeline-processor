@@ -1,21 +1,6 @@
-# Compile of control_unit.vhd was successful.
-# Compile of register_file.vhd was successful.
-# Compile of decode.vhd was successful.
-# Compile of Register.vhd was successful.
-# Compile of constants.vhd was successful.
-# Compile of data_memory.vhd was successful.
-# Compile of instructions_memory.vhd was successful.
-# Compile of alu.vhd was successful.
-# Compile of execute.vhd was successful.
-# Compile of fetch.vhd was successful.
-# Compile of memory.vhd was successful.
-# Compile of write_back.vhd was successful.
-# Compile of pipeline_buffer.vhd was successful.
-# Compile of Processor.vhd was successful.
-# 14 compiles, 0 failed with no errors.
 vsim -gui work.main
 # vsim -gui work.main 
-# Start time: 20:38:06 on Jan 08,2022
+# Start time: 11:22:16 on Jan 09,2022
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -25,6 +10,8 @@ vsim -gui work.main
 # Loading work.constants(body)
 # Loading work.main(mainkarch)
 # Loading work.reg(regarch)
+# Loading work.stackreg(stackregarch)
+# Loading work.forwardunit(forwardunitarch)
 # Loading work.fetch(fetcharch)
 # Loading work.instructionmemory(instructionmemoryarch)
 # Loading work.pipelinebuffer(pipelinebufferarch)
@@ -36,50 +23,31 @@ vsim -gui work.main
 # Loading work.memory(memoryarch)
 # Loading work.datamemory(datamemoryarch)
 # Loading work.writeback(writebackarch)
-# ** Warning: (vsim-8683) Uninitialized out port /main/MemoryStage/Mem/dataout2(15 downto 0) has no driver.
-# This port will contribute value (UUUUUUUUUUUUUUUU) to the signal network.
-vsim -gui work.main
-# End time: 20:38:19 on Jan 08,2022, Elapsed time: 0:00:13
-# Errors: 0, Warnings: 3
-# vsim -gui work.main 
-# Start time: 20:38:19 on Jan 08,2022
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.std_logic_arith(body)
-# Loading ieee.std_logic_unsigned(body)
-# Loading ieee.numeric_std(body)
-# Loading work.constants(body)
-# Loading work.main(mainkarch)
-# Loading work.reg(regarch)
-# Loading work.fetch(fetcharch)
-# Loading work.instructionmemory(instructionmemoryarch)
-# Loading work.pipelinebuffer(pipelinebufferarch)
-# Loading work.decode_stage(ds_arc)
-# Loading work.registerfile(registerfilearch)
-# Loading work.control_unit(cu_arc)
-# Loading work.execute(executearch)
-# Loading work.alu(aluarch)
-# Loading work.memory(memoryarch)
-# Loading work.datamemory(datamemoryarch)
-# Loading work.writeback(writebackarch)
-# ** Warning: (vsim-8683) Uninitialized out port /main/MemoryStage/Mem/dataout2(15 downto 0) has no driver.
-# This port will contribute value (UUUUUUUUUUUUUUUU) to the signal network.
 mem load -filltype value -filldata 0 -fillradix symbolic -skip 0 /main/DecodeStage/RegFile/regFile
 mem load -filltype value -filldata 0 -fillradix symbolic -skip 0 /main/MemoryStage/Mem/memory
 mem load -filltype value -filldata 0 -fillradix binary /main/FetchStage/instMem/memory(0)
 mem load -filltype value -filldata 10 -fillradix binary /main/FetchStage/instMem/memory(1)
-mem load -filltype value -filldata 0000100000000000 -fillradix binary /main/FetchStage/instMem/memory(2)
-mem load -filltype value -filldata 0110100000000000 -fillradix binary /main/FetchStage/instMem/memory(3)
-mem load -filltype value -filldata 0001000010010000 -fillradix binary /main/FetchStage/instMem/memory(4)
-mem load -filltype value -filldata 0001000010010000 -fillradix binary /main/FetchStage/instMem/memory(5)
-mem load -filltype value -filldata 0001000010010000 -fillradix binary /main/FetchStage/instMem/memory(6)
+
+mem load -filltype value -filldata 0000000000000000 -fillradix binary /main/FetchStage/instMem/memory(2)
+mem load -filltype value -filldata 0110110000000000 -fillradix binary /main/FetchStage/instMem/memory(3)
+mem load -filltype value -filldata 0000000000000000 -fillradix binary /main/FetchStage/instMem/memory(4)
+mem load -filltype value -filldata 0000000000000000 -fillradix binary /main/FetchStage/instMem/memory(5)
+mem load -filltype value -filldata 0000100000000000 -fillradix binary /main/FetchStage/instMem/memory(6)
+mem load -filltype value -filldata 0110100000010000 -fillradix binary /main/FetchStage/instMem/memory(7)
+mem load -filltype value -filldata 0000000000000000 -fillradix binary /main/FetchStage/instMem/memory(8)
+mem load -filltype value -filldata 0000110100100000 -fillradix binary /main/FetchStage/instMem/memory(9)
+mem load -filltype value -filldata 0110010000110000 -fillradix binary /main/FetchStage/instMem/memory(10)
+mem load -filltype value -filldata 0000000000000000 -fillradix binary /main/FetchStage/instMem/memory(11)
+mem load -filltype value -filldata 0000000000000000 -fillradix binary /main/FetchStage/instMem/memory(12)
+mem load -filltype value -filldata 0000110100100000 -fillradix binary /main/FetchStage/instMem/memory(13)
+mem load -filltype value -filldata 0110000001000000 -fillradix binary /main/FetchStage/instMem/memory(14)
+
 add wave -position end  sim:/main/clk
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: ahmed  Hostname: LAPTOP-8POTMREJ  ProcessID: 11148
-#           Attempting to use alternate WLF file "./wlft9cfx2w".
+#           Attempting to use alternate WLF file "./wlft9h5hj0".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft9cfx2w
+#           Using alternate file: ./wlft9h5hj0
 add wave -position end  sim:/main/rst
 add wave -position end  sim:/main/F_PC
 add wave -position end  sim:/main/F_instruction
@@ -106,10 +74,38 @@ sim:/main/FetchStage/jz \
 sim:/main/FetchStage/memory_out \
 sim:/main/FetchStage/out_pc \
 sim:/main/FetchStage/pc
+add wave -position insertpoint  \
+sim:/main/WriteBackStage/RdstOut \
+sim:/main/WriteBackStage/RegisterDataIn \
+sim:/main/WriteBackStage/WBEnOut
+add wave -position insertpoint  \
+sim:/main/ExecuteStage/ALU/alu_enable \
+sim:/main/ExecuteStage/ALU/opcode \
+sim:/main/ExecuteStage/ALU/result
+add wave -position insertpoint  \
+sim:/main/ExecuteStage/FU_Rsrc1_en
+add wave -position insertpoint  \
+sim:/main/DE_Buffer/in_port(79) \
+sim:/main/DE_Buffer/in_port(78) \
+sim:/main/DE_Buffer/in_port(77) \
+sim:/main/DE_Buffer/in_port(76) \
+sim:/main/DE_Buffer/in_port(75) \
+sim:/main/DE_Buffer/in_port(74)
+add wave -position insertpoint  \
+sim:/main/EM_Buffer/out_port(43) \
+sim:/main/EM_Buffer/out_port(42) \
+sim:/main/EM_Buffer/out_port(41)
+add wave -position insertpoint  \
+sim:/main/MW_Buffer/out_port(5) \
+sim:/main/MW_Buffer/out_port(4) \
+sim:/main/MW_Buffer/out_port(3)
+
 
 force -freeze sim:/main/clk 0 0, 1 {50 ps} -r 100
 force -freeze sim:/main/rst 1 0
 run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /main/MemoryStage/Mem
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ps  Iteration: 0  Instance: /main/MemoryStage/Mem
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
@@ -126,23 +122,63 @@ run
 #    Time: 0 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 1  Instance: /main/MemoryStage/Mem
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 #    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 #    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 #    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 50 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 50 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
 force -freeze sim:/main/rst 0 0
+
+mem load -filltype value -filldata {0000000000000101 } -fillradix symbolic /main/DecodeStage/RegFile/regFile(0)
+mem load -filltype value -filldata {0000000000001000 } -fillradix symbolic /main/DecodeStage/RegFile/regFile(1)
+mem load -filltype value -filldata {0000000000001100 } -fillradix symbolic /main/DecodeStage/RegFile/regFile(3)
 run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 150 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 150 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 150 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 150 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 150 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 150 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 150 ps  Iteration: 2  Instance: /main/MemoryStage/Mem
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 150 ps  Iteration: 2  Instance: /main/MemoryStage/Mem
 run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 250 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 250 ps  Iteration: 1  Instance: /main/ForwardUnitModel
 run
 run
 run
@@ -159,6 +195,359 @@ run
 run
 run
 run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1850 ps  Iteration: 0  Instance: /main/FetchStage
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1850 ps  Iteration: 1  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1850 ps  Iteration: 1  Instance: /main/DecodeStage/RegFile
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1950 ps  Iteration: 0  Instance: /main/FetchStage
+vsim -gui work.main
+# End time: 11:31:09 on Jan 09,2022, Elapsed time: 0:08:53
+# Errors: 0, Warnings: 41
+# vsim -gui work.main 
+# Start time: 11:31:09 on Jan 09,2022
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading ieee.numeric_std(body)
+# Loading work.constants(body)
+# Loading work.main(mainkarch)
+# Loading work.reg(regarch)
+# Loading work.stackreg(stackregarch)
+# Loading work.forwardunit(forwardunitarch)
+# Loading work.fetch(fetcharch)
+# Loading work.instructionmemory(instructionmemoryarch)
+# Loading work.pipelinebuffer(pipelinebufferarch)
+# Loading work.decode_stage(ds_arc)
+# Loading work.registerfile(registerfilearch)
+# Loading work.control_unit(cu_arc)
+# Loading work.execute(executearch)
+# Loading work.alu(aluarch)
+# Loading work.memory(memoryarch)
+# Loading work.datamemory(datamemoryarch)
+# Loading work.writeback(writebackarch)
+mem load -filltype value -filldata 0 -fillradix symbolic -skip 0 /main/DecodeStage/RegFile/regFile
+mem load -filltype value -filldata 0 -fillradix symbolic -skip 0 /main/MemoryStage/Mem/memory
+mem load -filltype value -filldata 0 -fillradix binary /main/FetchStage/instMem/memory(0)
+mem load -filltype value -filldata 10 -fillradix binary /main/FetchStage/instMem/memory(1)
+
+mem load -filltype value -filldata 0000000000000000 -fillradix binary /main/FetchStage/instMem/memory(2)
+mem load -filltype value -filldata 0110110000000000 -fillradix binary /main/FetchStage/instMem/memory(3)
+mem load -filltype value -filldata 0000000000000000 -fillradix binary /main/FetchStage/instMem/memory(4)
+mem load -filltype value -filldata 0000000000000000 -fillradix binary /main/FetchStage/instMem/memory(5)
+mem load -filltype value -filldata 0000100000000000 -fillradix binary /main/FetchStage/instMem/memory(6)
+mem load -filltype value -filldata 0110100000010000 -fillradix binary /main/FetchStage/instMem/memory(7)
+mem load -filltype value -filldata 0000000000000000 -fillradix binary /main/FetchStage/instMem/memory(8)
+mem load -filltype value -filldata 0000110100100000 -fillradix binary /main/FetchStage/instMem/memory(9)
+mem load -filltype value -filldata 0110010000110000 -fillradix binary /main/FetchStage/instMem/memory(10)
+mem load -filltype value -filldata 0000000000000000 -fillradix binary /main/FetchStage/instMem/memory(11)
+mem load -filltype value -filldata 0000000000000000 -fillradix binary /main/FetchStage/instMem/memory(12)
+mem load -filltype value -filldata 0000110100100000 -fillradix binary /main/FetchStage/instMem/memory(13)
+mem load -filltype value -filldata 0110000001000000 -fillradix binary /main/FetchStage/instMem/memory(14)
+
+add wave -position end  sim:/main/clk
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: ahmed  Hostname: LAPTOP-8POTMREJ  ProcessID: 11148
+#           Attempting to use alternate WLF file "./wlftf210ki".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftf210ki
+add wave -position end  sim:/main/rst
+add wave -position end  sim:/main/F_PC
+add wave -position end  sim:/main/F_instruction
+add wave -position end  sim:/main/FD_instruction
+add wave -position end  sim:/main/In_Port
+add wave -position end  sim:/main/Out_Port
+add wave -position end  sim:/main/Flags
+add wave -position end  sim:/main/WB_RdstOut
+add wave -position end  sim:/main/WB_RegisterDataIn
+add wave -position end  sim:/main/WB_WBEnOut
+add wave sim:/main/DecodeStage/RegFile/*
+
+add wave -position insertpoint  \
+sim:/main/ExecuteStage/ALU/opcode
+add wave -position insertpoint  \
+sim:/main/ExecuteStage/ALU/flags
+add wave -position insertpoint  \
+sim:/main/FetchStage/ALUFlags \
+sim:/main/FetchStage/branch_pc_before_extend \
+sim:/main/FetchStage/jc \
+sim:/main/FetchStage/jmp \
+sim:/main/FetchStage/jn \
+sim:/main/FetchStage/jz \
+sim:/main/FetchStage/memory_out \
+sim:/main/FetchStage/out_pc \
+sim:/main/FetchStage/pc
+add wave -position insertpoint  \
+sim:/main/WriteBackStage/RdstOut \
+sim:/main/WriteBackStage/RegisterDataIn \
+sim:/main/WriteBackStage/WBEnOut
+add wave -position insertpoint  \
+sim:/main/ExecuteStage/ALU/alu_enable \
+sim:/main/ExecuteStage/ALU/opcode \
+sim:/main/ExecuteStage/ALU/result
+add wave -position insertpoint  \
+sim:/main/ExecuteStage/FU_Rsrc1_en
+add wave -position insertpoint  \
+sim:/main/DE_Buffer/in_port(79) \
+sim:/main/DE_Buffer/in_port(78) \
+sim:/main/DE_Buffer/in_port(77) \
+sim:/main/DE_Buffer/in_port(76) \
+sim:/main/DE_Buffer/in_port(75) \
+sim:/main/DE_Buffer/in_port(74)
+add wave -position insertpoint  \
+sim:/main/EM_Buffer/out_port(43) \
+sim:/main/EM_Buffer/out_port(42) \
+sim:/main/EM_Buffer/out_port(41)
+add wave -position insertpoint  \
+sim:/main/MW_Buffer/out_port(5) \
+sim:/main/MW_Buffer/out_port(4) \
+sim:/main/MW_Buffer/out_port(3)
+
+
+force -freeze sim:/main/clk 0 0, 1 {50 ps} -r 100
+force -freeze sim:/main/rst 1 0
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /main/MemoryStage/Mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /main/MemoryStage/Mem
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+force -freeze sim:/main/rst 0 0
+
+mem load -filltype value -filldata {0000000000000101 } -fillradix symbolic /main/DecodeStage/RegFile/regFile(0)
+vsim -gui work.main
+# End time: 11:34:03 on Jan 09,2022, Elapsed time: 0:02:54
+# Errors: 0, Warnings: 27
+# vsim -gui work.main 
+# Start time: 11:34:03 on Jan 09,2022
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading ieee.numeric_std(body)
+# Loading work.constants(body)
+# Loading work.main(mainkarch)
+# Loading work.reg(regarch)
+# Loading work.stackreg(stackregarch)
+# Loading work.forwardunit(forwardunitarch)
+# Loading work.fetch(fetcharch)
+# Loading work.instructionmemory(instructionmemoryarch)
+# Loading work.pipelinebuffer(pipelinebufferarch)
+# Loading work.decode_stage(ds_arc)
+# Loading work.registerfile(registerfilearch)
+# Loading work.control_unit(cu_arc)
+# Loading work.execute(executearch)
+# Loading work.alu(aluarch)
+# Loading work.memory(memoryarch)
+# Loading work.datamemory(datamemoryarch)
+# Loading work.writeback(writebackarch)
+mem load -filltype value -filldata 0 -fillradix symbolic -skip 0 /main/DecodeStage/RegFile/regFile
+mem load -filltype value -filldata 0 -fillradix symbolic -skip 0 /main/MemoryStage/Mem/memory
+mem load -filltype value -filldata 0 -fillradix binary /main/FetchStage/instMem/memory(0)
+mem load -filltype value -filldata 10 -fillradix binary /main/FetchStage/instMem/memory(1)
+
+mem load -filltype value -filldata 0000000000000000 -fillradix binary /main/FetchStage/instMem/memory(2)
+mem load -filltype value -filldata 0110110000000000 -fillradix binary /main/FetchStage/instMem/memory(3)
+mem load -filltype value -filldata 0000000000000000 -fillradix binary /main/FetchStage/instMem/memory(4)
+mem load -filltype value -filldata 0000000000000000 -fillradix binary /main/FetchStage/instMem/memory(5)
+mem load -filltype value -filldata 0000100000000000 -fillradix binary /main/FetchStage/instMem/memory(6)
+mem load -filltype value -filldata 0110100000010000 -fillradix binary /main/FetchStage/instMem/memory(7)
+mem load -filltype value -filldata 0000000000000000 -fillradix binary /main/FetchStage/instMem/memory(8)
+mem load -filltype value -filldata 0000110100100000 -fillradix binary /main/FetchStage/instMem/memory(9)
+mem load -filltype value -filldata 0110010000110000 -fillradix binary /main/FetchStage/instMem/memory(10)
+mem load -filltype value -filldata 0000000000000000 -fillradix binary /main/FetchStage/instMem/memory(11)
+mem load -filltype value -filldata 0000000000000000 -fillradix binary /main/FetchStage/instMem/memory(12)
+mem load -filltype value -filldata 0000110100100000 -fillradix binary /main/FetchStage/instMem/memory(13)
+mem load -filltype value -filldata 0110000001000000 -fillradix binary /main/FetchStage/instMem/memory(14)
+
+mem load -filltype value -filldata {0000000000000101 } -fillradix symbolic /main/DecodeStage/RegFile/regFile(0)
+mem load -filltype value -filldata {0000000000001000 } -fillradix symbolic /main/DecodeStage/RegFile/regFile(1)
+mem load -filltype value -filldata {0000000000001100 } -fillradix symbolic /main/DecodeStage/RegFile/regFile(3)
+mem load -filltype value -filldata {0000000000000010 } -fillradix symbolic /main/DecodeStage/RegFile/regFile(4)
+
+add wave -position end  sim:/main/clk
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: ahmed  Hostname: LAPTOP-8POTMREJ  ProcessID: 11148
+#           Attempting to use alternate WLF file "./wlft75b0tf".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft75b0tf
+add wave -position end  sim:/main/rst
+add wave -position end  sim:/main/F_PC
+add wave -position end  sim:/main/F_instruction
+add wave -position end  sim:/main/FD_instruction
+add wave -position end  sim:/main/In_Port
+add wave -position end  sim:/main/Out_Port
+add wave -position end  sim:/main/Flags
+add wave -position end  sim:/main/WB_RdstOut
+add wave -position end  sim:/main/WB_RegisterDataIn
+add wave -position end  sim:/main/WB_WBEnOut
+add wave sim:/main/DecodeStage/RegFile/*
+
+add wave -position insertpoint  \
+sim:/main/ExecuteStage/ALU/opcode
+add wave -position insertpoint  \
+sim:/main/ExecuteStage/ALU/flags
+add wave -position insertpoint  \
+sim:/main/FetchStage/ALUFlags \
+sim:/main/FetchStage/branch_pc_before_extend \
+sim:/main/FetchStage/jc \
+sim:/main/FetchStage/jmp \
+sim:/main/FetchStage/jn \
+sim:/main/FetchStage/jz \
+sim:/main/FetchStage/memory_out \
+sim:/main/FetchStage/out_pc \
+sim:/main/FetchStage/pc
+add wave -position insertpoint  \
+sim:/main/WriteBackStage/RdstOut \
+sim:/main/WriteBackStage/RegisterDataIn \
+sim:/main/WriteBackStage/WBEnOut
+add wave -position insertpoint  \
+sim:/main/ExecuteStage/ALU/alu_enable \
+sim:/main/ExecuteStage/ALU/opcode \
+sim:/main/ExecuteStage/ALU/result
+add wave -position insertpoint  \
+sim:/main/ExecuteStage/FU_Rsrc1_en
+add wave -position insertpoint  \
+sim:/main/DE_Buffer/in_port(79) \
+sim:/main/DE_Buffer/in_port(78) \
+sim:/main/DE_Buffer/in_port(77) \
+sim:/main/DE_Buffer/in_port(76) \
+sim:/main/DE_Buffer/in_port(75) \
+sim:/main/DE_Buffer/in_port(74)
+add wave -position insertpoint  \
+sim:/main/EM_Buffer/out_port(43) \
+sim:/main/EM_Buffer/out_port(42) \
+sim:/main/EM_Buffer/out_port(41)
+add wave -position insertpoint  \
+sim:/main/MW_Buffer/out_port(5) \
+sim:/main/MW_Buffer/out_port(4) \
+sim:/main/MW_Buffer/out_port(3)
+
+
+force -freeze sim:/main/clk 0 0, 1 {50 ps} -r 100
+force -freeze sim:/main/rst 1 0
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /main/MemoryStage/Mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /main/MemoryStage/Mem
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+force -freeze sim:/main/rst 0 0
+
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 150 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 150 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 150 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 150 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 150 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 150 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 150 ps  Iteration: 2  Instance: /main/MemoryStage/Mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 150 ps  Iteration: 2  Instance: /main/MemoryStage/Mem
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 250 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 250 ps  Iteration: 1  Instance: /main/ForwardUnitModel
 run
 run
 run
@@ -175,6 +564,199 @@ run
 run
 run
 run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1850 ps  Iteration: 0  Instance: /main/FetchStage
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1850 ps  Iteration: 1  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1850 ps  Iteration: 1  Instance: /main/DecodeStage/RegFile
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1950 ps  Iteration: 0  Instance: /main/FetchStage
+vsim -gui work.main
+# End time: 11:45:43 on Jan 09,2022, Elapsed time: 0:11:40
+# Errors: 0, Warnings: 41
+# vsim -gui work.main 
+# Start time: 11:45:43 on Jan 09,2022
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading ieee.numeric_std(body)
+# Loading work.constants(body)
+# Loading work.main(mainkarch)
+# Loading work.reg(regarch)
+# Loading work.stackreg(stackregarch)
+# Loading work.forwardunit(forwardunitarch)
+# Loading work.fetch(fetcharch)
+# Loading work.instructionmemory(instructionmemoryarch)
+# Loading work.pipelinebuffer(pipelinebufferarch)
+# Loading work.decode_stage(ds_arc)
+# Loading work.registerfile(registerfilearch)
+# Loading work.control_unit(cu_arc)
+# Loading work.execute(executearch)
+# Loading work.alu(aluarch)
+# Loading work.memory(memoryarch)
+# Loading work.datamemory(datamemoryarch)
+# Loading work.writeback(writebackarch)
+mem load -filltype value -filldata 0 -fillradix symbolic -skip 0 /main/DecodeStage/RegFile/regFile
+mem load -filltype value -filldata 0 -fillradix symbolic -skip 0 /main/MemoryStage/Mem/memory
+mem load -filltype value -filldata 0 -fillradix binary /main/FetchStage/instMem/memory(0)
+mem load -filltype value -filldata 10 -fillradix binary /main/FetchStage/instMem/memory(1)
+
+mem load -filltype value -filldata 0110110000000000 -fillradix binary /main/FetchStage/instMem/memory(2)
+mem load -filltype value -filldata 0000000000000000 -fillradix binary /main/FetchStage/instMem/memory(3)
+mem load -filltype value -filldata 0000000000000000 -fillradix binary /main/FetchStage/instMem/memory(4)
+mem load -filltype value -filldata 0000100000000000 -fillradix binary /main/FetchStage/instMem/memory(5)
+mem load -filltype value -filldata 0110100000010000 -fillradix binary /main/FetchStage/instMem/memory(6)
+mem load -filltype value -filldata 0000000000000000 -fillradix binary /main/FetchStage/instMem/memory(7)
+mem load -filltype value -filldata 0000110100100000 -fillradix binary /main/FetchStage/instMem/memory(8)
+mem load -filltype value -filldata 0110010000110000 -fillradix binary /main/FetchStage/instMem/memory(9)
+mem load -filltype value -filldata 0000000000000000 -fillradix binary /main/FetchStage/instMem/memory(10)
+mem load -filltype value -filldata 0000000000000000 -fillradix binary /main/FetchStage/instMem/memory(11)
+mem load -filltype value -filldata 0000110100100000 -fillradix binary /main/FetchStage/instMem/memory(12)
+mem load -filltype value -filldata 0110000001000000 -fillradix binary /main/FetchStage/instMem/memory(13)
+
+mem load -filltype value -filldata {0000000000000101 } -fillradix symbolic /main/DecodeStage/RegFile/regFile(0)
+mem load -filltype value -filldata {0000000000001000 } -fillradix symbolic /main/DecodeStage/RegFile/regFile(1)
+mem load -filltype value -filldata {0000000000001100 } -fillradix symbolic /main/DecodeStage/RegFile/regFile(3)
+mem load -filltype value -filldata {0000000000000010 } -fillradix symbolic /main/DecodeStage/RegFile/regFile(4)
+
+add wave -position end  sim:/main/clk
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: ahmed  Hostname: LAPTOP-8POTMREJ  ProcessID: 11148
+#           Attempting to use alternate WLF file "./wlftwav71c".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftwav71c
+add wave -position end  sim:/main/rst
+add wave -position end  sim:/main/F_PC
+add wave -position end  sim:/main/F_instruction
+add wave -position end  sim:/main/FD_instruction
+add wave -position end  sim:/main/In_Port
+add wave -position end  sim:/main/Out_Port
+add wave -position end  sim:/main/Flags
+add wave -position end  sim:/main/WB_RdstOut
+add wave -position end  sim:/main/WB_RegisterDataIn
+add wave -position end  sim:/main/WB_WBEnOut
+add wave sim:/main/DecodeStage/RegFile/*
+
+add wave -position insertpoint  \
+sim:/main/ExecuteStage/ALU/opcode
+add wave -position insertpoint  \
+sim:/main/ExecuteStage/ALU/flags
+add wave -position insertpoint  \
+sim:/main/FetchStage/ALUFlags \
+sim:/main/FetchStage/branch_pc_before_extend \
+sim:/main/FetchStage/jc \
+sim:/main/FetchStage/jmp \
+sim:/main/FetchStage/jn \
+sim:/main/FetchStage/jz \
+sim:/main/FetchStage/memory_out \
+sim:/main/FetchStage/out_pc \
+sim:/main/FetchStage/pc
+add wave -position insertpoint  \
+sim:/main/WriteBackStage/RdstOut \
+sim:/main/WriteBackStage/RegisterDataIn \
+sim:/main/WriteBackStage/WBEnOut
+add wave -position insertpoint  \
+sim:/main/ExecuteStage/ALU/alu_enable \
+sim:/main/ExecuteStage/ALU/opcode \
+sim:/main/ExecuteStage/ALU/result
+add wave -position insertpoint  \
+sim:/main/ExecuteStage/FU_Rsrc1_en
+add wave -position insertpoint  \
+sim:/main/DE_Buffer/in_port(79) \
+sim:/main/DE_Buffer/in_port(78) \
+sim:/main/DE_Buffer/in_port(77) \
+sim:/main/DE_Buffer/in_port(76) \
+sim:/main/DE_Buffer/in_port(75) \
+sim:/main/DE_Buffer/in_port(74)
+add wave -position insertpoint  \
+sim:/main/EM_Buffer/out_port(43) \
+sim:/main/EM_Buffer/out_port(42) \
+sim:/main/EM_Buffer/out_port(41)
+add wave -position insertpoint  \
+sim:/main/MW_Buffer/out_port(5) \
+sim:/main/MW_Buffer/out_port(4) \
+sim:/main/MW_Buffer/out_port(3)
+
+
+force -freeze sim:/main/clk 0 0, 1 {50 ps} -r 100
+force -freeze sim:/main/rst 1 0
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /main/MemoryStage/Mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /main/MemoryStage/Mem
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+force -freeze sim:/main/rst 0 0
+
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 150 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 150 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 150 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 150 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 150 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 150 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 150 ps  Iteration: 2  Instance: /main/MemoryStage/Mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 150 ps  Iteration: 2  Instance: /main/MemoryStage/Mem
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 250 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 250 ps  Iteration: 1  Instance: /main/ForwardUnitModel
 run
 run
 run
@@ -187,109 +769,27 @@ run
 run
 run
 run
-# Compile of control_unit.vhd was successful.
-# Compile of register_file.vhd was successful.
-# Compile of decode.vhd was successful.
-# Compile of Register.vhd was successful.
-# Compile of constants.vhd was successful.
-# Compile of data_memory.vhd was successful.
-# Compile of instructions_memory.vhd was successful.
-# Compile of alu.vhd was successful.
-# Compile of execute.vhd was successful.
-# Compile of fetch.vhd was successful.
-# Compile of memory.vhd was successful.
-# Compile of write_back.vhd was successful.
-# Compile of pipeline_buffer.vhd was successful.
-# Compile of Processor.vhd failed with 1 errors.
-# 14 compiles, 1 failed with 1 error.
-# Compile of control_unit.vhd was successful.
-# Compile of register_file.vhd was successful.
-# Compile of decode.vhd was successful.
-# Compile of Register.vhd was successful.
-# Compile of constants.vhd was successful.
-# Compile of data_memory.vhd was successful.
-# Compile of instructions_memory.vhd was successful.
-# Compile of alu.vhd was successful.
-# Compile of execute.vhd was successful.
-# Compile of fetch.vhd was successful.
-# Compile of memory.vhd was successful.
-# Compile of write_back.vhd was successful.
-# Compile of pipeline_buffer.vhd was successful.
-# Compile of Processor.vhd was successful.
-# 14 compiles, 0 failed with no errors.
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1450 ps  Iteration: 0  Instance: /main/FetchStage
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1450 ps  Iteration: 1  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1450 ps  Iteration: 1  Instance: /main/DecodeStage/RegFile
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1550 ps  Iteration: 0  Instance: /main/FetchStage
+# Break key hit
+mem load -i {E:/CA project/MIPS_pipeline_processor/Assembler/output.mem} /main/FetchStage/instMem/memory
+run
 # Load canceled
-vsim -gui work.main
-# End time: 20:58:10 on Jan 08,2022, Elapsed time: 0:19:51
-# Errors: 0, Warnings: 21
-# vsim -gui work.main 
-# Start time: 20:58:10 on Jan 08,2022
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.std_logic_arith(body)
-# Loading ieee.std_logic_unsigned(body)
-# Loading ieee.numeric_std(body)
-# Loading work.constants(body)
-# Loading work.main(mainkarch)
-# Loading work.reg(regarch)
-# Loading work.fetch(fetcharch)
-# Loading work.instructionmemory(instructionmemoryarch)
-# Loading work.pipelinebuffer(pipelinebufferarch)
-# Loading work.decode_stage(ds_arc)
-# Loading work.registerfile(registerfilearch)
-# Loading work.control_unit(cu_arc)
-# Loading work.execute(executearch)
-# Loading work.alu(aluarch)
-# Loading work.memory(memoryarch)
-# Loading work.datamemory(datamemoryarch)
-# Loading work.writeback(writebackarch)
-# ** Warning: (vsim-8683) Uninitialized out port /main/MemoryStage/Mem/dataout2(15 downto 0) has no driver.
-# This port will contribute value (UUUUUUUUUUUUUUUU) to the signal network.
-mem load -filltype value -filldata 0 -fillradix symbolic -skip 0 /main/DecodeStage/RegFile/regFile
-mem load -filltype value -filldata 0 -fillradix symbolic -skip 0 /main/MemoryStage/Mem/memory
-mem load -filltype value -filldata 0 -fillradix binary /main/FetchStage/instMem/memory(0)
-mem load -filltype value -filldata 10 -fillradix binary /main/FetchStage/instMem/memory(1)
-mem load -filltype value -filldata 0000100000000000 -fillradix binary /main/FetchStage/instMem/memory(2)
-mem load -filltype value -filldata 0110100000000000 -fillradix binary /main/FetchStage/instMem/memory(3)
-mem load -filltype value -filldata 0001000010010000 -fillradix binary /main/FetchStage/instMem/memory(4)
-mem load -filltype value -filldata 0001000010010000 -fillradix binary /main/FetchStage/instMem/memory(5)
-mem load -filltype value -filldata 0001000010010000 -fillradix binary /main/FetchStage/instMem/memory(6)
-add wave -position end  sim:/main/clk
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: ahmed  Hostname: LAPTOP-8POTMREJ  ProcessID: 11148
-#           Attempting to use alternate WLF file "./wlftddjvrc".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftddjvrc
-add wave -position end  sim:/main/rst
-add wave -position end  sim:/main/F_PC
-add wave -position end  sim:/main/F_instruction
-add wave -position end  sim:/main/FD_instruction
-add wave -position end  sim:/main/In_Port
-add wave -position end  sim:/main/Out_Port
-add wave -position end  sim:/main/Flags
-add wave -position end  sim:/main/WB_RdstOut
-add wave -position end  sim:/main/WB_RegisterDataIn
-add wave -position end  sim:/main/WB_WBEnOut
-add wave sim:/main/DecodeStage/RegFile/*
-
-add wave -position insertpoint  \
-sim:/main/ExecuteStage/ALU/opcode
-add wave -position insertpoint  \
-sim:/main/ExecuteStage/ALU/flags
-add wave -position insertpoint  \
-sim:/main/FetchStage/ALUFlags \
-sim:/main/FetchStage/branch_pc_before_extend \
-sim:/main/FetchStage/jc \
-sim:/main/FetchStage/jmp \
-sim:/main/FetchStage/jn \
-sim:/main/FetchStage/jz \
-sim:/main/FetchStage/memory_out \
-sim:/main/FetchStage/out_pc \
-sim:/main/FetchStage/pc
-
-force -freeze sim:/main/clk 0 0, 1 {50 ps} -r 100
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+mem load -i {E:/CA project/MIPS_pipeline_processor/Assembler/output.mem} /main/MemoryStage/Mem/memory
+force -freeze sim:/main/clk 1 0, 0 {50 ps} -r 100
 force -freeze sim:/main/rst 1 0
 run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /main/MemoryStage/Mem
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ps  Iteration: 0  Instance: /main/MemoryStage/Mem
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
@@ -306,8 +806,30 @@ run
 #    Time: 0 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 1  Instance: /main/MemoryStage/Mem
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 #    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
@@ -315,14 +837,143 @@ run
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 #    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 50 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+#    Time: 100 ps  Iteration: 1  Instance: /main/FetchStage/instMem
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 100 ps  Iteration: 1  Instance: /main/FetchStage/instMem
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 100 ps  Iteration: 1  Instance: /main/FetchStage/instMem
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 50 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+#    Time: 100 ps  Iteration: 1  Instance: /main/FetchStage/instMem
 force -freeze sim:/main/rst 0 0
 run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ps  Iteration: 0  Instance: /main/FetchStage
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ps  Iteration: 0  Instance: /main/FetchStage
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ps  Iteration: 0  Instance: /main/FetchStage
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 150 ps  Iteration: 2  Instance: /main/MemoryStage/Mem
+#    Time: 200 ps  Iteration: 1  Instance: /main/FetchStage/instMem
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ps  Iteration: 1  Instance: /main/FetchStage/instMem
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ps  Iteration: 1  Instance: /main/FetchStage/instMem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 200 ps  Iteration: 1  Instance: /main/FetchStage/instMem
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 200 ps  Iteration: 2  Instance: /main/MemoryStage/Mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 200 ps  Iteration: 2  Instance: /main/MemoryStage/Mem
+# Break key hit
+mem load -i {E:/CA project/MIPS_pipeline_processor/Assembler/output.mem} /main/FetchStage/instMem/memory
+# Load canceled
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+mem load -i {E:/CA project/MIPS_pipeline_processor/Assembler/output.mem} /main/FetchStage/instMem/memory
+force -freeze sim:/main/clk 1 0, 0 {50 ps} -r 100
+force -freeze sim:/main/rst 1 0
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /main/MemoryStage/Mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /main/MemoryStage/Mem
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+force -freeze sim:/main/rst 0 0
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 200 ps  Iteration: 2  Instance: /main/MemoryStage/Mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 200 ps  Iteration: 2  Instance: /main/MemoryStage/Mem
 run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 300 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 300 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 300 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 300 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 300 ps  Iteration: 1  Instance: /main/ForwardUnitModel
 run
 run
 run
@@ -359,102 +1010,571 @@ run
 run
 run
 run
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+mem load -i {E:/CA project/MIPS_pipeline_processor/Assembler/output.mem} /main/FetchStage/instMem/memory
+force -freeze sim:/main/clk 1 0, 0 {50 ps} -r 100
+force -freeze sim:/main/rst 1 0
 run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /main/MemoryStage/Mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /main/MemoryStage/Mem
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+force -freeze sim:/main/rst 0 0
+force -freeze sim:/main/In_Port 16#30 0
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 200 ps  Iteration: 2  Instance: /main/MemoryStage/Mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 200 ps  Iteration: 2  Instance: /main/MemoryStage/Mem
+force -freeze sim:/main/In_Port 16#50 0
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 300 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 300 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+force -freeze sim:/main/In_Port 16#100 0
+run
+force -freeze sim:/main/In_Port 16#300 0
+run
+run
+run
+run
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 900 ps  Iteration: 2  Instance: /main/ExecuteStage/ALU
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 900 ps  Iteration: 2  Instance: /main/MemoryStage/Mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 900 ps  Iteration: 2  Instance: /main/MemoryStage/Mem
+run
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+restart -f
+mem load -i {E:/CA project/MIPS_pipeline_processor/Assembler/output.mem} /main/FetchStage/instMem/memory
+force -freeze sim:/main/rst 1 0
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /main/MemoryStage/Mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /main/MemoryStage/Mem
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# Load canceled
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+mem load -i {E:/CA project/MIPS_pipeline_processor/Assembler/output.mem} /main/FetchStage/instMem/memory
+force -freeze sim:/main/clk 1 0, 0 {50 ps} -r 100
+force -freeze sim:/main/rst 1 0
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /main/MemoryStage/Mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /main/MemoryStage/Mem
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+force -freeze sim:/main/rst 0 0
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 200 ps  Iteration: 2  Instance: /main/MemoryStage/Mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 200 ps  Iteration: 2  Instance: /main/MemoryStage/Mem
+force -freeze sim:/main/In_Port 16#30 0
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 300 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 300 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+force -freeze sim:/main/In_Port 16#50 0
+run
+force -freeze sim:/main/In_Port 16#100 0
+run
+force -freeze sim:/main/In_Port 16#300 0
+run
+run
+run
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 900 ps  Iteration: 2  Instance: /main/ExecuteStage/ALU
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 900 ps  Iteration: 2  Instance: /main/MemoryStage/Mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 900 ps  Iteration: 2  Instance: /main/MemoryStage/Mem
+run
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+mem load -i {E:/CA project/MIPS_pipeline_processor/Assembler/output.mem} /main/FetchStage/instMem/memory
+force -freeze sim:/main/clk 1 0, 0 {50 ps} -r 100
+force -freeze sim:/main/rst 1 0
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /main/MemoryStage/Mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /main/MemoryStage/Mem
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+force -freeze sim:/main/rst 0 0
+force -freeze sim:/main/In_Port 16#30 0
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 200 ps  Iteration: 2  Instance: /main/MemoryStage/Mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 200 ps  Iteration: 2  Instance: /main/MemoryStage/Mem
+force -freeze sim:/main/In_Port 16#50 0
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 300 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 300 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+force -freeze sim:/main/In_Port 16#100 0
+run
+force -freeze sim:/main/In_Port 16#300 0
+run
+run
+run
+run
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 900 ps  Iteration: 2  Instance: /main/ExecuteStage/ALU
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 900 ps  Iteration: 2  Instance: /main/MemoryStage/Mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 900 ps  Iteration: 2  Instance: /main/MemoryStage/Mem
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+mem load -i {E:/CA project/MIPS_pipeline_processor/Assembler/output.mem} /main/FetchStage/instMem/memory
+force -freeze sim:/main/clk 1 0, 0 {50 ps} -r 100
+force -freeze sim:/main/rst 1 0
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /main/MemoryStage/Mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /main/MemoryStage/Mem
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+force -freeze sim:/main/rst 0 0
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 200 ps  Iteration: 2  Instance: /main/MemoryStage/Mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 200 ps  Iteration: 2  Instance: /main/MemoryStage/Mem
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 300 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 300 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+force -freeze sim:/main/In_Port 16#30 0
+run
+force -freeze sim:/main/In_Port 16#50 0
+run
+force -freeze sim:/main/In_Port 16#100 0
+run
+force -freeze sim:/main/In_Port 16#300 0
+run
+run
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 900 ps  Iteration: 2  Instance: /main/ExecuteStage/ALU
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 900 ps  Iteration: 2  Instance: /main/MemoryStage/Mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 900 ps  Iteration: 2  Instance: /main/MemoryStage/Mem
+run
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1100 ps  Iteration: 2  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1100 ps  Iteration: 2  Instance: /main/ExecuteStage/ALU
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1200 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1200 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1200 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1200 ps  Iteration: 2  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1200 ps  Iteration: 2  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1200 ps  Iteration: 3  Instance: /main/ExecuteStage/ALU
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1300 ps  Iteration: 2  Instance: /main/ExecuteStage/ALU
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1300 ps  Iteration: 2  Instance: /main/MemoryStage/Mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1300 ps  Iteration: 2  Instance: /main/MemoryStage/Mem
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1400 ps  Iteration: 2  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1400 ps  Iteration: 2  Instance: /main/ExecuteStage/ALU
+run
+run
+run
+run
+run
+run
+run
+run
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+mem load -i {E:/CA project/MIPS_pipeline_processor/Assembler/output.mem} /main/FetchStage/instMem/memory
+mem load -filltype value -filldata 0 -fillradix symbolic -skip 0 /main/DecodeStage/RegFile/regFile
+force -freeze sim:/main/clk 1 0, 0 {50 ps} -r 100
+force -freeze sim:/main/rst 1 0
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /main/MemoryStage/Mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /main/MemoryStage/Mem
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ExecuteStage/ALU
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /main/DecodeStage/RegFile
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
+force -freeze sim:/main/rst 0 0
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 200 ps  Iteration: 2  Instance: /main/MemoryStage/Mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 200 ps  Iteration: 2  Instance: /main/MemoryStage/Mem
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 300 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 300 ps  Iteration: 1  Instance: /main/ForwardUnitModel
+force -freeze sim:/main/In_Port 16#30 0
+run
+force -freeze sim:/main/In_Port 16#50 0
+run
+force -freeze sim:/main/In_Port 16#100 0
+run
+force -freeze sim:/main/In_Port 16#300 0
+run
+run
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 900 ps  Iteration: 2  Instance: /main/MemoryStage/Mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 900 ps  Iteration: 2  Instance: /main/MemoryStage/Mem
+run
+run
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1200 ps  Iteration: 1  Instance: /main/ExecuteStage/ALU
 run
 run
 run
