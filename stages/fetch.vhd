@@ -14,9 +14,12 @@ entity Fetch is
         jn : in std_logic;
         jz : in std_logic;
         ALUFlags: in std_logic_vector(FLAG_REG_SIZE-1 downto 0);
-        branch_pc_before_extend  : in std_logic_vector (REG_SIZE-1 downto 0)
+        branch_pc_before_extend  : in std_logic_vector (REG_SIZE-1 downto 0);
         -- inst_mem_input_data   : in std_logic_vector(2*MEM_WIDTH-1 downto 0);   -- input to instuction memory 
         -- inst_mem_write_enable : in std_logic                                -- to write on instruction memory
+
+        --EX
+        EX_EX1, EX_EX2: in std_logic
     );
 end entity;
 
@@ -24,10 +27,10 @@ end entity;
 architecture FetchArch of Fetch is
 
 signal pc : std_logic_vector(PC_SIZE-1 downto 0) := (others =>'0'); -- pc is starting at address zero ?
-signal PCReset : std_logic_vector(PC_SIZE-1 downto 0);
+signal PCReset,PCEX1,PCEX2 : std_logic_vector(PC_SIZE-1 downto 0);
 
 begin
-    instMem : entity work.instructionMemory PORT MAP (clk,pc,memory_out,PCReset);
+    instMem : entity work.instructionMemory PORT MAP (clk,pc,memory_out,PCReset,PCEX1,PCEX2);
     process (clk) is
         variable temp_pc : std_logic_vector(PC_SIZE-1 downto 0);
     begin
@@ -35,6 +38,12 @@ begin
             if rst = '1' then
                 out_pc <= PCReset;
 		        pc <= PCReset;
+            elsif EX_EX1 = '1' then
+                out_pc <= PCEX1;
+		        pc <= PCEX1;
+            elsif EX_EX2 = '1' then
+                out_pc <= PCEX2;
+		        pc <= PCEX2;
             else 
                 if memory_out(31) = '1' then                      -- has immediate value
                     temp_pc := pc + 2;

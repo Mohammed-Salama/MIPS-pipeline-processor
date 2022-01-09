@@ -8,7 +8,8 @@ entity instructionMemory is generic (n : integer := 16 ; m : integer := 20);
 		clk           : in std_logic;
 		address       : in  std_logic_vector(2*n-1 downto 0);       -- pc is 32 bit , we care about first 20 bits, then all bits excepts the first 20 bits must be zero else OUT_OF_RANGE INDEXING will happen.
 		dataout       : out std_logic_vector(2*n-1 downto 0);
-		PCStationary  : out std_logic_vector(2*n-1 downto 0)
+		PCStationary  : out std_logic_vector(2*n-1 downto 0);
+		PCEX1,PCEX2   : out std_logic_vector(2*n-1 downto 0)
 		);
 end entity instructionMemory;
 
@@ -30,5 +31,7 @@ architecture instructionMemoryArch of instructionMemory is
 		dataout(2*n-1 downto n) <= memory(to_integer(unsigned(address)));
 		dataout(n-1 downto 0) <= memory(to_integer(unsigned(address+1)));
 		PCStationary <= memory(0) & memory(1);
+		PCEX1 <= memory(2) & memory(3);
+		PCEX2 <= memory(4) & memory(5);
 end instructionMemoryArch;
 

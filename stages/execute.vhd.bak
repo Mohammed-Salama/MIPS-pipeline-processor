@@ -34,7 +34,10 @@ entity Execute is
         FU_Rsrc1_en,FU_Rsrc2_en: in std_logic;
         FU_Rsrc1_MOrW,FU_Rsrc2_MOrW: in std_logic;
         EM_ALUResult: in std_logic_vector (15 downto 0);
-        MW_DataIn: in std_logic_vector (15 downto 0)
+        MW_DataIn: in std_logic_vector (15 downto 0);
+
+        --Exception
+        Exception_1_toFetch,Exception_2_toFetch: out std_logic
     );
 end entity;
 
@@ -46,7 +49,10 @@ signal ALUResultTemp : std_logic_vector(ALU_RESULT_LEN-1 downto 0);
 signal SP_Operations : std_logic_vector(31 downto 0);
 signal SP_Real : std_logic_vector(31 downto 0);
 begin 
-
+    Exception_1_toFetch <= '1' when Stack = "10" and SP_Operations(20) = '1'
+	else '0';
+    Exception_2_toFetch <= '1' when MemW = '1' and ALUResult > 'hFF00
+    else '0';
     ALU : entity work.Alu port map (ALUEn,ALUOP,ALUIn1,ALUIn2,ALUResultTemp,ALUFlags);
     ALUIn1 <=   
 		        Rsrc1   when LDM = '0' and FU_Rsrc1_en = '0'
@@ -64,7 +70,7 @@ begin
         
                    
     Rsrc2Out <= 
-                Rsrc2 when FU_Rsrc2_en = '0
+                Rsrc2 when FU_Rsrc2_en = '0'
         else    EM_ALUResult when FU_Rsrc2_MOrW = '1'
         else    MW_DataIn;   
 
