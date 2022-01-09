@@ -1,0 +1,10 @@
+
+
+############
+Currently only One Operand is working
+############
+run command 
+
+python assembler.py inputFileName outputFileName
+
+outputFileName is optional
